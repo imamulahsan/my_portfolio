@@ -1,0 +1,131 @@
+.home-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* Full height of the viewport */
+    padding: 1rem;
+    /* No background-color here to inherit from the body */
+  }
+  
+  .home-left, .home-right {
+    flex: 1;
+    padding: 1rem;
+  }
+  
+  .home-left {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative; /* Position relative to contain absolute positioned lights */
+  }
+  
+  .profile-image {
+    max-width: 100%;
+    height: auto;
+    border-radius: 50%;
+    position: relative; /* Ensure the lights are behind the image */
+    z-index: 1;
+  }
+  
+  .lights {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0; /* Ensure lights are behind the image */
+    overflow: hidden; /* Hide any overflow of lights */
+  }
+  
+  .light {
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    background: var(--light-color);
+    border-radius: 50%;
+    box-shadow: 0 0 20px var(--light-shadow);
+    animation: moveLight 5s linear infinite;
+  }
+  
+  .light1 {
+    top: 10%;
+    left: 70%;
+    animation-duration: 6s;
+  }
+  
+  .light2 {
+    top: 30%;
+    left: 10%;
+    animation-duration: 8s;
+  }
+  
+  .light3 {
+    top: 70%;
+    left: 70%;
+    animation-duration: 7s;
+  }
+  
+  @keyframes moveLight {
+    0% {
+      transform: translateY(0) translateX(0);
+    }
+    50% {
+      transform: translateY(-20px) translateX(20px);
+    }
+    100% {
+      transform: translateY(0) translateX(0);
+    }
+  }
+  
+  .home-right {
+    text-align: left;
+    color: inherit; /* Inherit text color from body */
+  }
+  
+  .home-right h1 {
+    font-size: 2.5rem;
+    margin-bottom: 0.5rem;
+    color: inherit; /* Inherit text color from body */
+  }
+  
+  .home-right h1 .highlight-name {
+    color: #ff6347; /* Your chosen color */
+  }
+  
+  .home-right p {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    color: inherit; /* Inherit text color from body */
+  }
+  
+  .social-links {
+    display: flex;
+    gap: 1rem;
+  }
+  
+  .social-links a {
+    color: inherit; /* Inherit text color from body */
+    font-size: 1.5rem;
+    transition: color 0.3s;
+  }
+  
+  .social-links a:hover {
+    color: #0077b5; /* Change this color as per your design */
+  }
+  
+  .btn-download-cv {
+    padding: 0.5rem 1rem;
+    font-size: 1rem;
+    color: #ffffff;
+    background-color: #0077b5; /* Button background color */
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s;
+  }
+  
+  .btn-download-cv:hover {
+    background-color: #005a9c; /* Darker shade on hover */
+    color: #ffffff;
+  }
+  

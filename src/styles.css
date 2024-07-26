@@ -1,1 +1,33 @@
-/* You can add global styles to this file, and also import other style files */
+body {
+  --light-color: rgba(255, 204, 128, 0.6); /* Default light color for day mode */
+  --light-shadow: rgba(255, 204, 128, 0.8); /* Default light shadow for day mode */
+  --footer-text-color: inherit;
+  --footer-link-color: inherit;
+  --footer-link-hover-color: #0077b5;
+    font-family: 'Roboto', sans-serif;
+    transition: background-color 0.5s, color 0.5s, background-image 0.5s;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+  }
+  
+  body.light-mode {
+    background-color: #ffffff;
+    color: #000000;
+    background-image: url('assets/images/white-mode.jpg'); /* Path to your light mode background image */
+    --footer-text-color: #000000;
+  --footer-link-color: #000000;
+  --footer-link-hover-color: #0077b5;
+  }
+  
+  body.dark-mode {
+    --light-color: rgba(211, 211, 211, 0.6); /* Light color for night mode */
+  --light-shadow: rgba(211, 211, 211, 0.8); /* Light shadow for night mode */
+    background-color: #121212;
+    color: #ffffff;
+    background-image: url('assets/images/dark-mode.jpg'); /* Path to your dark mode background image */
+    --footer-text-color: #ffffff;
+  --footer-link-color: #ffffff;
+  --footer-link-hover-color: #0077b5;
+  }
+  

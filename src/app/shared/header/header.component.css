@@ -1,0 +1,77 @@
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: inherit; /* Inherits the background color from the body */
+    padding: 1rem;
+    transition: background-color 0.5s, color 0.5s;
+  }
+  
+  .nav-left {
+    flex: 1;
+  }
+  
+  .nav-right {
+    flex: 2;
+    display: flex;
+    justify-content: flex-end;
+  }
+  
+  .brand-name {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: inherit; /* Inherits the text color from the body */
+  }
+  
+  nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+  }
+  
+  nav ul li {
+    margin: 0 0.5rem;
+  }
+  
+  nav ul li a {
+    color: inherit; /* Inherits the text color from the body */
+    text-decoration: none;
+    padding: 0.5rem 1rem;
+    display: block;
+    font-weight: bold;
+    transition: color 0.3s;
+  }
+  
+  nav ul li a:hover {
+    color: #ee0022; /* Changes text color to red on hover */
+  }
+  
+  nav ul li button {
+    background: none;
+    border: none;
+    color: inherit; /* Inherits the text color from the body */
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+    transition: color 0.3s;
+  }
+  
+  nav ul li button i {
+    font-size: 1.5rem;
+  }
+  
+  nav ul li button:hover {
+    color: #ee0022; /* Changes icon color to red on hover */
+  }
+  
+  /* Dark mode styles specific to the header component */
+  body.dark-mode nav ul li a:hover {
+    color: #ee0022; /* Changes text color to red on hover */
+  }
+  
+  body.dark-mode nav ul li button:hover {
+    color: #ee0022; /* Changes icon color to red on hover */
+  }
+  
