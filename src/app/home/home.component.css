@@ -44,7 +44,7 @@
     background: var(--light-color);
     border-radius: 50%;
     box-shadow: 0 0 20px var(--light-shadow);
-    animation: moveLight 5s linear infinite;
+    animation: moveLight 3s linear infinite;
   }
   
   .light1 {

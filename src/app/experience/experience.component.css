@@ -1,0 +1,52 @@
+.experience-container {
+    display: flex;
+    background-color: inherit; /* Inherit background color from body */
+    color: inherit; /* Inherit text color from body */
+    padding: 2rem; /* Add padding for some space inside the container */
+    margin: 0 2rem; /* Add margins on left and right */
+  }
+  
+  .sidebar {
+    flex: 0 0 200px;
+    padding: 1rem;
+    background-color: rgba(255, 255, 255, 0.1); /* Use a semi-transparent background to allow some background image visibility */
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+  
+  .sidebar button {
+    background: none;
+    border: none;
+    color: inherit; /* Inherit text color */
+    padding: 1rem;
+    cursor: pointer;
+    text-align: left;
+    transition: background-color 0.3s, color 0.3s;
+  }
+  
+  .sidebar button.active {
+    background-color: #00d4a1; /* Highlight active button */
+    color: #000; /* Ensure text is readable on active button */
+  }
+  
+  .content {
+    flex: 1;
+    padding: 2rem;
+    background-color: inherit; /* Inherit background color */
+    color: inherit; /* Inherit text color */
+  }
+  
+  .experience-list, .education-list, .skills-list, .about-me {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+  
+  .experience-item {
+    padding: 1rem;
+    border: 1px solid var(--footer-link-color); /* Use a variable for the border color */
+    border-radius: 8px;
+    background-color: rgba(255, 255, 255, 0.1); /* Use a semi-transparent background */
+  }
+  

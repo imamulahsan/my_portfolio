@@ -1,0 +1,40 @@
+<div class="experience-container">
+    <div class="sidebar">
+      <button (click)="filterContent('work')" [class.active]="selectedFilter === 'work'">Experience</button>
+      <button (click)="filterContent('education')" [class.active]="selectedFilter === 'education'">Education</button>
+      <button (click)="filterContent('skills')" [class.active]="selectedFilter === 'skills'">Skills</button>
+      <button (click)="filterContent('about')" [class.active]="selectedFilter === 'about'">About Me</button>
+    </div>
+    <div class="content">
+      <div *ngIf="selectedFilter === 'work'">
+        <h1>My Experience</h1>
+        <div class="experience-list">
+          <div class="experience-item" *ngFor="let exp of experiences">
+            <h2>{{ exp.title }}</h2>
+            <h3>{{ exp.company }}</h3>
+            <p>{{ exp.duration }}</p>
+            <p>{{ exp.description }}</p>
+          </div>
+        </div>
+      </div>
+      <div *ngIf="selectedFilter === 'education'">
+        <h1>My Education</h1>
+        <div class="education-list">
+          <!-- Add education details here -->
+        </div>
+      </div>
+      <div *ngIf="selectedFilter === 'skills'">
+        <h1>My Skills</h1>
+        <div class="skills-list">
+          <!-- Add skills details here -->
+        </div>
+      </div>
+      <div *ngIf="selectedFilter === 'about'">
+        <h1>About Me</h1>
+        <div class="about-me">
+          <!-- Add about me details here -->
+        </div>
+      </div>
+    </div>
+  </div>
+  
