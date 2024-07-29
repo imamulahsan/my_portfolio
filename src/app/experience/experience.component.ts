@@ -11,30 +11,58 @@ export class ExperienceComponent implements OnInit {
 
   experiences = [
     {
-      title: 'Freelance Web Developer',
-      company: 'E-commerce Startup',
-      duration: '2020 - 2021',
-      description: 'Developed and maintained web applications using Angular and other modern technologies.'
+      title: 'Full-stack Software Developer Intern',
+      company: 'Bosch Rexroth',
+      location: 'Ulm, Germany',
+      duration: 'March, 2024 - October, 2024',
+      description: 'Developed and maintained web applications using Angular,PHP and MySQL.'
     },
     {
-      title: 'Teaching Assistant',
-      company: 'Tech Academy',
-      duration: '2019 - 2020',
+      title: 'Lecturer',
+      company: 'Prime University',
+      location: 'Dhaka, Bangladesh',
+      duration: 'February, 2019 - May, 2021',
       description: 'Assisted in teaching web development courses and providing support to students.'
     },
+    
+  ];
+
+  education = [
     {
-      title: 'UI/UX Designer',
-      company: 'Digital Agency',
-      duration: '2018 - 2019',
-      description: 'Designed user interfaces and improved user experiences for various clients.'
+      title: 'Master in Automotive Software Engineering',
+      company: 'Technical University of Chemnitz',
+      location: 'Chemnitz, Germany',
+      duration: 'April, 2021 - Present',
+      description: 'Completed courses like Database and Web Techniques, Empirical Software Engineering'
     },
     {
-      title: 'Junior Developer',
-      company: 'Software Development Firm',
-      duration: '2017 - 2018',
-      description: 'Worked on multiple projects as a junior developer, focusing on front-end development.'
-    }
+      title: 'Bachelor of Science in Computer Science and Engineering',
+      company: 'Islamic University of Technology',
+      location: 'Gazipur, Bangladesh',
+      duration: 'September, 2019 - October, 2018',
+      description: 'Completed courses like Artifical Intelligence, Web Engineering and Machine Learning'
+    },
+    
   ];
+
+  skills = [
+    { name: 'Angular', logo: 'assets/logos/angular.png' },
+    { name: 'TypeScript', logo: 'assets/logos/typescript.png' },
+    { name: 'JavaScript', logo: 'assets/logos/javascript.png' },
+    { name: 'HTML', logo: 'assets/logos/html.png' },
+    { name: 'CSS', logo: 'assets/logos/css.png' },
+    { name: 'PHP', logo: 'assets/logos/php.png' },
+    { name: 'MySQL', logo: 'assets/logos/mysql.png' }
+  ];
+
+  aboutMe = {
+    name: 'John Doe',
+    photo: 'assets/photos/john_doe.jpg',
+    description: `I am a passionate software engineer with experience in developing web applications 
+                  using various technologies. I enjoy learning new things and tackling challenging problems. 
+                  When I’m not coding, I love hiking, reading books, and exploring new technologies.`,
+    hobbies: ['Hiking', 'Reading', 'Traveling'],
+  };
 
   // You can add similar arrays for education, skills, and about me
 

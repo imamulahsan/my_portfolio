@@ -12,6 +12,7 @@
           <div class="experience-item" *ngFor="let exp of experiences">
             <h2>{{ exp.title }}</h2>
             <h3>{{ exp.company }}</h3>
+            <p>{{ exp.location }}</p>
             <p>{{ exp.duration }}</p>
             <p>{{ exp.description }}</p>
           </div>
@@ -20,18 +21,36 @@
       <div *ngIf="selectedFilter === 'education'">
         <h1>My Education</h1>
         <div class="education-list">
+          <div class="education-item" *ngFor=" let edu of education">
+            <h2>{{ edu.title }}</h2>
+            <h3>{{ edu.company }}</h3>
+            <p>{{ edu.location }}</p>
+            <p>{{ edu.duration }}</p>
+            <p>{{ edu.description }}</p>
+
+          </div>
           <!-- Add education details here -->
         </div>
       </div>
       <div *ngIf="selectedFilter === 'skills'">
         <h1>My Skills</h1>
         <div class="skills-list">
-          <!-- Add skills details here -->
+          <div class="skill-card" *ngFor="let skill of skills">
+            <img [src]="skill.logo" alt="{{ skill.name }} logo">
+            <p>{{ skill.name }}</p>
+          </div>
         </div>
       </div>
       <div *ngIf="selectedFilter === 'about'">
         <h1>About Me</h1>
         <div class="about-me">
+          <img [src]="aboutMe.photo" alt="{{ aboutMe.name }}" class="about-me-photo">
+          <h2>{{ aboutMe.name }}</h2>
+          <p>{{ aboutMe.description }}</p>
+          <h3>Hobbies</h3>
+          <ul>
+            <li *ngFor="let hobby of aboutMe.hobbies">{{ hobby }}</li>
+          </ul>
           <!-- Add about me details here -->
         </div>
       </div>
