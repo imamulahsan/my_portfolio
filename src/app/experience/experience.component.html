@@ -44,16 +44,24 @@
       <div *ngIf="selectedFilter === 'about'">
         <h1>About Me</h1>
         <div class="about-me">
-          <img [src]="aboutMe.photo" alt="{{ aboutMe.name }}" class="about-me-photo">
-          <h2>{{ aboutMe.name }}</h2>
-          <p>{{ aboutMe.description }}</p>
-          <h3>Hobbies</h3>
-          <ul>
-            <li *ngFor="let hobby of aboutMe.hobbies">{{ hobby }}</li>
-          </ul>
-          <!-- Add about me details here -->
+          <div class="about-me-columns">
+            <div class="about-me-column">
+              <img [src]="aboutMe.photo" alt="{{ aboutMe.name }}" class="about-me-photo">
+            </div>
+            <div class="about-me-column">
+              <h2>{{ aboutMe.name }}</h2>
+              <p>{{ aboutMe.description }}</p>
+            </div>
+          </div>
+          <div class="about-me-hobbies">
+            <h3>Hobbies</h3>
+            <ul>
+              <li *ngFor="let hobby of aboutMe.hobbies">{{ hobby }}</li>
+            </ul>
+          </div>
         </div>
       </div>
+      
     </div>
   </div>
   

@@ -60,7 +60,7 @@
 
   .skills-list {
     display: flex;
-    flex-direction: row; /* Make the skill cards align in a row */
+    flex-direction: row; /* Align the skill cards in a row */
     flex-wrap: wrap; /* Allow the items to wrap to the next line if they exceed the container width */
     gap: 1.5rem;
   }
@@ -75,47 +75,77 @@
     background-color: rgba(255, 255, 255, 0.1); /* Use a semi-transparent background */
     width: 150px;
     text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transition for transform and shadow */
   }
   
   .skill-card img {
     width: 50px;
     height: 50px;
     margin-bottom: 0.5rem;
+    transition: transform 0.3s ease; /* Smooth transition for transform */
   }
+  
+  .skill-card:hover {
+    transform: translateY(-10px); /* Lift the card slightly on hover */
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2); /* Add shadow for 3D effect */
+  }
+  
+  .skill-card img:hover {
+    transform: rotateX(20deg) rotateY(20deg); /* Rotate the image for 3D effect */
+  }
+  
 
   .about-me {
     display: flex;
-    flex-direction: column;
+    flex-direction: column; /* Arrange columns and hobbies vertically */
     align-items: center;
     padding: 2rem;
     border: 1px solid var(--footer-link-color); /* Use a variable for the border color */
     border-radius: 8px;
     background-color: rgba(255, 255, 255, 0.1); /* Use a semi-transparent background */
-    text-align: center;
+    text-align: left; /* Align text to the left */
   }
-
+  
+  .about-me-columns {
+    display: flex;
+    flex-direction: row; /* Arrange columns in a row */
+    align-items: center;
+    width: 100%;
+  }
+  
+  .about-me-column {
+    flex: 1; /* Make each column take up equal space */
+    padding: 1rem;
+  }
+  
   .about-me-photo {
     width: 150px;
     height: 150px;
     border-radius: 50%;
     margin-bottom: 1rem;
   }
-
+  
+  .about-me-hobbies {
+    width: 100%;
+    margin-top: 2rem;
+  }
+  
   .about-me ul {
     list-style: none;
     padding: 0;
   }
-
+  
   .about-me ul li {
     margin: 0.5rem 0;
   }
-
+  
   .about-me a {
     color: inherit;
     text-decoration: none;
     transition: color 0.3s;
   }
-
+  
   .about-me a:hover {
     color: #00d4a1;
   }
+  

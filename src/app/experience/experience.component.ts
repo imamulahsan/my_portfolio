@@ -46,18 +46,18 @@ export class ExperienceComponent implements OnInit {
   ];
 
   skills = [
-    { name: 'Angular', logo: 'assets/logos/angular.png' },
-    { name: 'TypeScript', logo: 'assets/logos/typescript.png' },
-    { name: 'JavaScript', logo: 'assets/logos/javascript.png' },
-    { name: 'HTML', logo: 'assets/logos/html.png' },
-    { name: 'CSS', logo: 'assets/logos/css.png' },
-    { name: 'PHP', logo: 'assets/logos/php.png' },
-    { name: 'MySQL', logo: 'assets/logos/mysql.png' }
+    { name: 'Angular', logo: 'assets/images/logos/angular.png' },
+    { name: 'TypeScript', logo: 'assets/images/logos/typescript.png' },
+    { name: 'JavaScript', logo: 'assets/images/logos/javascript.png' },
+    { name: 'HTML', logo: 'assets/images/logos/html.png' },
+    { name: 'CSS', logo: 'assets/images/logos/css.png' },
+    { name: 'PHP', logo: 'assets/images/logos/php.png' },
+    { name: 'MySQL', logo: 'assets/images/logos/mysql.png' }
   ];
 
   aboutMe = {
-    name: 'John Doe',
-    photo: 'assets/photos/john_doe.jpg',
+    name: 'Imamul Ahsan',
+    photo: 'assets/images/my-image.png',
     description: `I am a passionate software engineer with experience in developing web applications 
                   using various technologies. I enjoy learning new things and tackling challenging problems. 
                   When I’m not coding, I love hiking, reading books, and exploring new technologies.`,
