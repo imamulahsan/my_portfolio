@@ -9,7 +9,7 @@
   .sidebar {
     flex: 0 0 300px;
     padding: 1rem;
-    background-color: rgba(255, 255, 255, 0.1); /* Use a semi-transparent background to allow some background image visibility */
+    background-color: rgba(255, 255, 255, 0.2); /* Use a semi-transparent background to allow some background image visibility */
     display: flex;
     flex-direction: column;
     gap: 2rem;
@@ -23,11 +23,13 @@
     padding: 1rem;
     cursor: pointer;
     text-align: center;
+    font-weight: bold;
+    font-size: large;
     transition: background-color 0.3s, color 0.3s;
   }
   
   .sidebar button.active {
-    background-color: #00d4a1; /* Highlight active button */
+    background-color: #FF5733; /* Highlight active button */
     color: #000; /* Ensure text is readable on active button */
   }
   
@@ -49,6 +51,20 @@
     border: 1px solid var(--footer-link-color); /* Use a variable for the border color */
     border-radius: 8px;
     background-color: rgba(255, 255, 255, 0.1); /* Use a semi-transparent background */
+  }
+
+  .experience-details {
+    flex: 1; /* Allow text to take up available space */
+  }
+  
+ 
+  
+  .company-logo {
+    max-width: 80%;
+    height: auto;
+    margin-left: 1rem; /* Add some space between text and logo */
+    /* Optional: Add a border or shadow to make it more distinct */
+    border-radius: 8px;
   }
 
   .education-item {

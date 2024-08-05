@@ -15,14 +15,16 @@ export class ExperienceComponent implements OnInit {
       company: 'Bosch Rexroth',
       location: 'Ulm, Germany',
       duration: 'March, 2024 - October, 2024',
-      description: 'Developed and maintained web applications using Angular,PHP and MySQL.'
+      description: 'Developed and maintained web applications using Angular,PHP and MySQL.',
+      logo: 'assets/images/bosch-logo.png' // Add company logo path here
     },
     {
       title: 'Lecturer',
       company: 'Prime University',
       location: 'Dhaka, Bangladesh',
       duration: 'February, 2019 - May, 2021',
-      description: 'Assisted in teaching web development courses and providing support to students.'
+      description: 'Assisted in teaching web development courses and providing support to students.',
+      logo: 'assets/images/prime-university.png' // Add company logo path here
     },
     
   ];
