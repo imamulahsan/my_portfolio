@@ -1,76 +1,88 @@
 <div class="experience-container">
-    <div class="sidebar">
-      <button (click)="filterContent('work')" [class.active]="selectedFilter === 'work'">Experience</button>
-      <button (click)="filterContent('education')" [class.active]="selectedFilter === 'education'">Education</button>
-      <button (click)="filterContent('skills')" [class.active]="selectedFilter === 'skills'">Skills</button>
-      <button (click)="filterContent('about')" [class.active]="selectedFilter === 'about'">About Me</button>
-    </div>
-    <div class="content">
-      <div *ngIf="selectedFilter === 'work'">
-        <h1>My Experience</h1>
-        <div class="experience-list">
-          <div class="experience-item" *ngFor="let exp of experiences">
-            <div class="row">
-              <div class="col-9">
-                <h2>{{ exp.title }}</h2>
-                <h3>{{ exp.company }}</h3>
-                <p>{{ exp.location }}</p>
-                <p>{{ exp.duration }}</p>
-                <p>{{ exp.description }}</p>
-              </div>
-              <div class="col-3">
-                <img class="company-logo" [src]="exp.logo" alt="{{ exp.company }} logo">
-              </div>
+  <div class="sidebar">
+    <button (click)="filterContent('work')" [class.active]="selectedFilter === 'work'">Experience</button>
+    <button (click)="filterContent('education')" [class.active]="selectedFilter === 'education'">Education</button>
+    <button (click)="filterContent('skills')" [class.active]="selectedFilter === 'skills'">Skills</button>
+    <button (click)="filterContent('about')" [class.active]="selectedFilter === 'about'">About Me</button>
+  </div>
+  <div class="content">
+    <div *ngIf="selectedFilter === 'work'">
+      <h1>My Experience</h1>
+      <div class="experience-list">
+        <div class="experience-item" *ngFor="let exp of experiences">
+          <div class="row">
+            <div class="col-9">
+              <h3>{{ exp.title }}</h3>
+              <h5>{{ exp.company }}</h5>
+              <p>{{ exp.duration }}</p>
+              <p>{{ exp.description }}</p>
             </div>
-          
-           
+            <div class="col-3">
+              <img class="company-logo" [src]="exp.logo" alt="{{ exp.company }} logo">
+              <p style="text-align: center;">{{ exp.location }}</p>
+            </div>
           </div>
         </div>
       </div>
-      <div *ngIf="selectedFilter === 'education'">
-        <h1>My Education</h1>
-        <div class="education-list">
-          <div class="education-item" *ngFor=" let edu of education">
-            <h2>{{ edu.title }}</h2>
-            <h3>{{ edu.company }}</h3>
-            <p>{{ edu.location }}</p>
+    </div>
+    <div *ngIf="selectedFilter === 'education'">
+      <h1>My Education</h1>
+      <div class="education-list">
+        <div class="education-item" *ngFor=" let edu of education">
+          <div class="row">
+            <div class="col-9">
+              <h3>{{ edu.title }}</h3>
+            <h5>{{ edu.company }}</h5>
+            
             <p>{{ edu.duration }}</p>
             <p>{{ edu.description }}</p>
+  
+            </div>
+
+            <div class="col-3">
+              <img class="company-logo" [src]="edu.logo" alt="{{ edu.company }} logo">
+  
+              <p style="text-align: center;">{{ edu.location }}</p>
+            </div>
 
           </div>
-          <!-- Add education details here -->
+        
+        
+          
+
         </div>
+        <!-- Add education details here -->
       </div>
-      <div *ngIf="selectedFilter === 'skills'">
-        <h1>My Skills</h1>
-        <div class="skills-list">
-          <div class="skill-card" *ngFor="let skill of skills">
-            <img [src]="skill.logo" alt="{{ skill.name }} logo">
-            <p>{{ skill.name }}</p>
-          </div>
-        </div>
-      </div>
-      <div *ngIf="selectedFilter === 'about'">
-        <h1>About Me</h1>
-        <div class="about-me">
-          <div class="about-me-columns">
-            <div class="about-me-column">
-              <img [src]="aboutMe.photo" alt="{{ aboutMe.name }}" class="about-me-photo">
-            </div>
-            <div class="about-me-column">
-              <h2>{{ aboutMe.name }}</h2>
-              <p>{{ aboutMe.description }}</p>
-            </div>
-          </div>
-          <div class="about-me-hobbies">
-            <h3>Hobbies</h3>
-            <ul>
-              <li *ngFor="let hobby of aboutMe.hobbies">{{ hobby }}</li>
-            </ul>
-          </div>
-        </div>
-      </div>
-      
     </div>
+    <div *ngIf="selectedFilter === 'skills'">
+      <h1>My Skills</h1>
+      <div class="skills-list">
+        <div class="skill-card" *ngFor="let skill of skills">
+          <img [src]="skill.logo" alt="{{ skill.name }} logo">
+          <p>{{ skill.name }}</p>
+        </div>
+      </div>
+    </div>
+    <div *ngIf="selectedFilter === 'about'">
+      <h1>About Me</h1>
+      <div class="about-me">
+        <div class="about-me-columns">
+          <div class="about-me-column">
+            <img [src]="aboutMe.photo" alt="{{ aboutMe.name }}" class="about-me-photo">
+          </div>
+          <div class="about-me-column">
+            <h2>{{ aboutMe.name }}</h2>
+            <p>{{ aboutMe.description }}</p>
+          </div>
+        </div>
+        <div class="about-me-hobbies">
+          <h3>Hobbies</h3>
+          <ul>
+            <li *ngFor="let hobby of aboutMe.hobbies">{{ hobby }}</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    
   </div>
-  
+</div>

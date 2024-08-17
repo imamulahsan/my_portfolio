@@ -9,7 +9,7 @@
   .sidebar {
     flex: 0 0 300px;
     padding: 1rem;
-    background-color: rgba(255, 255, 255, 0.2); /* Use a semi-transparent background to allow some background image visibility */
+    background-color: rgba(218, 247, 166, 0.2); /* Use a semi-transparent background to allow some background image visibility */
     display: flex;
     flex-direction: column;
     gap: 2rem;
@@ -50,7 +50,7 @@
     padding: 1rem;
     border: 1px solid var(--footer-link-color); /* Use a variable for the border color */
     border-radius: 8px;
-    background-color: rgba(255, 255, 255, 0.1); /* Use a semi-transparent background */
+    background-color: rgba(218, 247, 166, 0.2); /* Use a semi-transparent background */
   }
 
   .experience-details {
@@ -60,8 +60,8 @@
  
   
   .company-logo {
-    max-width: 80%;
-    height: auto;
+    width: 300px;
+    height: 150px;
     margin-left: 1rem; /* Add some space between text and logo */
     /* Optional: Add a border or shadow to make it more distinct */
     border-radius: 8px;
@@ -71,7 +71,7 @@
     padding: 1rem;
     border: 1px solid var(--footer-link-color); /* Use a variable for the border color */
     border-radius: 8px;
-    background-color: rgba(255, 255, 255, 0.1); /* Use a semi-transparent background */
+    background-color: rgba(218, 247, 166, 0.2); /* Use a semi-transparent background */
   }
 
   .skills-list {
@@ -88,7 +88,7 @@
     padding: 1rem;
     border: 1px solid var(--footer-link-color); /* Use a variable for the border color */
     border-radius: 8px;
-    background-color: rgba(255, 255, 255, 0.1); /* Use a semi-transparent background */
+    background-color: rgba(218, 247, 166, 0.2); /* Use a semi-transparent background */
     width: 150px;
     text-align: center;
     transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transition for transform and shadow */
@@ -118,7 +118,7 @@
     padding: 2rem;
     border: 1px solid var(--footer-link-color); /* Use a variable for the border color */
     border-radius: 8px;
-    background-color: rgba(255, 255, 255, 0.1); /* Use a semi-transparent background */
+    background-color: rgba(218, 247, 166, 0.2); /* Use a semi-transparent background */
     text-align: left; /* Align text to the left */
   }
   

@@ -16,7 +16,7 @@ export class ExperienceComponent implements OnInit {
       location: 'Ulm, Germany',
       duration: 'March, 2024 - October, 2024',
       description: 'Developed and maintained web applications using Angular,PHP and MySQL.',
-      logo: 'assets/images/bosch-logo.png' // Add company logo path here
+      logo: 'assets/images/bosch-rexroth.jpg' // Add company logo path here
     },
     {
       title: 'Lecturer',
@@ -35,14 +35,16 @@ export class ExperienceComponent implements OnInit {
       company: 'Technical University of Chemnitz',
       location: 'Chemnitz, Germany',
       duration: 'April, 2021 - Present',
-      description: 'Completed courses like Database and Web Techniques, Empirical Software Engineering'
+      description: 'Completed courses like Database and Web Techniques, Empirical Software Engineering',
+      logo: 'assets/images/prime-university.png' // Add company logo path here
     },
     {
       title: 'Bachelor of Science in Computer Science and Engineering',
       company: 'Islamic University of Technology',
       location: 'Gazipur, Bangladesh',
       duration: 'September, 2019 - October, 2018',
-      description: 'Completed courses like Artifical Intelligence, Web Engineering and Machine Learning'
+      description: 'Completed courses like Artifical Intelligence, Web Engineering and Machine Learning',
+      logo: 'assets/images/prime-university.png' // Add company logo path here
     },
     
   ];
