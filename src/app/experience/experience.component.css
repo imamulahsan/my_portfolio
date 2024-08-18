@@ -60,10 +60,8 @@
  
   
   .company-logo {
-    width: 300px;
-    height: 150px;
-    margin-left: 1rem; /* Add some space between text and logo */
-    /* Optional: Add a border or shadow to make it more distinct */
+    max-width: 100%;
+    height: auto;
     border-radius: 8px;
   }
 
@@ -88,7 +86,7 @@
     padding: 1rem;
     border: 1px solid var(--footer-link-color); /* Use a variable for the border color */
     border-radius: 8px;
-    background-color: rgba(218, 247, 166, 0.2); /* Use a semi-transparent background */
+    background-color: rgba(218, 247, 166, 0.5); /* Use a semi-transparent background */
     width: 150px;
     text-align: center;
     transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transition for transform and shadow */
@@ -109,7 +107,6 @@
   .skill-card img:hover {
     transform: rotateX(20deg) rotateY(20deg); /* Rotate the image for 3D effect */
   }
-  
 
   .about-me {
     display: flex;
@@ -122,46 +119,13 @@
     text-align: left; /* Align text to the left */
   }
   
-  .about-me-columns {
-    display: flex;
-    flex-direction: row; /* Arrange columns in a row */
-    align-items: center;
-    width: 100%;
-  }
   
-  .about-me-column {
-    flex: 1; /* Make each column take up equal space */
-    padding: 1rem;
-  }
-  
+
   .about-me-photo {
-    width: 150px;
-    height: 150px;
-    border-radius: 50%;
+    width: 250px;
+    height: 250px;
+    border-radius: 50%; /* This makes the image circular */
     margin-bottom: 1rem;
+    object-fit: cover; /* Ensures the image covers the area without distortion */
   }
-  
-  .about-me-hobbies {
-    width: 100%;
-    margin-top: 2rem;
-  }
-  
-  .about-me ul {
-    list-style: none;
-    padding: 0;
-  }
-  
-  .about-me ul li {
-    margin: 0.5rem 0;
-  }
-  
-  .about-me a {
-    color: inherit;
-    text-decoration: none;
-    transition: color 0.3s;
-  }
-  
-  .about-me a:hover {
-    color: #00d4a1;
-  }
-  
+

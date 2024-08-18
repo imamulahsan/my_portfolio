@@ -1,0 +1,88 @@
+.projects-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem;
+  margin: 3rem;
+  overflow: hidden;
+}
+
+.carousel {
+  width: 100%;
+  max-width: 1200px;
+}
+
+.project-slide {
+  min-height: 500px;
+  padding: 1rem;
+  background-color: rgba(218, 247, 166, 0.2);
+  display: flex;
+  flex-direction: row; /* Set to row for two-column layout */
+  justify-content: space-between; /* Space out the columns */
+  align-items: center; /* Align items vertically */
+  margin: 1rem;
+  border-radius: 10px;
+}
+
+.project-info {
+  flex: 1;
+  text-align: left;
+  padding-right: 1rem;
+}
+
+.project-info h5 {
+  margin-top: 1rem; /* Add space above each section */
+  margin-bottom: 0.5rem; /* Add space below the heading */
+  font-size: 1.2rem; /* Optional: adjust the font size of the h5 tag */
+  color: inherit; /* Ensure the heading inherits the color */
+}
+
+.project-info p {
+  margin-bottom: 1rem; /* Add space below the description */
+}
+
+.project-image {
+  flex: 1; /* Take up equal space */
+  text-align: right; /* Align the image container to the right */
+}
+
+.project-image img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 10px;
+}
+
+.project-links {
+  display: flex;
+  justify-content: flex-start; /* Align links to the left */
+  gap: 1rem;
+}
+
+.project-links a i {
+  font-size: 64px; /* Increase this value to make the icons bigger */
+  color: orange; /* Ensure the color inherits from the parent */
+  transition: transform 0.3s ease; /* Add a smooth transition for hover effect */
+}
+
+.project-links a i:hover {
+  transform: scale(1.2); /* Slightly increase the size on hover for a nice effect */
+}
+
+.technologies {
+  display: flex;
+  justify-content: flex-start; /* Align icons to the left */
+  gap: 0.5rem; /* Space between the icons */
+  margin-top: 0.5rem; /* Space above the icons */
+  margin-bottom: 1rem; /* Add space below the technologies */
+}
+
+.tech-icon {
+  width: 64px; /* Width of the icons */
+  height: 64px; /* Height of the icons */
+  object-fit: contain; /* Ensure the icons don't get distorted */
+  transition: transform 0.3s ease; /* Add a smooth transition for hover effect */
+}
+
+.tech-icon:hover{
+  transform: scale(1.2);
+}

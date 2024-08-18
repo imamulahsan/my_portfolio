@@ -1,0 +1,40 @@
+<div class="projects-container">
+  <ngx-slick-carousel class="carousel" [config]="slideConfig">
+    <div ngxSlickItem *ngFor="let project of projects" class="slide">
+      <div class="project-slide">
+        <div class="project-info">
+          <h1>{{ project.title }}</h1>
+          
+          <!-- Description Section -->
+          <h5>Description</h5>
+          <p>{{ project.description }}</p>
+          
+          <!-- Technologies Section -->
+          <h5>Technologies Used</h5>
+          <div class="technologies">
+            <img *ngFor="let tech of project.technologies" 
+                 [src]="tech.imgUrl" 
+                 [title]="tech.name" 
+                 alt="Technology icon" 
+                 class="tech-icon">
+          </div>
+          
+          <!-- Links Section -->
+          <h5>Links</h5>
+          <div class="project-links">
+            <a [href]="project.liveLink" target="_blank">
+              <i class="fas fa-arrow-up-right-from-square"></i>
+            </a>
+            <a [href]="project.githubLink" target="_blank">
+              <i class="fab fa-github"></i>
+            </a>
+          </div>
+        </div>
+        
+        <div class="project-image">
+          <img [src]="project.image" alt="{{ project.title }}">
+        </div>
+      </div>
+    </div>
+  </ngx-slick-carousel>
+</div>

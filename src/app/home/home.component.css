@@ -44,7 +44,7 @@
     background: var(--light-color);
     border-radius: 50%;
     box-shadow: 0 0 20px var(--light-shadow);
-    animation: moveLight 3s linear infinite;
+    animation: moveLight 5s linear infinite;
   }
   
   .light1 {
@@ -128,4 +128,6 @@
     background-color: #005a9c; /* Darker shade on hover */
     color: #ffffff;
   }
+
+
   

@@ -1,8 +1,26 @@
 {
-    "HOME": "Startseite",
-    "EXPERIENCE": "Erfahrung",
-    "PROJECTS": "Projekte",
-    "CONTACT": "Kontakt",
-    "TOGGLE_MODE": "Tag/Nacht Modus wechseln"
-  }
-  
+  "HOME": "Startseite",
+  "EXPERIENCE": "Erfahrung",
+  "PROJECTS": "Projekte",
+  "CONTACT": "Kontakt",
+  "TOGGLE_MODE": "Tag/Nacht Modus wechseln",
+  "WORK": "Arbeitserfahrung",
+  "EDUCATION": "Ausbildung",
+  "SKILLS": "Fähigkeiten",
+  "ABOUT_ME": "Über mich",
+  "FRONTEND_TECHNOLOGIES": "Frontend-Technologien",
+  "BACKEND_TECHNOLOGIEN": "Backend-Technologien",
+  "DEVOPS_VERSION_CONTROL": "DevOps & Versionskontrolle",
+  "MY_EXPERIENCE": "Meine Erfahrung",
+  "MY_EDUCATION": "Meine Ausbildung",
+  "MY_SKILLS": "Meine Fähigkeiten",
+  "ABOUT_ME_DESCRIPTION": "Ich habe ein starkes Interesse an Web- und mobilen Technologien. Ich liebe es, verschiedene Webanwendungen zu analysieren, wertvolle Erkenntnisse zu gewinnen, Prototypen zu entwickeln und das Ergebnis in einer Webanwendung zu präsentieren. Ich habe über zwei Jahre Erfahrung als Full-Stack-Entwickler und Dozent an der Prime University, wo ich Web-Technologien wie <strong>React</strong> und <strong>Node.js</strong> aufgebaut und unterrichtet habe. Aufgrund meiner Leidenschaft für Web-Technologien habe ich mir sowohl im Frontend- als auch im Backend-Bereich einiges Wissen angeeignet. Ich habe gute Kenntnisse in Frontend-Frameworks und Bibliotheken wie <strong>Angular</strong>, <strong>React</strong>, <strong>Flask</strong>, <strong>HTML5</strong>, <strong>CSS3</strong>, <strong>Bootstrap</strong>, <strong>Tailwind CSS</strong> und <strong>Redux</strong>. Ich habe auch Erfahrung in der Backend-Entwicklung mit <strong>PHP</strong>, <strong>Node.js</strong>, <strong>Express.js</strong>, <strong>MongoDB</strong> und <strong>RESTful API</strong>. Ich bin gut vertraut mit Testautomatisierungstools wie <strong>Jest</strong> und Git-basierter Versionskontrolle. Außerdem lerne ich derzeit <strong>React Native</strong> und möchte mehr über die Bereitstellungsumgebung für eine hybride mobile App erfahren.",
+  "EXPERIENCE_BOSCH_DESCRIPTION": "Entwicklung und Wartung von Webanwendungen mit Angular, PHP und MySQL.",
+  "EXPERIENCE_PRIME_DESCRIPTION": "Unterstützung beim Unterrichten von Webentwicklungskursen und Betreuung der Studierenden.",
+  "EDUCATION_CHEMNITZ_DESCRIPTION": "Absolvierte Kurse wie Datenbanken und Webtechniken, Empirische Softwaretechnik.",
+  "EDUCATION_IUT_DESCRIPTION": "Absolvierte Kurse wie Künstliche Intelligenz, Web Engineering und Maschinelles Lernen.",
+  "FULLSTACK_DEVELOPER": "Fullstack-Entwickler",
+  "HOME_INTRODUCTION": "Hallo, ich bin",
+  "HOME_DESCRIPTION": "Ich habe ein starkes Interesse an Web- und mobilen Technologien. Ich liebe es, verschiedene Webanwendungen zu analysieren, wertvolle Erkenntnisse zu gewinnen und einen Prototyp zu entwickeln.",
+  "DOWNLOAD_CV": "Lebenslauf herunterladen"
+}
