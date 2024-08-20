@@ -9,41 +9,41 @@
 
 .carousel {
   width: 100%;
-  max-width: 1200px;
+  max-width: 1600px;
 }
 
 .project-slide {
-  min-height: 500px;
-  padding: 1rem;
+  min-height: 600px;
+  padding: 2rem;
   background-color: rgba(218, 247, 166, 0.2);
   display: flex;
-  flex-direction: row; /* Set to row for two-column layout */
-  justify-content: space-between; /* Space out the columns */
-  align-items: center; /* Align items vertically */
-  margin: 1rem;
-  border-radius: 10px;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  margin: 2rem;
+  border-radius: 15px;
 }
 
 .project-info {
   flex: 1;
   text-align: left;
-  padding-right: 1rem;
+  padding-right: 2rem;
 }
 
 .project-info h5 {
-  margin-top: 1rem; /* Add space above each section */
-  margin-bottom: 0.5rem; /* Add space below the heading */
-  font-size: 1.2rem; /* Optional: adjust the font size of the h5 tag */
-  color: inherit; /* Ensure the heading inherits the color */
+  margin-top: 1rem;
+  margin-bottom: 0.5rem;
+  font-size: 1.2rem;
+  color: inherit;
 }
 
 .project-info p {
-  margin-bottom: 1rem; /* Add space below the description */
+  margin-bottom: 1rem;
 }
 
 .project-image {
-  flex: 1; /* Take up equal space */
-  text-align: right; /* Align the image container to the right */
+  flex: 1;
+  text-align: right;
 }
 
 .project-image img {
@@ -54,35 +54,105 @@
 
 .project-links {
   display: flex;
-  justify-content: flex-start; /* Align links to the left */
+  justify-content: flex-start;
   gap: 1rem;
 }
 
 .project-links a i {
-  font-size: 64px; /* Increase this value to make the icons bigger */
-  color: orange; /* Ensure the color inherits from the parent */
-  transition: transform 0.3s ease; /* Add a smooth transition for hover effect */
+  font-size: 64px;
+  color: orange;
+  transition: transform 0.3s ease;
 }
 
 .project-links a i:hover {
-  transform: scale(1.2); /* Slightly increase the size on hover for a nice effect */
+  transform: scale(1.2);
 }
 
 .technologies {
   display: flex;
-  justify-content: flex-start; /* Align icons to the left */
-  gap: 0.5rem; /* Space between the icons */
-  margin-top: 0.5rem; /* Space above the icons */
-  margin-bottom: 1rem; /* Add space below the technologies */
+  justify-content: flex-start;
+  gap: 0.5rem;
+  margin-top: 0.5rem;
+  margin-bottom: 1rem;
 }
 
 .tech-icon {
-  width: 64px; /* Width of the icons */
-  height: 64px; /* Height of the icons */
-  object-fit: contain; /* Ensure the icons don't get distorted */
-  transition: transform 0.3s ease; /* Add a smooth transition for hover effect */
+  width: 64px;
+  height: 64px;
+  object-fit: contain;
+  transition: transform 0.3s ease;
 }
 
-.tech-icon:hover{
+.tech-icon:hover {
   transform: scale(1.2);
+}
+
+/* Media Queries for Responsive Design */
+@media (max-width: 1200px) {
+  .carousel {
+    max-width: 100%;
+  }
+
+  .project-slide {
+    flex-direction: column; /* Stack content vertically */
+    min-height: auto;
+    padding: 1.5rem;
+  }
+
+  .project-info {
+    padding-right: 0; /* Remove padding on smaller screens */
+    margin-bottom: 1rem;
+  }
+
+  .project-image {
+    text-align: center; /* Center the image on smaller screens */
+  }
+}
+
+@media (max-width: 768px) {
+  .project-slide {
+    padding: 1rem;
+    margin: 1rem;
+  }
+
+  .project-info h5 {
+    font-size: 1rem; /* Reduce font size */
+  }
+
+  .project-info p {
+    font-size: 0.9rem; /* Reduce font size */
+  }
+
+  .project-links a i {
+    font-size: 48px; /* Decrease icon size */
+  }
+
+  .tech-icon {
+    width: 48px; /* Decrease technology icon size */
+    height: 48px;
+  }
+}
+
+@media (max-width: 480px) {
+  .project-slide {
+    padding: 1rem;
+    margin: 0.5rem;
+  }
+
+  .project-info h5 {
+    font-size: 0.9rem;
+  }
+
+  .project-info p {
+    font-size: 0.8rem;
+  }
+
+  .project-links a i {
+    font-size: 36px; /* Decrease icon size */
+  }
+
+  .tech-icon {
+    width: 40px; /* Decrease technology icon size */
+    height: 40px;
+  }
 }
