@@ -1,0 +1,28 @@
+.hobby-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 2rem;
+  }
+  
+  .map {
+    height: 400px;
+    width: 100%;
+    max-width: 800px;
+    margin-bottom: 2rem;
+  }
+  
+  .hobbies-list {
+    text-align: center;
+  }
+  
+  .hobbies-list ul {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  .hobbies-list li {
+    margin: 0.5rem 0;
+    font-size: 1.2rem;
+  }
+  

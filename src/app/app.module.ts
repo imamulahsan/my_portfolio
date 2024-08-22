@@ -13,6 +13,7 @@ import { ExperienceComponent } from './experience/experience.component';
 import { ProjectsComponent } from './projects/projects.component';
 import { SlickCarouselModule } from 'ngx-slick-carousel';
 import { ContactComponent } from './contact/contact.component';
+import { HobbyComponent } from './hobby/hobby.component';
 
 export function HttpLoaderFactory(http: HttpClient): TranslateHttpLoader {
   return new TranslateHttpLoader(http, './assets/i18n/', '.json');
@@ -26,7 +27,8 @@ export function HttpLoaderFactory(http: HttpClient): TranslateHttpLoader {
     FooterComponent,
     ExperienceComponent,
     ProjectsComponent,
-    ContactComponent
+    ContactComponent,
+    HobbyComponent
   ],
   imports: [
     BrowserModule,
