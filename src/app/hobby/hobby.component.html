@@ -1,19 +1,36 @@
 <div class="hobby-container">
-    <h1>My Hobbies</h1>
-    
-    <!-- Upper section with the map -->
-    <div id="map" class="map"></div>
-    
-    <!-- Lower section for listing hobbies -->
-    <div class="hobbies-list">
-      <h2>Hobbies</h2>
-      <ul>
-        <li>Photography</li>
-        <li>Traveling</li>
-        <li>Cooking</li>
-        <li>Reading</li>
-        <!-- Add more hobbies as needed -->
-      </ul>
+  <h1>My Hobbies</h1>
+
+  <div class="cards-container">
+    <div class="card" (click)="onCardClick('traveling')">
+      <img src="assets/images/logos/travel.png" alt="Traveling">
+      <span>Traveling</span>
     </div>
+    <div class="card" (click)="onCardClick('photography')">
+      <img src="assets/images/logos/photography.png" alt="Photography">
+      <span>Photography</span>
+    </div>
+    <div class="card" (click)="onCardClick('cooking')">
+      <img src="assets/images/logos/cooking.png" alt="Cooking">
+      <span>Cooking</span>
+    </div>
+    <!-- Add more cards as needed -->
   </div>
-  
+
+  <!-- Content Section -->
+  <div *ngIf="selectedHobby === 'traveling'">
+    <h2>Traveling Map</h2>
+    <div id="map" class="map"></div>
+  </div>
+
+  <div *ngIf="selectedHobby === 'photography'">
+    <h2>Photography</h2>
+    <p>Photography is a wonderful way to capture the world...</p>
+  </div>
+
+  <div *ngIf="selectedHobby === 'cooking'">
+    <h2>Cooking</h2>
+    <p>Cooking is an art and a way to explore various cuisines...</p>
+  </div>
+</div>
+

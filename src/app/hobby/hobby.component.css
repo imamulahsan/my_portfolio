@@ -1,28 +1,69 @@
 .hobby-container {
-    display: flex;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 2rem;
+  background-color: rgba(218, 247, 166, 0.2);
+  width: 100vw; /* Force the container to take the full viewport width */
+  max-width: 100%; /* Remove any max-width restriction */
+  margin: 0; /* Ensure there's no margin that reduces the width */
+}
+
+.cards-container {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.card {
+  display: flex;
     flex-direction: column;
     align-items: center;
-    padding: 2rem;
-  }
-  
-  .map {
-    height: 400px;
-    width: 100%;
-    max-width: 800px;
-    margin-bottom: 2rem;
-  }
-  
-  .hobbies-list {
+    padding: 1rem;
+    border: 1px solid var(--footer-link-color); /* Use a variable for the border color */
+    border-radius: 8px;
+    background-color: rgba(218, 247, 166, 0.5); /* Use a semi-transparent background */
+    width: 150px;
     text-align: center;
-  }
-  
-  .hobbies-list ul {
-    list-style-type: none;
-    padding: 0;
-  }
-  
-  .hobbies-list li {
-    margin: 0.5rem 0;
-    font-size: 1.2rem;
-  }
-  
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transition for transform and shadow */
+}
+
+.card:hover {
+  transform: translateY(-10px); /* Lift the card slightly on hover */
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2); /* Add shadow for 3D effect */
+}
+
+.card img {
+  width: 100px;  /* Set the image size */
+  height: 100px;
+  object-fit: cover;
+  margin-bottom: 1rem;
+}
+
+.card img:hover{
+  transform: rotateX(20deg) rotateY(20deg); /* Rotate the image for 3D effect */
+}
+
+.map {
+  height: 400px;
+  width: 100vw; /* Force the map to take the full viewport width */
+  margin-top: 1rem;
+}
+
+h2 {
+  margin-top: 1rem;
+}
+
+hobbies-list {
+  text-align: center;
+}
+
+hobbies-list ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+hobbies-list li {
+  margin: 0.5rem 0;
+  font-size: 1.2rem;
+}
