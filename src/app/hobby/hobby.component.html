@@ -19,18 +19,28 @@
 
   <!-- Content Section -->
   <div *ngIf="selectedHobby === 'traveling'">
-    <h2>Traveling Map</h2>
+    <h2>My traveling Map - {{ visitedCountries.length }} Countries Visited</h2>
     <div id="map" class="map"></div>
   </div>
 
   <div *ngIf="selectedHobby === 'photography'">
-    <h2>Photography</h2>
-    <p>Photography is a wonderful way to capture the world...</p>
+    <h2>Photography - infinite photos captured</h2>
+    <!-- Display the photos in a grid -->
+    <div class="photo-gallery">
+      <div class="photo" *ngFor="let photo of photographyPhotos">
+        <img [src]="photo" alt="Photography Photo">
+      </div>
+    </div>
   </div>
-
   <div *ngIf="selectedHobby === 'cooking'">
-    <h2>Cooking</h2>
-    <p>Cooking is an art and a way to explore various cuisines...</p>
+    <h2>Cooking - A survival hobby</h2>
+    <div class="dishes-gallery">
+      <div class="dish" *ngFor="let dish of favoriteDishes">
+        <img [src]="dish.image" [alt]="dish.name">
+        <h3>{{ dish.name }}</h3>
+        <p>{{ dish.description }}</p>
+      </div>
+    </div>
   </div>
 </div>
 

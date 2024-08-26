@@ -46,14 +46,16 @@
 
 .map {
   height: 400px;
-  width: 100vw; /* Force the map to take the full viewport width */
+  width: 90vw; /* Force the map to take the full viewport width */
   margin-top: 1rem;
 }
 
 h2 {
   margin-top: 1rem;
+  font-size: 1.5rem;
+  font-weight: bold;
+  text-align: center;
 }
-
 hobbies-list {
   text-align: center;
 }
@@ -66,4 +68,81 @@ hobbies-list ul {
 hobbies-list li {
   margin: 0.5rem 0;
   font-size: 1.2rem;
+}
+
+
+.photo-gallery {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: center;
+  margin-top: 1rem;
+}
+
+.photo {
+  flex: 1 1 calc(33.333% - 10px); /* Adjust this value to control the number of columns */
+  max-width: calc(33.333% - 10px);
+  box-sizing: border-box;
+  overflow: hidden; /* Ensure content doesn't overflow */
+}
+
+.photo img {
+  width: 100%;
+  height: 500px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transition for hover effects */
+}
+
+.photo img:hover {
+  transform: scale(1.05); /* Slightly scale up the image */
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Increase shadow on hover */
+}
+
+
+.dishes-gallery {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+  margin-top: 1rem;
+}
+
+.dish {
+  background-color: rgba(218, 247, 166, 0.5); /* Use a semi-transparent background */
+  padding: 15px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  max-width: 250px;
+  flex: 1 1 calc(33.333% - 40px); /* Adjust for 3 columns */
+  box-sizing: border-box;
+}
+
+.dish img {
+  width: 100%;
+  height: 200px; /* Set a fixed height for all images */
+  object-fit: cover; /* Ensures the image covers the area while maintaining aspect ratio */
+  border-radius: 8px;
+  margin-bottom: 10px;
+}
+
+.dish h3 {
+  font-size: 1.2rem;
+  margin-bottom: 10px;
+}
+
+.dish p {
+  font-size: 1rem;
+  color: inherit;
+}
+
+.dish:hover {
+  transform: scale(1.05) rotate(2deg); /* Scale and rotate */
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Increase shadow */
+  filter: brightness(1.1); /* Increase brightness */
+}
+
+.dish:hover img {
+  filter: grayscale(0%); /* Remove grayscale on hover */
 }

@@ -11,11 +11,43 @@ export class HobbyComponent implements OnInit, OnDestroy {
   private map: L.Map | null = null;
   selectedHobby: string | null = null;  // To track the selected hobby
 
-  private visitedCountries: { name: string, latLng: [number, number] }[] = [
-    { name: 'France', latLng: [46.603354, 1.888334] },
-    { name: 'Japan', latLng: [36.204824, 138.252924] },
-    { name: 'USA', latLng: [37.09024, -95.712891] },
-    { name: 'Brazil', latLng: [-14.235004, -51.92528] },
+  public visitedCountries: { name: string, latLng: [number, number] }[] = [
+    { name: 'Bangladesh', latLng: [23.6850, 90.3563] },
+    { name: 'Indonesia', latLng: [-0.7893, 113.9213] },
+    { name: 'Austria', latLng: [47.5162, 14.5501] },
+    { name: 'Germany', latLng: [51.1657, 10.4515] },
+    { name: 'Switzerland', latLng: [46.8182, 8.2275] },
+    { name: 'Poland', latLng: [51.9194, 19.1451] },
+    { name: 'Turkey', latLng: [38.9637, 35.2433] },
+    { name: 'Czech Republic', latLng: [49.8175, 15.4730] }
+  ];
+
+  // Define an array to hold photography image paths
+  public photographyPhotos: string[] = [
+    'assets/images/photography/photo1.JPG',
+    'assets/images/photography/photo2.JPG',
+    'assets/images/photography/photo3.jpg',
+    // Add more photo paths as needed
+  ];
+
+  // Array of favorite dishes
+  public favoriteDishes: { name: string, description: string, image: string }[] = [
+    {
+      name: 'Halim',
+      description: 'A classic Bangladeshi meal made with meat and lentils.',
+      image: 'assets/images/photography/halim.jpg'
+    },
+    {
+      name: 'Shorshe Ilish',
+      description: 'Hilsha fish with a spicy mustard curry.',
+      image: 'assets/images/photography/ilish.jpg'
+    },
+    {
+      name: 'Kacchi Biriyani',
+      description: 'A flavorful and spicy Bangladeshi biriyani of rice and meat.',
+      image: 'assets/images/photography/kacchi.jpg'
+    },
+    // Add more dishes as needed
   ];
 
   ngOnInit(): void {
@@ -50,7 +82,7 @@ export class HobbyComponent implements OnInit, OnDestroy {
       return;
     }
 
-    this.map = L.map('map').setView([20, 0], 2);
+    this.map = L.map('map').setView([51.1657, 10.4515], 4);
 
     L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
       attribution: '&copy; OpenStreetMap contributors'
