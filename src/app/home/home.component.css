@@ -100,32 +100,35 @@
   
   .social-links {
     display: flex;
-    gap: 1rem;
+    gap: 1.5rem; /* Increase gap between social icons */
+    margin-top: 1rem; /* Add some top margin for spacing */
   }
   
   .social-links a {
     color: inherit; /* Inherit text color from body */
-    font-size: 1.5rem;
-    transition: color 0.3s;
+    font-size: 2rem; /* Increase font size for social icons */
+    transition: color 0.3s, transform 0.3s; /* Add transition for hover effect */
   }
   
   .social-links a:hover {
     color: #0077b5; /* Change this color as per your design */
+    transform: scale(1.2); /* Slightly scale up the icon on hover */
   }
   
   .btn-download-cv {
-    padding: 0.5rem 1rem;
-    font-size: 1rem;
+    padding: 1rem 2rem; /* Increase padding for larger button */
+    font-size: 1.2rem; /* Increase font size */
     color: #ffffff;
-    background-color: #0077b5; /* Button background color */
+    background-color: #ff6347; /* Button background color */
     border: none;
     border-radius: 4px;
     cursor: pointer;
-    transition: background-color 0.3s, color 0.3s;
+    transition: background-color 0.3s, color 0.3s, transform 0.3s; /* Add transition for hover effect */
   }
   
   .btn-download-cv:hover {
-    background-color: #005a9c; /* Darker shade on hover */
+    background-color: #239b56; /* Darker shade on hover */
+    transform: scale(0.9); /* Slightly scale up the button on hover */
     color: #ffffff;
   }
 

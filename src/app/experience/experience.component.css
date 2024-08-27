@@ -9,7 +9,7 @@
   .sidebar {
     flex: 0 0 300px;
     padding: 1rem;
-    background-color: rgba(218, 247, 166, 0.2); /* Use a semi-transparent background to allow some background image visibility */
+    background-color: rgba(133, 193, 233, 0.2); /* Use a semi-transparent background to allow some background image visibility */
     display: flex;
     flex-direction: column;
     gap: 2rem;
@@ -29,7 +29,7 @@
   }
   
   .sidebar button.active {
-    background-color: #FF5733; /* Highlight active button */
+    background-color: #ff6347; /* Highlight active button */
     color: #000; /* Ensure text is readable on active button */
   }
   
@@ -50,7 +50,7 @@
     padding: 1rem;
     border: 1px solid var(--footer-link-color); /* Use a variable for the border color */
     border-radius: 8px;
-    background-color: rgba(218, 247, 166, 0.2); /* Use a semi-transparent background */
+    background-color: rgba(133, 193, 233, 0.2); /* Use a semi-transparent background */
   }
 
   .experience-details {
@@ -69,7 +69,7 @@
     padding: 1rem;
     border: 1px solid var(--footer-link-color); /* Use a variable for the border color */
     border-radius: 8px;
-    background-color: rgba(218, 247, 166, 0.2); /* Use a semi-transparent background */
+    background-color: rgba(133, 193, 233, 0.2); /* Use a semi-transparent background */
   }
 
   .skills-list {
@@ -86,7 +86,7 @@
     padding: 1rem;
     border: 1px solid var(--footer-link-color); /* Use a variable for the border color */
     border-radius: 8px;
-    background-color: rgba(218, 247, 166, 0.5); /* Use a semi-transparent background */
+    background-color: rgba(133, 193, 233, 0.5); /* Use a semi-transparent background */
     width: 150px;
     text-align: center;
     transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transition for transform and shadow */
@@ -115,7 +115,7 @@
     padding: 2rem;
     border: 1px solid var(--footer-link-color); /* Use a variable for the border color */
     border-radius: 8px;
-    background-color: rgba(218, 247, 166, 0.2); /* Use a semi-transparent background */
+    background-color: rgba(133, 193, 233, 0.2); /* Use a semi-transparent background */
     text-align: left; /* Align text to the left */
   }
   

@@ -1,30 +1,30 @@
 <div class="hobby-container">
-  <h1>My Hobbies</h1>
+  <h1>{{ 'HOBBIES_TITLE' | translate }}</h1>
 
   <div class="cards-container">
     <div class="card" (click)="onCardClick('traveling')">
       <img src="assets/images/logos/travel.png" alt="Traveling">
-      <span>Traveling</span>
+      <span>{{ 'TRAVELING' | translate }}</span>
     </div>
     <div class="card" (click)="onCardClick('photography')">
       <img src="assets/images/logos/photography.png" alt="Photography">
-      <span>Photography</span>
+      <span>{{ 'PHOTOGRAPHY' | translate }}</span>
     </div>
     <div class="card" (click)="onCardClick('cooking')">
       <img src="assets/images/logos/cooking.png" alt="Cooking">
-      <span>Cooking</span>
+      <span>{{ 'COOKING' | translate }}</span>
     </div>
     <!-- Add more cards as needed -->
   </div>
 
   <!-- Content Section -->
   <div *ngIf="selectedHobby === 'traveling'">
-    <h2>My traveling Map - {{ visitedCountries.length }} Countries Visited</h2>
+    <h2>{{ 'TRAVELING_TITLE' | translate: { count: visitedCountries.length } }}</h2>
     <div id="map" class="map"></div>
   </div>
 
   <div *ngIf="selectedHobby === 'photography'">
-    <h2>Photography - infinite photos captured</h2>
+    <h2>{{ 'PHOTOGRAPHY_TITLE' | translate }}</h2>
     <!-- Display the photos in a grid -->
     <div class="photo-gallery">
       <div class="photo" *ngFor="let photo of photographyPhotos">
@@ -33,7 +33,7 @@
     </div>
   </div>
   <div *ngIf="selectedHobby === 'cooking'">
-    <h2>Cooking - A survival hobby</h2>
+    <h2>{{ 'COOKING_TITLE' | translate }}</h2>
     <div class="dishes-gallery">
       <div class="dish" *ngFor="let dish of favoriteDishes">
         <img [src]="dish.image" [alt]="dish.name">

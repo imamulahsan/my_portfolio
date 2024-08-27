@@ -3,6 +3,7 @@
   "EXPERIENCE": "Erfahrung",
   "PROJECTS": "Projekte",
   "CONTACT": "Kontakt",
+  "HOBBIES": "Hobbys",
   "TOGGLE_MODE": "Tag/Nacht Modus wechseln",
   "WORK": "Arbeitserfahrung",
   "EDUCATION": "Ausbildung",
@@ -22,5 +23,22 @@
   "FULLSTACK_DEVELOPER": "Fullstack-Entwickler",
   "HOME_INTRODUCTION": "Hallo, ich bin",
   "HOME_DESCRIPTION": "Ich habe ein starkes Interesse an Web- und mobilen Technologien. Ich liebe es, verschiedene Webanwendungen zu analysieren, wertvolle Erkenntnisse zu gewinnen und einen Prototyp zu entwickeln.",
-  "DOWNLOAD_CV": "Lebenslauf herunterladen"
+  "DOWNLOAD_CV": "Lebenslauf herunterladen",
+  "CONTACT_ME": "Kontaktiere mich",
+  "CONTACT_MESSAGE": "Wenn Sie Fragen haben, hinterlassen Sie mir gerne eine Nachricht!",
+  "NAME": "Name",
+  "EMAIL": "E-Mail",
+  "SUBJECT": "Betreff",
+  "MESSAGE": "Nachricht",
+  "SEND_MESSAGE": "Nachricht senden",
+  "CONNECT_WITH_ME": "Oder verbinde dich mit mir auf:",
+  "HOBBIES_TITLE": "Meine Hobbys",
+  "TRAVELING_TITLE": "Meine Reisekarte - {{count}} besuchte Länder",
+  "PHOTOGRAPHY_TITLE": "Fotografie - unendlich viele Fotos aufgenommen",
+  "COOKING_TITLE": "Kochen - Ein Überlebenshobby",
+  "TRAVELING": "Reisen",
+  "PHOTOGRAPHY": "Fotografie",
+  "COOKING": "Kochen"
+  
+
 }

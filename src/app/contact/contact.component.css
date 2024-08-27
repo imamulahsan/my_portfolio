@@ -3,7 +3,7 @@
     flex-direction: column;
     align-items: center;
     padding: 2rem 1rem; /* Reduced padding */
-    background-color: rgba(218, 247, 166, 0.2);
+    background-color: rgba(133, 193, 233, 0.2);
     margin: 2rem;
     border-radius: 10px;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
@@ -56,7 +56,7 @@
   
   .submit-btn {
     padding: 0.75rem 2rem;
-    background-color: #ff6f61;
+    background-color: #ff6347;
     color: #fff;
     border: none;
     border-radius: 5px;
@@ -67,7 +67,7 @@
   }
   
   .submit-btn:hover {
-    background-color: #ff5a4d;
+    background-color: #239b56;
   }
   
   .social-media {
@@ -89,7 +89,7 @@
   
   .social-icons a:hover {
     transform: scale(1.2);
-    color: #ff6f61;
+    color: #ff6347;
   }
   
   /* Responsive Design */
