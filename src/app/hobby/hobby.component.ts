@@ -34,17 +34,17 @@ export class HobbyComponent implements OnInit, OnDestroy {
   public favoriteDishes: { name: string, description: string, image: string }[] = [
     {
       name: 'Halim',
-      description: 'A classic Bangladeshi meal made with meat and lentils.',
+      description: 'HALIM_DESCRIPTION', // Use the translation key
       image: 'assets/images/photography/halim.jpg'
     },
     {
       name: 'Shorshe Ilish',
-      description: 'Hilsha fish with a spicy mustard curry.',
+      description: 'SHORSHE_ILISH_DESCRIPTION', // Use the translation key
       image: 'assets/images/photography/ilish.jpg'
     },
     {
       name: 'Kacchi Biriyani',
-      description: 'A flavorful and spicy Bangladeshi biriyani of rice and meat.',
+      description: 'KACCHI_BIRIYANI_DESCRIPTION', // Use the translation key
       image: 'assets/images/photography/kacchi.jpg'
     },
     // Add more dishes as needed

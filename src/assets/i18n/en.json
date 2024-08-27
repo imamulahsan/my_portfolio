@@ -12,6 +12,7 @@
   "FRONTEND_TECHNOLOGIES": "Frontend Technologies",
   "BACKEND_TECHNOLOGIES": "Backend Technologies",
   "DEVOPS_VERSION_CONTROL": "DevOps & Version Control",
+  "AI_DATA": "Artificial Intelligence and Data Science",
   "MY_EXPERIENCE": "My Experience",
   "MY_EDUCATION": "My Education",
   "MY_SKILLS": "My Skills",
@@ -38,5 +39,17 @@
   "COOKING_TITLE": "Cooking - A survival hobby",
   "TRAVELING": "Traveling",
   "PHOTOGRAPHY": "Photography",
-  "COOKING": "Cooking"
+  "COOKING": "Cooking",
+  "HALIM_DESCRIPTION": "A classic Bangladeshi meal made with meat and lentils.",
+  "SHORSHE_ILISH_DESCRIPTION": "Hilsha fish with a spicy mustard curry.",
+  "KACCHI_BIRIYANI_DESCRIPTION": "A flavorful and spicy Bangladeshi biriyani of rice and meat.",
+  "CHEMNITZ_DESCRIPTION": "A MEAN stack application to show educational institutions and set as own for the city of Chemnitz. Users can log in to the application and set their location. Based on their requirements, they can select their Point of Interest, such as a school or kindergarten.",
+  "BERLINER_DESCRIPTION": "A React application for food ordering and reservation in a restaurant. Users can view the food menu, reserve a table, and contact the restaurant.",
+  "AI_TOOL_DESCRIPTION": "A MERN application where various language operations can be done like text summarization, grammar correction, keyword extraction, translation, lesson plan writing, turn-by-turn direction guidance, emoji chatbot, mood-to-color, Twitter sentiment analysis, AI-based rap battle, product review classification, and code explanation.",
+  "GRAFFITI_DESCRIPTION": "Discover and celebrate the creativity of street artists worldwide. The application features street art from across Europe.",
+  "FACIAL_RECOGNITION_DESCRIPTION": "A Python-based facial recognition system using real-time video through a webcam. The web module is built with Flask, and facial recognition is done using OpenCV and the Facial Recognition Library.",
+  "PEOPLE_DETECTION_DESCRIPTION": "A Python-based person detection system using real-time video through a webcam. The web module is built with Flask, and person detection is done using OpenCV.",
+  "DESCRIPTION": "Description",
+  "TECHNOLOGIES_USED": "Technologies Used",
+  "LINKS": "Links"
 }

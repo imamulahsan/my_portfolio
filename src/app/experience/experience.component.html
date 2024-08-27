@@ -80,6 +80,15 @@
           <p>{{ skill.name }}</p>
         </div>
       </div>
+
+      <!-- DevOps & Version Control Skills -->
+      <h4>{{ 'AI_DATA' | translate }}</h4>
+      <div class="skills-list">
+        <div class="skill-card" *ngFor="let skill of datascienceai">
+          <img [src]="skill.logo" alt="{{ skill.name }} logo">
+          <p>{{ skill.name }}</p>
+        </div>
+      </div>
     </div>
 
     <!-- About Me Section -->

@@ -12,6 +12,7 @@
   "FRONTEND_TECHNOLOGIES": "Frontend-Technologien",
   "BACKEND_TECHNOLOGIEN": "Backend-Technologien",
   "DEVOPS_VERSION_CONTROL": "DevOps & Versionskontrolle",
+  "AI_DATA": " German Artificial Intelligence and Data Science",
   "MY_EXPERIENCE": "Meine Erfahrung",
   "MY_EDUCATION": "Meine Ausbildung",
   "MY_SKILLS": "Meine Fähigkeiten",
@@ -38,7 +39,19 @@
   "COOKING_TITLE": "Kochen - Ein Überlebenshobby",
   "TRAVELING": "Reisen",
   "PHOTOGRAPHY": "Fotografie",
-  "COOKING": "Kochen"
+  "COOKING": "Kochen",
+  "HALIM_DESCRIPTION": "Ein klassisches Gericht aus Bangladesch, zubereitet mit Fleisch und Linsen.",
+  "SHORSHE_ILISH_DESCRIPTION": "Hilsha-Fisch mit einer würzigen Senfsauce.",
+  "KACCHI_BIRIYANI_DESCRIPTION": "Ein würziges und aromatisches Bangladeschi-Biryani aus Reis und Fleisch.",
+  "CHEMNITZ_DESCRIPTION": "Eine MEAN-Stack-Anwendung, um Bildungseinrichtungen für die Stadt Chemnitz anzuzeigen und eigene Einrichtungen hinzuzufügen. Benutzer können sich in die Anwendung einloggen und ihren Standort festlegen. Basierend auf ihren Anforderungen können sie ihren Interessenspunkt auswählen, z.B. eine Schule oder einen Kindergarten.",
+  "BERLINER_DESCRIPTION": "Eine React-Anwendung zur Essensbestellung und Reservierung in einem Restaurant. Benutzer können die Speisekarte einsehen, einen Tisch reservieren und das Restaurant kontaktieren.",
+  "AI_TOOL_DESCRIPTION": "Eine MERN-Anwendung, bei der verschiedene Sprachoperationen durchgeführt werden können, wie z.B. Textzusammenfassung, Grammatiküberprüfung, Schlüsselauszug, Übersetzung, Unterrichtsplanerstellung, Wegbeschreibung, Emoji-Chatbot, Stimmungsanalyse bei Twitter, AI-basierter Rap-Wettbewerb, Produktbewertungsklassifizierung und Codeerklärung.",
+  "GRAFFITI_DESCRIPTION": "Entdecken und feiern Sie die Kreativität von Straßenkünstlern weltweit. Die Anwendung zeigt Street Art aus ganz Europa.",
+  "FACIAL_RECOGNITION_DESCRIPTION": "Ein auf Python basierendes Gesichtserkennungssystem mit Echtzeitvideo über eine Webcam. Das Webmodul wurde mit Flask entwickelt, und die Gesichtserkennung erfolgt mit OpenCV und der Facial Recognition Library.",
+  "PEOPLE_DETECTION_DESCRIPTION": "Ein auf Python basierendes Personenerkennungssystem mit Echtzeitvideo über eine Webcam. Das Webmodul wurde mit Flask entwickelt, und die Personenerkennung erfolgt mit OpenCV.",
+  "DESCRIPTION": "Beschreibung",
+  "TECHNOLOGIES_USED": "Verwendete Technologien",
+  "LINKS": "Links"
   
 
 }

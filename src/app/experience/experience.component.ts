@@ -66,18 +66,23 @@ export class ExperienceComponent implements OnInit {
     { name: 'MongoDB', logo: 'assets/images/logos/mongodb.png' },
     { name: 'Firebase', logo: 'assets/images/logos/firebase.png' },
     { name: 'Django', logo: 'assets/images/logos/django.png' },
-    { name: 'GraphQL', logo: 'assets/images/logos/grapghql.png' },
+    
   ];
 
   devOpsAndVersionControlSkills = [
     { name: 'Docker', logo: 'assets/images/logos/docker.png' },
-    { name: 'Kubernetes', logo: 'assets/images/logos/kubernetes.png' },
     { name: 'AWS', logo: 'assets/images/logos/aws.png' },
     { name: 'Azure', logo: 'assets/images/logos/azure.png' },
     { name: 'Git', logo: 'assets/images/logos/git.png' },
     { name: 'GitHub', logo: 'assets/images/logos/github.png' },
-    { name: 'Bitbucket', logo: 'assets/images/logos/bitbucket.png' },
     { name: 'CI/CD', logo: 'assets/images/logos/cicd.png' },
+  ];
+
+  datascienceai = [
+    { name: 'Python', logo: 'assets/images/logos/python.png' },
+    { name: 'OpenCV', logo: 'assets/images/logos/opencv.png' },
+    { name: 'Flask', logo: 'assets/images/logos/flask.png' },
+    
   ];
 
 

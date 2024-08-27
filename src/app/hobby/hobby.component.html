@@ -38,7 +38,7 @@
       <div class="dish" *ngFor="let dish of favoriteDishes">
         <img [src]="dish.image" [alt]="dish.name">
         <h3>{{ dish.name }}</h3>
-        <p>{{ dish.description }}</p>
+        <p>{{ dish.description | translate }}</p>
       </div>
     </div>
   </div>
