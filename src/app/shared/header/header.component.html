@@ -1,28 +1,30 @@
 <nav>
-    <div class="nav-left">
-      <span class="brand-name">Imamul Ahsan</span>
-    </div>
-    <div class="nav-right">
-      <ul>
-        <li><a routerLink="/home">{{ 'HOME' | translate }}</a></li>
-        <li><a routerLink="/experience">{{ 'EXPERIENCE' | translate }}</a></li>
-        <li><a routerLink="/projects">{{ 'PROJECTS' | translate }}</a></li>
-        <li><a routerLink="/contact">{{ 'CONTACT' | translate }}</a></li>
-        <li><a routerLink="/hobby">{{ 'HOBBIES' | translate }}</a></li>
-        <li>
-          <button (click)="toggleTheme()">
-            <i [class]="isDarkMode ? 'fas fa-sun' : 'fas fa-moon'"></i>
-          </button>
-        </li>
-        <li>
-          <button (click)="switchLanguage('en')" class="btn btn-link">
-            <img src="assets/images/uk.png" alt="English" width="30">
-          </button>
-          <button (click)="switchLanguage('de')" class="btn btn-link">
-            <img src="assets/images/german.png" alt="German" width="30">
-          </button>
-        </li>
-      </ul>
-    </div>
-  </nav>
-  
+  <div class="nav-left">
+    <span class="brand-name">Imamul Ahsan</span>
+  </div>
+  <div class="nav-right">
+    <ul [class.open]="isMenuOpen">
+      <li><a routerLink="/home" (click)="toggleMenu()">{{ 'HOME' | translate }}</a></li>
+      <li><a routerLink="/experience" (click)="toggleMenu()">{{ 'EXPERIENCE' | translate }}</a></li>
+      <li><a routerLink="/projects" (click)="toggleMenu()">{{ 'PROJECTS' | translate }}</a></li>
+      <li><a routerLink="/contact" (click)="toggleMenu()">{{ 'CONTACT' | translate }}</a></li>
+      <li><a routerLink="/hobby" (click)="toggleMenu()">{{ 'HOBBIES' | translate }}</a></li>
+      <li>
+        <button (click)="toggleTheme()">
+          <i [class]="isDarkMode ? 'fas fa-sun' : 'fas fa-moon'"></i>
+        </button>
+      </li>
+      <li>
+        <button (click)="switchLanguage('en')" class="btn btn-link" (click)="toggleMenu()">
+          <img src="assets/images/uk.png" alt="English" width="30">
+        </button>
+        <button (click)="switchLanguage('de')" class="btn btn-link" (click)="toggleMenu()">
+          <img src="assets/images/german.png" alt="German" width="30">
+        </button>
+      </li>
+    </ul>
+    <button class="hamburger" (click)="toggleMenu()">
+      <i class="fas fa-bars"></i>
+    </button>
+  </div>
+</nav>

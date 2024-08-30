@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { TranslateService } from '@ngx-translate/core';
 
+
 @Component({
   selector: 'app-header',
   templateUrl: './header.component.html',
@@ -9,6 +10,7 @@ import { TranslateService } from '@ngx-translate/core';
 export class HeaderComponent implements OnInit {
 
   isDarkMode: boolean = false;
+  isMenuOpen: boolean = false;
 
   constructor(private translate: TranslateService) {
     // Set default language
@@ -18,6 +20,8 @@ export class HeaderComponent implements OnInit {
   ngOnInit(): void {
     this.isDarkMode = localStorage.getItem('theme') === 'dark';
     this.applyTheme();
+
+    
   }
 
   toggleTheme(): void {
@@ -40,4 +44,10 @@ export class HeaderComponent implements OnInit {
   switchLanguage(language: string): void {
     this.translate.use(language);
   }
+
+  toggleMenu(): void {
+    this.isMenuOpen = !this.isMenuOpen;
+  }
+
+  
 }

@@ -1,77 +1,118 @@
+/* Base Styles */
 nav {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background-color: inherit; /* Inherits the background color from the body */
-    padding: 1rem;
-    transition: background-color 0.5s, color 0.5s;
-  }
-  
-  .nav-left {
-    flex: 1;
-  }
-  
-  .nav-right {
-    flex: 2;
-    display: flex;
-    justify-content: flex-end;
-  }
-  
-  .brand-name {
-    font-size: 1.5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  position: relative;
+  z-index: 3000; /* Ensure the header is above other content */
+  background-color: inherit; /* Ensure the background color of the header is defined */
+  width: 100%; /* Ensure the header takes full width */
+}
+
+.nav-left{
+  z-index: 3000; /* Ensure the header is above other content */
+}
+
+
+.brand-name{
+  font-size: 1.5rem;
     font-weight: bold;
-    color: inherit; /* Inherits the text color from the body */
+    color: black; /* Inherits the text color from the body */
+    margin-bottom: 15px;
+}
+
+.nav-right ul {
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-right ul li {
+  margin-left: 20px;
+}
+
+nav ul li a {
+  color: inherit; /* Inherits the text color from the body */
+  text-decoration: none;
+  font-size: 0.8rem;
+  padding: 0.5rem 1rem;
+  display: block;
+  font-weight: bold;
+  transition: color 0.3s;
+}
+
+nav ul li a:hover {
+  color: white;
+}
+
+nav ul li button {
+  background: none;
+  border: none;
+  color: inherit; /* Inherits the text color from the body */
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  transition: color 0.3s;
+}
+
+nav ul li button i {
+  font-size: 1.5rem;
+}
+
+nav ul li button:hover {
+  color: #e6a50e; /* Changes icon color to red on hover */
+}
+
+.nav-right .hamburger {
+  display: none; /* Hidden by default */
+  background: none;
+  border: none;
+  font-size: 24px;
+  cursor: pointer;
+  color: #333; /* Adjust color as needed */
+}
+
+@media (max-width: 768px) {
+  .nav-left{
+    z-index: 4000; /* Ensure the header is above other content */
   }
-  
-  nav ul {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
+  .nav-right ul {
+    flex-direction: column;
+    position: fixed; /* Make the menu fixed to the viewport */
+    top: 0;
+    left: 0;
+    background: rgba(223, 79, 79, 0.95); /* Slightly transparent background */
+    padding: 30px 10px; /* Space for the menu items */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+    display: none; /* Initially hidden */
+    z-index: 3000; /* High z-index to ensure it is above everything */
+    overflow-y: auto; /* Allow scrolling if content overflows */
   }
-  
-  nav ul li {
-    margin: 0 0.5rem;
+
+  .nav-right ul.open {
+    display: flex; /* Show menu when open */
   }
-  
-  nav ul li a {
-    color: inherit; /* Inherits the text color from the body */
-    text-decoration: none;
-    padding: 0.5rem 1rem;
-    display: block;
-    font-weight: bold;
-    transition: color 0.3s;
+
+  .nav-right ul li {
+    margin: 5px 0; /* Space between items */
   }
-  
-  nav ul li a:hover {
-    color: #ee0022; /* Changes text color to red on hover */
+
+  .brand-name{
+    font-size: 1rem;
+      color: black; /* Inherits the text color from the body */
+      margin-bottom: 15px;
   }
-  
-  nav ul li button {
-    background: none;
-    border: none;
-    color: inherit; /* Inherits the text color from the body */
-    padding: 0.5rem 1rem;
-    cursor: pointer;
-    transition: color 0.3s;
+
+  .nav-right .hamburger {
+    display: block; /* Show hamburger icon */
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    z-index: 3000; /* Ensure it’s above the menu */
   }
-  
-  nav ul li button i {
-    font-size: 1.5rem;
+
+  .nav-right .hamburger i {
+    font-size: 24px;
   }
-  
-  nav ul li button:hover {
-    color: #ee0022; /* Changes icon color to red on hover */
-  }
-  
-  /* Dark mode styles specific to the header component */
-  body.dark-mode nav ul li a:hover {
-    color: #ee0022; /* Changes text color to red on hover */
-  }
-  
-  body.dark-mode nav ul li button:hover {
-    color: #ee0022; /* Changes icon color to red on hover */
-  }
-  
+}
