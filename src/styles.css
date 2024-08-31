@@ -31,4 +31,38 @@ body {
   --footer-link-color: #ffffff;
   --footer-link-hover-color: #0077b5;
   }
+
+  .toast-center-center {
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    position: fixed;
+    margin: 0;
+  }
+
+  /* Change background color for success toasts */
+.toast-success {
+  background-color: #28a745 !important; /* Green background */
+}
+
+/* Change background color for error toasts */
+.toast-error {
+  background-color: #dc3545 !important; /* Red background */
+}
+
+/* Change background color for info toasts */
+.toast-info {
+  background-color: #17a2b8 !important; /* Blue background */
+}
+
+/* Change background color for warning toasts */
+.toast-warning {
+  background-color: #ffc107 !important; /* Yellow background */
+}
+
+/* Optional: Change text color if needed */
+.toast-success, .toast-error, .toast-info, .toast-warning {
+  color: #ffffff !important; /* White text color */
+}
+
   

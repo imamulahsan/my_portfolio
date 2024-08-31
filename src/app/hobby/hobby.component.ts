@@ -52,6 +52,15 @@ export class HobbyComponent implements OnInit, OnDestroy {
 
   ngOnInit(): void {
     // No need to load the map initially
+    this.selectedHobby = 'traveling';  // Automatically select the traveling hobby
+
+    // Initialize the map only if the traveling hobby is selected
+    if (this.selectedHobby === 'traveling') {
+      // Delay to ensure the map container is available in the DOM
+      setTimeout(() => {
+        this.initMap();
+      }, 0);
+    }
   }
 
   ngOnDestroy(): void {

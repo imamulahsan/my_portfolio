@@ -118,4 +118,12 @@
       font-size: 1.5rem;
     }
   }
+
+  .ngx-toastr .toast-success {
+    background-color: #28a745; /* Success background color */
+  }
+  
+  .ngx-toastr .toast-error {
+    background-color: #dc3545; /* Error background color */
+  }
   
