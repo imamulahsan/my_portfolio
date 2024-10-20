@@ -1,3 +1,13 @@
+# Live Website
+https://imamulahsan.netlify.app/
+
+# Technologies Used
+- Angular 17
+- HTML5
+- CSS3
+- Typescript
+
+
 # Portfolio
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 17.3.3.
