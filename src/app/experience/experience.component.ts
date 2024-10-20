@@ -11,11 +11,19 @@ export class ExperienceComponent implements OnInit {
 
   experiences = [
     {
+      title: 'Full-stack Software Developer Werkstudent',
+      company: 'Bosch Rexroth',
+      location: 'Ulm, Germany',
+      duration: 'September, 2024 - Present',
+      description: 'EXPERIENCE_BOSCH_DESCRIPTION2',  // Translation key
+      logo: 'assets/images/bosch-rexroth.jpg'
+    },
+    {
       title: 'Full-stack Software Developer Intern',
       company: 'Bosch Rexroth',
       location: 'Ulm, Germany',
-      duration: 'March, 2024 - October, 2024',
-      description: 'EXPERIENCE_BOSCH_DESCRIPTION',  // Translation key
+      duration: 'March, 2024 - August, 2024',
+      description: 'EXPERIENCE_BOSCH_DESCRIPTION1',  // Translation key
       logo: 'assets/images/bosch-rexroth.jpg'
     },
     {
