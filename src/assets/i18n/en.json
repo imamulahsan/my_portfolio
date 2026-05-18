@@ -52,5 +52,10 @@
   "PEOPLE_DETECTION_DESCRIPTION": "A Python-based person detection system using real-time video through a webcam. The web module is built with Flask, and person detection is done using OpenCV.",
   "DESCRIPTION": "Description",
   "TECHNOLOGIES_USED": "Technologies Used",
-  "LINKS": "Links"
+  "LINKS": "Links",
+  "RESEARCH": "Research",
+  "RESEARCH_TITLE": "Research",
+  "MASTER_THESIS": "Master Thesis",
+  "PUBLICATIONS": "Publications",
+  "METHODS_TECH": "Methods and technologies"
 }

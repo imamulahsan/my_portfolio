@@ -52,7 +52,12 @@
   "PEOPLE_DETECTION_DESCRIPTION": "Ein auf Python basierendes Personenerkennungssystem mit Echtzeitvideo über eine Webcam. Das Webmodul wurde mit Flask entwickelt, und die Personenerkennung erfolgt mit OpenCV.",
   "DESCRIPTION": "Beschreibung",
   "TECHNOLOGIES_USED": "Verwendete Technologien",
-  "LINKS": "Links"
+  "LINKS": "Links",
+  "RESEARCH": "Forschung",
+  "RESEARCH_TITLE": "Forschung",
+  "MASTER_THESIS": "Masterarbeit",
+  "PUBLICATIONS": "Veröffentlichungen",
+  "METHODS_TECH": "Methoden und Technologien"
   
 
 }

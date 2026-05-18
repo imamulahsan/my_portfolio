@@ -1,0 +1,65 @@
+<section class="research-page">
+
+  <h1>{{ 'RESEARCH_TITLE' | translate }}</h1>
+
+  <!-- MASTER THESIS -->
+  <div class="research-card">
+
+    <h2>{{ 'MASTER_THESIS' | translate }}</h2>
+
+    <h3>
+      {{ thesis.title | translate }}
+    </h3>
+
+    <p class="meta">
+      {{ thesis.university }} ·
+      {{ thesis.submission | translate }}
+    </p>
+
+    <ul>
+      <li *ngFor="let point of thesis.points">
+        {{ point | translate }}
+      </li>
+    </ul>
+
+    <div class="methods-section">
+      <h4>{{ 'METHODS_TECH' | translate }}</h4>
+
+      <p>
+        {{ thesis.methods | translate }}
+      </p>
+    </div>
+
+  </div>
+
+  <!-- PUBLICATIONS -->
+  <div class="research-card">
+
+    <h2>{{ 'PUBLICATIONS' | translate }}</h2>
+
+    <div
+      class="publication"
+      *ngFor="let publication of publications"
+    >
+
+      <h3>
+        {{ publication.title }}
+      </h3>
+
+      <p class="publication-authors">
+        {{ publication.authors }}
+      </p>
+
+      <p class="publication-year">
+        {{ publication.year }}
+      </p>
+
+      <p class="publication-venue">
+        <em>{{ publication.venue }}</em>
+      </p>
+
+    </div>
+
+  </div>
+
+</section>
