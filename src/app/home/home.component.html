@@ -1,31 +1,193 @@
-<div class="home-container">
+
+<section class="home-container">
+
+  <!-- =========================
+       Left Side
+  ========================== -->
   <div class="home-left">
+
     <div class="lights">
       <div class="light light1"></div>
       <div class="light light2"></div>
       <div class="light light3"></div>
     </div>
-    <img src="assets/images/my-image.png" alt="Imamul Ahsan" class="profile-image">
-  </div>
-  <div class="home-right">
-    <p>{{ 'FULLSTACK_DEVELOPER' | translate }}</p>
-    <h1>{{ 'HOME_INTRODUCTION' | translate }} <span class="highlight-name">Imamul Ahsan</span></h1>
-    <p>{{ 'HOME_DESCRIPTION' | translate }}</p>
-    <div class="social-links">
-      <a href="https://www.linkedin.com/in/imamulahsan/" target="_blank">
-        <i class="fab fa-linkedin"></i>
-      </a>
-      <a href="https://github.com/imamulahsan" target="_blank">
-        <i class="fab fa-github"></i>
-      </a>
-      <a href="https://x.com/gunners808_" target="_blank">
-        <i class="fab fa-twitter"></i>
-      </a>
-      <a href="assets/docs/Lebenslauf_Imamul_Ahsan.pdf" download>
-        <button class="btn-download-cv">{{ 'DOWNLOAD_CV' | translate }}</button>
-      </a>
-    </div>
-  </div>
-</div>
 
+    <div class="image-wrapper">
+      <img
+        src="assets/images/my-image.png"
+        alt="Imamul Ahsan - AI Developer and Research-Oriented Software Engineer"
+        class="profile-image"
+      >
+    </div>
+
+  </div>
+
+
+  <!-- =========================
+       Right Side
+  ========================== -->
+  <div class="home-right">
+
+    <div class="hero-content">
+
+      <!-- Small Top Label -->
+      <div class="hero-eyebrow">
+        <span class="eyebrow-line"></span>
+
+        <span>
+          {{ 'HOME_TAGLINE' | translate }}
+        </span>
+      </div>
+
+
+      <!-- Professional Role Badge -->
+      <div class="role-badge">
+        <span class="role-badge-icon">
+          <i class="fas fa-brain"></i>
+        </span>
+
+        <span>
+          {{ 'FULLSTACK_DEVELOPER' | translate }}
+        </span>
+      </div>
+
+
+      <!-- Main Heading -->
+      <h1 class="hero-title">
+
+        <span class="intro-text">
+          {{ 'HOME_INTRODUCTION' | translate }}
+        </span>
+
+        <span class="highlight-name">
+          Imamul Ahsan
+        </span>
+
+      </h1>
+
+
+      <!-- Accent Divider -->
+      <div class="hero-divider">
+        <span></span>
+      </div>
+
+
+      <!-- Main Description -->
+      <p class="hero-description">
+        {{ 'HOME_DESCRIPTION' | translate }}
+      </p>
+
+
+      <!-- Secondary Description -->
+      <p class="hero-secondary-description">
+        {{ 'HOME_SECONDARY_DESCRIPTION' | translate }}
+      </p>
+
+
+      <!-- Actions -->
+      <div class="hero-actions">
+
+        <a
+          routerLink="/projects"
+          class="btn btn-primary"
+        >
+          <i class="fas fa-code"></i>
+
+          <span>
+            {{ 'VIEW_PROJECTS' | translate }}
+          </span>
+
+          <i class="fas fa-arrow-right btn-arrow"></i>
+        </a>
+
+
+        <a
+          routerLink="/research"
+          class="btn btn-secondary"
+        >
+          <i class="fas fa-flask"></i>
+
+          <span>
+            {{ 'VIEW_RESEARCH' | translate }}
+          </span>
+        </a>
+
+
+        <a
+          href="assets/docs/Lebenslauf_Imamul_Ahsan.pdf"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="btn btn-outline"
+        >
+          <i class="fas fa-file-alt"></i>
+
+          <span>
+            {{ 'DOWNLOAD_CV' | translate }}
+          </span>
+        </a>
+
+      </div>
+
+
+      <!-- Bottom Info -->
+      <div class="hero-footer">
+
+        <!-- Availability -->
+        <div class="availability">
+
+          <span class="availability-indicator">
+            <span class="availability-dot"></span>
+          </span>
+
+          <span class="availability-text">
+            {{ 'OPEN_TO' | translate }}
+          </span>
+
+        </div>
+
+
+        <!-- Social Links -->
+        <div class="social-links">
+
+          <a
+            href="https://www.linkedin.com/in/imamulahsan/"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="LinkedIn profile"
+            title="LinkedIn"
+          >
+            <i class="fab fa-linkedin-in"></i>
+          </a>
+
+
+          <a
+            href="https://github.com/imamulahsan"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="GitHub profile"
+            title="GitHub"
+          >
+            <i class="fab fa-github"></i>
+          </a>
+
+
+          <a
+            href="https://x.com/gunners808_"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="X profile"
+            title="X"
+          >
+            <i class="fab fa-twitter"></i>
+          </a>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
 

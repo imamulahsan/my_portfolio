@@ -1,193 +1,1184 @@
-.home-container {
-  display: flex;
-  flex-direction: row; /* Default direction is row for larger screens */
-  justify-content: center;
-  align-items: center;
-  height: 100vh; /* Full height of the viewport */
-  padding: 1rem;
-  background-color: inherit; /* Inherit background color from the body */
+
+:host {
+  display: block;
 }
 
-.home-left, .home-right {
-  flex: 1;
-  padding: 1rem;
+
+/* =========================================================
+   Main Layout
+========================================================= */
+
+.home-container {
+  width: min(1240px, calc(100% - 3rem));
+
+  min-height: calc(100vh - 80px);
+
+  margin: 0 auto;
+
+  padding: 4rem 0;
+
+  display: grid;
+
+  grid-template-columns: 1fr 1.15fr;
+
+  align-items: center;
+
+  gap: clamp(2.5rem, 5vw, 5.5rem);
 }
+
+
+/* =========================================================
+   LEFT SIDE
+========================================================= */
 
 .home-left {
+  position: relative;
+
   display: flex;
   justify-content: center;
   align-items: center;
-  position: relative;
-  max-width: 100%;
-}
 
-.profile-image {
-  max-width: 100%;
-  height: auto;
-  border-radius: 50%;
-  position: relative;
-  z-index: 1;
-}
-
-.lights {
-  position: absolute;
-  top: 0;
-  left: 0;
   width: 100%;
-  height: 100%;
-  z-index: 0;
+
+  min-height: 460px;
+
   overflow: hidden;
 }
 
+
+/* =========================================================
+   Animated Lights
+========================================================= */
+
+.lights {
+  position: absolute;
+
+  inset: 0;
+
+  width: 100%;
+  height: 100%;
+
+  overflow: hidden;
+
+  pointer-events: none;
+
+  z-index: 0;
+}
+
+
 .light {
   position: absolute;
-  width: 100px;
-  height: 100px;
-  background: var(--light-color);
+
+  width: 110px;
+  height: 110px;
+
   border-radius: 50%;
-  box-shadow: 0 0 20px var(--light-shadow);
-  animation: moveLight 5s linear infinite;
+
+  background: var(--light-color);
+
+  box-shadow:
+    0 0 25px var(--light-shadow),
+    0 0 55px var(--light-shadow);
+
+  filter: blur(2px);
+
+  opacity: 0.8;
+
+  animation:
+    moveLight 7s ease-in-out infinite,
+    lightPulse 4s ease-in-out infinite;
 }
+
 
 .light1 {
   top: 10%;
-  left: 70%;
-  animation-duration: 6s;
+  left: 67%;
+
+  width: 105px;
+  height: 105px;
+
+  animation-duration: 7s, 4s;
 }
 
+
 .light2 {
-  top: 30%;
-  left: 10%;
-  animation-duration: 8s;
+  top: 40%;
+  left: 6%;
+
+  width: 82px;
+  height: 82px;
+
+  animation-duration: 9s, 5s;
+
+  animation-delay: -2s;
 }
+
 
 .light3 {
   top: 70%;
-  left: 70%;
-  animation-duration: 7s;
+  left: 68%;
+
+  width: 92px;
+  height: 92px;
+
+  animation-duration: 8s, 4.5s;
+
+  animation-delay: -4s;
 }
+
 
 @keyframes moveLight {
+
   0% {
-    transform: translateY(0) translateX(0);
+    transform:
+      translate(0, 0)
+      scale(1);
   }
+
+  25% {
+    transform:
+      translate(-22px, 18px)
+      scale(1.05);
+  }
+
   50% {
-    transform: translateY(-20px) translateX(20px);
+    transform:
+      translate(16px, -24px)
+      scale(0.96);
   }
+
+  75% {
+    transform:
+      translate(25px, 16px)
+      scale(1.04);
+  }
+
   100% {
-    transform: translateY(0) translateX(0);
+    transform:
+      translate(0, 0)
+      scale(1);
   }
+
 }
+
+
+@keyframes lightPulse {
+
+  0%,
+  100% {
+    opacity: 0.55;
+  }
+
+  50% {
+    opacity: 0.95;
+  }
+
+}
+
+
+/* =========================================================
+   Circular Profile Image
+========================================================= */
+
+.image-wrapper {
+  position: relative;
+
+  width: min(380px, 88%);
+
+  aspect-ratio: 1 / 1;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  z-index: 2;
+}
+
+
+.image-wrapper::before {
+  content: "";
+
+  position: absolute;
+
+  inset: -10px;
+
+  border-radius: 50%;
+
+  border: 1px solid rgba(255, 99, 71, 0.24);
+
+  opacity: 0.75;
+
+  z-index: -1;
+}
+
+
+.image-wrapper::after {
+  content: "";
+
+  position: absolute;
+
+  inset: -20px;
+
+  border-radius: 50%;
+
+  border: 1px solid rgba(128, 128, 128, 0.12);
+
+  z-index: -1;
+}
+
+
+.profile-image {
+  position: relative;
+
+  z-index: 2;
+
+  width: 100%;
+  height: 100%;
+
+  max-width: 360px;
+  max-height: 360px;
+
+  aspect-ratio: 1 / 1;
+
+  object-fit: cover;
+
+  border-radius: 50%;
+
+  border: 2px solid rgba(128, 128, 128, 0.22);
+
+  box-shadow:
+    0 20px 55px rgba(0, 0, 0, 0.2);
+
+  transition:
+    transform 0.4s ease,
+    box-shadow 0.4s ease;
+}
+
+
+.profile-image:hover {
+  transform:
+    translateY(-5px)
+    scale(1.015);
+
+  box-shadow:
+    0 28px 70px rgba(0, 0, 0, 0.26);
+}
+
+
+/* =========================================================
+   RIGHT SIDE
+========================================================= */
 
 .home-right {
-  text-align: left;
+  position: relative;
+
+  width: 100%;
+
+  max-width: 720px;
+
+  justify-self: start;
+
   color: inherit;
 }
 
-.home-right h1 {
-  font-size: 2.5rem;
-  margin-bottom: 0.5rem;
-  color: inherit;
+
+/* =========================================================
+   Main Hero Content Card
+========================================================= */
+
+.hero-content {
+  position: relative;
+
+  padding:
+    clamp(1.7rem, 3vw, 2.5rem)
+    clamp(1.5rem, 3vw, 2.7rem);
+
+  border-radius: 24px;
+
+  background:
+    linear-gradient(
+      145deg,
+      rgba(255, 255, 255, 0.08),
+      rgba(255, 255, 255, 0.025)
+    );
+
+  border: 1px solid rgba(128, 128, 128, 0.16);
+
+  box-shadow:
+    0 20px 55px rgba(0, 0, 0, 0.08);
+
+  backdrop-filter: blur(8px);
+
+  -webkit-backdrop-filter: blur(8px);
+
+  overflow: hidden;
 }
 
-.home-right h1 .highlight-name {
+
+/* Subtle top accent */
+
+.hero-content::before {
+  content: "";
+
+  position: absolute;
+
+  top: 0;
+  left: 12%;
+
+  width: 36%;
+  height: 2px;
+
+  background:
+    linear-gradient(
+      90deg,
+      transparent,
+      #ff6347,
+      transparent
+    );
+}
+
+
+/* Decorative background glow */
+
+.hero-content::after {
+  content: "";
+
+  position: absolute;
+
+  width: 240px;
+  height: 240px;
+
+  right: -120px;
+  top: -120px;
+
+  border-radius: 50%;
+
+  background:
+    radial-gradient(
+      circle,
+      rgba(255, 99, 71, 0.08),
+      transparent 70%
+    );
+
+  pointer-events: none;
+}
+
+
+/* =========================================================
+   Eyebrow / Top Label
+========================================================= */
+
+.hero-eyebrow {
+  display: flex;
+
+  align-items: center;
+
+  gap: 0.75rem;
+
+  margin-bottom: 1rem;
+
+  font-size: 0.72rem;
+
+  font-weight: 700;
+
+  letter-spacing: 0.17em;
+
+  line-height: 1.5;
+
+  text-transform: uppercase;
+
   color: #ff6347;
 }
 
-.home-right p {
-  font-size: 1.5rem;
-  margin-bottom: 1rem;
+
+.eyebrow-line {
+  display: inline-block;
+
+  width: 34px;
+  height: 2px;
+
+  flex-shrink: 0;
+
+  border-radius: 2px;
+
+  background: #ff6347;
+}
+
+
+/* =========================================================
+   Role Badge
+========================================================= */
+
+.role-badge {
+  width: fit-content;
+
+  display: inline-flex;
+
+  align-items: center;
+
+  gap: 0.55rem;
+
+  margin-bottom: 1.25rem;
+
+  padding: 0.48rem 0.8rem;
+
+  border-radius: 999px;
+
+  border: 1px solid rgba(128, 128, 128, 0.18);
+
+  background: rgba(128, 128, 128, 0.07);
+
+  font-size: 0.82rem;
+
+  line-height: 1.4;
+
+  font-weight: 500;
+
+  opacity: 0.92;
+}
+
+
+.role-badge-icon {
+  width: 25px;
+  height: 25px;
+
+  display: inline-flex;
+
+  align-items: center;
+  justify-content: center;
+
+  flex-shrink: 0;
+
+  border-radius: 50%;
+
+  color: #ff6347;
+
+  background: rgba(255, 99, 71, 0.1);
+
+  font-size: 0.75rem;
+}
+
+
+/* =========================================================
+   Main Heading
+========================================================= */
+
+.hero-title {
+  margin: 0;
+
+  font-size:
+    clamp(2.65rem, 4.8vw, 4.4rem);
+
+  line-height: 1;
+
+  letter-spacing: -0.045em;
+
+  font-weight: 700;
+
   color: inherit;
 }
+
+
+.intro-text {
+  display: block;
+
+  margin-bottom: 0.35rem;
+
+  font-size: 0.48em;
+
+  line-height: 1.2;
+
+  letter-spacing: -0.015em;
+
+  font-weight: 500;
+
+  opacity: 0.72;
+}
+
+
+.highlight-name {
+  display: block;
+
+  width: fit-content;
+
+  background:
+    linear-gradient(
+      90deg,
+      #ff6347 0%,
+      #ff795f 55%,
+      #ff967f 100%
+    );
+
+  background-clip: text;
+
+  -webkit-background-clip: text;
+
+  -webkit-text-fill-color: transparent;
+
+  color: #ff6347;
+}
+
+
+/* =========================================================
+   Small Divider
+========================================================= */
+
+.hero-divider {
+  margin: 1.35rem 0 1.5rem;
+
+  width: 100%;
+
+  height: 1px;
+
+  background:
+    linear-gradient(
+      90deg,
+      rgba(128, 128, 128, 0.3),
+      rgba(128, 128, 128, 0.08),
+      transparent
+    );
+}
+
+
+.hero-divider span {
+  display: block;
+
+  width: 55px;
+  height: 2px;
+
+  transform: translateY(-0.5px);
+
+  border-radius: 2px;
+
+  background: #ff6347;
+}
+
+
+/* =========================================================
+   Description
+========================================================= */
+
+.hero-description {
+  max-width: 650px;
+
+  margin: 0;
+
+  font-size:
+    clamp(1.02rem, 1.35vw, 1.15rem);
+
+  line-height: 1.72;
+
+  font-weight: 400;
+
+  color: inherit;
+
+  opacity: 0.94;
+}
+
+
+.hero-secondary-description {
+  max-width: 630px;
+
+  margin:
+    0.9rem
+    0
+    0;
+
+  font-size: 0.93rem;
+
+  line-height: 1.7;
+
+  color: inherit;
+
+  opacity: 0.66;
+}
+
+
+/* =========================================================
+   Hero Actions
+========================================================= */
+
+.hero-actions {
+  display: flex;
+
+  flex-wrap: wrap;
+
+  align-items: center;
+
+  gap: 0.75rem;
+
+  margin-top: 1.8rem;
+}
+
+
+.btn {
+  position: relative;
+
+  min-height: 46px;
+
+  display: inline-flex;
+
+  align-items: center;
+  justify-content: center;
+
+  gap: 0.55rem;
+
+  padding: 0.72rem 1.05rem;
+
+  border-radius: 10px;
+
+  border: 1px solid transparent;
+
+  font-size: 0.88rem;
+
+  font-weight: 600;
+
+  line-height: 1;
+
+  text-decoration: none;
+
+  color: inherit;
+
+  cursor: pointer;
+
+  overflow: hidden;
+
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease,
+    background-color 0.25s ease,
+    border-color 0.25s ease,
+    color 0.25s ease;
+}
+
+
+.btn i {
+  font-size: 0.85rem;
+}
+
+
+.btn:hover {
+  transform: translateY(-2px);
+}
+
+
+/* Primary Button */
+
+.btn-primary {
+  color: #ffffff;
+
+  background:
+    linear-gradient(
+      135deg,
+      #ff6347,
+      #e9543c
+    );
+
+  border-color: #ff6347;
+
+  box-shadow:
+    0 10px 24px rgba(255, 99, 71, 0.22);
+}
+
+
+.btn-primary:hover {
+  box-shadow:
+    0 14px 30px rgba(255, 99, 71, 0.3);
+}
+
+
+.btn-arrow {
+  margin-left: 0.15rem;
+
+  font-size: 0.72rem !important;
+
+  transition: transform 0.25s ease;
+}
+
+
+.btn-primary:hover .btn-arrow {
+  transform: translateX(3px);
+}
+
+
+/* Secondary Button */
+
+.btn-secondary {
+  background: rgba(128, 128, 128, 0.08);
+
+  border-color: rgba(128, 128, 128, 0.22);
+}
+
+
+.btn-secondary:hover {
+  border-color: rgba(255, 99, 71, 0.6);
+
+  background: rgba(255, 99, 71, 0.07);
+
+  color: #ff6347;
+}
+
+
+/* CV Button */
+
+.btn-outline {
+  background: transparent;
+
+  border-color: rgba(128, 128, 128, 0.25);
+}
+
+
+.btn-outline:hover {
+  border-color: #ff6347;
+
+  color: #ff6347;
+
+  background: rgba(255, 99, 71, 0.04);
+}
+
+
+/* =========================================================
+   Bottom Section
+========================================================= */
+
+.hero-footer {
+  margin-top: 1.7rem;
+
+  padding-top: 1.25rem;
+
+  border-top:
+    1px solid rgba(128, 128, 128, 0.14);
+
+  display: flex;
+
+  align-items: center;
+  justify-content: space-between;
+
+  gap: 1.2rem;
+}
+
+
+/* =========================================================
+   Availability
+========================================================= */
+
+.availability {
+  display: flex;
+
+  align-items: center;
+
+  gap: 0.65rem;
+
+  min-width: 0;
+
+  font-size: 0.82rem;
+
+  line-height: 1.45;
+
+  color: inherit;
+
+  opacity: 0.72;
+}
+
+
+.availability-indicator {
+  position: relative;
+
+  width: 10px;
+  height: 10px;
+
+  flex-shrink: 0;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+}
+
+
+.availability-dot {
+  width: 8px;
+  height: 8px;
+
+  display: block;
+
+  border-radius: 50%;
+
+  background: #22c55e;
+
+  box-shadow:
+    0 0 0 4px rgba(34, 197, 94, 0.12);
+
+  animation:
+    availabilityPulse
+    2.5s
+    ease-in-out
+    infinite;
+}
+
+
+@keyframes availabilityPulse {
+
+  0%,
+  100% {
+    box-shadow:
+      0 0 0 4px rgba(34, 197, 94, 0.12);
+  }
+
+  50% {
+    box-shadow:
+      0 0 0 7px rgba(34, 197, 94, 0.04);
+  }
+
+}
+
+
+.availability-text {
+  max-width: 390px;
+}
+
+
+/* =========================================================
+   Social Links
+========================================================= */
 
 .social-links {
   display: flex;
-  gap: 1.5rem;
-  margin-top: 1rem;
+
+  align-items: center;
+
+  gap: 0.55rem;
+
+  flex-shrink: 0;
 }
+
 
 .social-links a {
+  width: 38px;
+  height: 38px;
+
+  display: inline-flex;
+
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 9px;
+
+  border:
+    1px solid rgba(128, 128, 128, 0.2);
+
+  background:
+    rgba(128, 128, 128, 0.06);
+
   color: inherit;
-  font-size: 2rem;
-  transition: color 0.3s, transform 0.3s;
+
+  font-size: 0.95rem;
+
+  text-decoration: none;
+
+  transition:
+    transform 0.25s ease,
+    color 0.25s ease,
+    border-color 0.25s ease,
+    background-color 0.25s ease;
 }
+
 
 .social-links a:hover {
-  color: #0077b5;
-  transform: scale(1.2);
+  transform: translateY(-3px);
+
+  color: #ff6347;
+
+  border-color:
+    rgba(255, 99, 71, 0.65);
+
+  background:
+    rgba(255, 99, 71, 0.08);
 }
 
-.btn-download-cv {
-  padding: 1rem 2rem;
-  font-size: 1.2rem;
-  color: #ffffff;
-  background-color: #ff6347;
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
-  transition: background-color 0.3s, color 0.3s, transform 0.3s;
-}
 
-.btn-download-cv:hover {
-  background-color: #239b56;
-  transform: scale(0.9);
-  color: #ffffff;
-}
+/* =========================================================
+   Tablet
+========================================================= */
 
-/* Media Query for smaller screens */
-@media (max-width: 768px) {
+@media (max-width: 900px) {
+
   .home-container {
-    flex-direction: column; /* Stack elements vertically */
-    height: auto; /* Allow the container to adjust its height */
-    padding: 1rem; /* Reduce padding */
+    width:
+      min(
+        720px,
+        calc(100% - 2rem)
+      );
+
+    min-height: auto;
+
+    grid-template-columns: 1fr;
+
+    gap: 2.5rem;
+
+    padding: 3.5rem 0;
   }
 
-  .home-left, .home-right {
-    width: 100%; /* Full width */
-    padding: 0.5rem; /* Reduce padding */
-    text-align: center; /* Center align text */
+
+  .home-left {
+    min-height: 360px;
   }
 
-  .home-right h1 {
-    font-size: 2rem; /* Decrease font size */
-    margin-bottom: 0.5rem;
+
+  .image-wrapper {
+    width:
+      min(
+        300px,
+        75vw
+      );
   }
 
-  .home-right p {
-    font-size: 1rem; /* Decrease font size */
+
+  .profile-image {
+    max-width: 300px;
+    max-height: 300px;
   }
+
+
+  .home-right {
+    max-width: 680px;
+
+    justify-self: center;
+  }
+
+
+  .hero-content {
+    text-align: left;
+  }
+
+
+  .light {
+    width: 85px;
+    height: 85px;
+  }
+
+
+  .light1 {
+    left: 68%;
+  }
+
+
+  .light2 {
+    width: 68px;
+    height: 68px;
+  }
+
+
+  .light3 {
+    width: 75px;
+    height: 75px;
+  }
+
+}
+
+
+/* =========================================================
+   Mobile
+========================================================= */
+
+@media (max-width: 600px) {
+
+  .home-container {
+    width:
+      calc(100% - 1.5rem);
+
+    gap: 2rem;
+
+    padding:
+      2.5rem
+      0
+      3rem;
+  }
+
+
+  .home-left {
+    min-height: 290px;
+  }
+
+
+  .image-wrapper {
+    width:
+      min(
+        240px,
+        72vw
+      );
+  }
+
+
+  .profile-image {
+    max-width: 240px;
+    max-height: 240px;
+  }
+
+
+  .light1 {
+    width: 70px;
+    height: 70px;
+
+    top: 8%;
+    left: 70%;
+  }
+
+
+  .light2 {
+    width: 55px;
+    height: 55px;
+
+    top: 42%;
+    left: 3%;
+  }
+
+
+  .light3 {
+    width: 62px;
+    height: 62px;
+
+    top: 72%;
+    left: 70%;
+  }
+
+
+  /* Right side */
+
+  .hero-content {
+    padding:
+      1.5rem
+      1.25rem;
+
+    border-radius: 18px;
+  }
+
+
+  .hero-eyebrow {
+    font-size: 0.65rem;
+
+    letter-spacing: 0.12em;
+  }
+
+
+  .eyebrow-line {
+    width: 24px;
+  }
+
+
+  .role-badge {
+    font-size: 0.76rem;
+  }
+
+
+  .hero-title {
+    font-size:
+      clamp(
+        2.25rem,
+        11vw,
+        3.3rem
+      );
+  }
+
+
+  .hero-description {
+    font-size: 0.98rem;
+
+    line-height: 1.65;
+  }
+
+
+  .hero-secondary-description {
+    font-size: 0.87rem;
+
+    line-height: 1.65;
+  }
+
+
+  .hero-actions {
+    flex-direction: column;
+
+    align-items: stretch;
+  }
+
+
+  .btn {
+    width: 100%;
+  }
+
+
+  .hero-footer {
+    flex-direction: column;
+
+    align-items: flex-start;
+  }
+
 
   .social-links {
-    justify-content: center; /* Center the social links */
-    gap: 1rem; /* Reduce gap between icons */
+    width: 100%;
   }
 
-  .social-links a {
-    font-size: 1.5rem; /* Reduce icon size */
-  }
-
-  .btn-download-cv {
-    padding: 0.8rem 1.5rem; /* Reduce padding */
-    font-size: 1rem; /* Decrease font size */
-  }
 }
 
-/* Media Query for extra small screens */
-@media (max-width: 480px) {
-  .home-right h1 {
-    font-size: 1.8rem; /* Further decrease font size */
+
+/* =========================================================
+   Very Small Screens
+========================================================= */
+
+@media (max-width: 380px) {
+
+  .home-left {
+    min-height: 260px;
   }
 
-  .home-right p {
-    font-size: 0.9rem; /* Further decrease font size */
+
+  .image-wrapper {
+    width:
+      min(
+        210px,
+        70vw
+      );
   }
 
-  .social-links a {
-    font-size: 1.2rem; /* Further reduce icon size */
+
+  .profile-image {
+    max-width: 210px;
+    max-height: 210px;
   }
 
-  .btn-download-cv {
-    padding: 0.6rem 1rem; /* Further reduce padding */
-    font-size: 0.9rem; /* Further decrease font size */
+
+  .hero-content {
+    padding:
+      1.3rem
+      1rem;
   }
+
+
+  .hero-title {
+    font-size: 2.15rem;
+  }
+
 }
+
+
+/* =========================================================
+   Reduced Motion
+========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+  .light,
+  .availability-dot {
+    animation: none;
+  }
+
+
+  .profile-image,
+  .btn,
+  .social-links a,
+  .btn-arrow {
+    transition: none;
+  }
+
+}
+

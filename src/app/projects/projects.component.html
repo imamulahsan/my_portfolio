@@ -1,40 +1,244 @@
-<div class="projects-container">
-  <ngx-slick-carousel class="carousel" [config]="slideConfig">
-    <div ngxSlickItem *ngFor="let project of projects" class="slide">
-      <div class="project-slide">
-        <div class="project-info">
-          <h1>{{ project.title }}</h1>
-          
-          <!-- Description Section -->
-          <h5>{{ 'DESCRIPTION' | translate }}</h5>
-          <p>{{ project.description | translate }}</p>
-          
-          <!-- Technologies Section -->
-          <h5>{{ 'TECHNOLOGIES_USED' | translate }}</h5>
-          <div class="technologies">
-            <img *ngFor="let tech of project.technologies" 
-                 [src]="tech.imgUrl" 
-                 [title]="tech.name" 
-                 alt="Technology icon" 
-                 class="tech-icon">
+<section class="projects-page">
+
+  <!-- =====================================================
+       PAGE HEADER
+  ====================================================== -->
+
+
+
+
+  <!-- =====================================================
+       PROJECT FILTER
+  ====================================================== -->
+
+  <nav
+    class="project-filters"
+    aria-label="Project categories"
+  >
+
+    <button
+      type="button"
+      *ngFor="let category of categories"
+      [class.active]="selectedCategory === category.key"
+      (click)="filterProjects(category.key)"
+    >
+
+      {{ category.label }}
+
+    </button>
+
+  </nav>
+
+
+  <!-- =====================================================
+       PROJECT COUNT
+  ====================================================== -->
+
+  <div class="projects-overview">
+
+    <div>
+
+      <span class="projects-kicker">
+        Portfolio
+      </span>
+
+      <h2>
+        {{ selectedCategory === 'all'
+          ? 'All Projects'
+          : 'Selected Projects'
+        }}
+      </h2>
+
+    </div>
+
+
+    <span class="project-count">
+      {{ filteredProjects.length }}
+    </span>
+
+  </div>
+
+
+  <!-- =====================================================
+       PROJECT GRID
+  ====================================================== -->
+
+  <div class="projects-grid">
+
+    <article
+      class="project-card"
+      *ngFor="let project of filteredProjects"
+      [class.featured-project]="project.featured"
+    >
+
+
+      <!-- =================================================
+           IMAGE
+      ================================================== -->
+
+      <div class="project-image-wrapper">
+
+        <img
+          [src]="project.image"
+          [alt]="project.title"
+          class="project-image"
+        >
+
+
+        <div class="project-image-overlay"></div>
+
+
+        <div class="project-badges">
+
+          <span class="project-category">
+            {{ project.categoryLabel }}
+          </span>
+
+
+          <span
+            class="featured-badge"
+            *ngIf="project.featured"
+          >
+
+            <i class="fas fa-star"></i>
+
+            Featured
+
+          </span>
+
+        </div>
+
+      </div>
+
+
+      <!-- =================================================
+           CONTENT
+      ================================================== -->
+
+      <div class="project-content">
+
+
+        <!-- PROJECT HEADER -->
+
+        <div class="project-title-row">
+
+          <div>
+
+            <span class="project-number">
+              PROJECT {{ project.id.toString().padStart(2, '0') }}
+            </span>
+
+            <h3>
+              {{ project.title }}
+            </h3>
+
           </div>
-          
-          <!-- Links Section -->
-          <h5>{{ 'LINKS' | translate }}</h5>
-          <div class="project-links">
-            <a [href]="project.liveLink" target="_blank">
-              <i class="fas fa-arrow-up-right-from-square"></i>
-            </a>
-            <a [href]="project.githubLink" target="_blank">
+
+
+          <div class="project-header-links">
+
+            <a
+              *ngIf="project.githubLink"
+              [href]="project.githubLink"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="View source code on GitHub"
+              title="GitHub"
+            >
               <i class="fab fa-github"></i>
             </a>
+
+
+            <a
+              *ngIf="project.liveLink"
+              [href]="project.liveLink"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Open project demo"
+              title="Open project"
+            >
+              <i class="fas fa-external-link-alt"></i>
+            </a>
+
           </div>
+
         </div>
-        
-        <div class="project-image">
-          <img [src]="project.image" alt="{{ project.title }}">
+
+
+        <!-- DESCRIPTION -->
+
+        <p class="project-description">
+          {{ project.description | translate }}
+        </p>
+
+
+        <!-- TECHNOLOGIES -->
+
+        <div class="technology-list">
+
+          <div
+            class="technology-tag"
+            *ngFor="let tech of project.technologies"
+            [title]="tech.name"
+          >
+
+            <img
+              [src]="tech.imgUrl"
+              [alt]="tech.name + ' logo'"
+            >
+
+            <span>
+              {{ tech.name }}
+            </span>
+
+          </div>
+
         </div>
+
+
+        <!-- ACTIONS -->
+
+        <div class="project-actions">
+
+          <a
+            *ngIf="project.liveLink"
+            [href]="project.liveLink"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="project-button primary"
+          >
+
+            <span>
+              View Project
+            </span>
+
+            <i class="fas fa-arrow-up-right-from-square"></i>
+
+          </a>
+
+
+          <a
+            *ngIf="project.githubLink"
+            [href]="project.githubLink"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="project-button secondary"
+          >
+
+            <i class="fab fa-github"></i>
+
+            <span>
+              Source Code
+            </span>
+
+          </a>
+
+        </div>
+
       </div>
-    </div>
-  </ngx-slick-carousel>
-</div>
+
+    </article>
+
+  </div>
+
+</section>

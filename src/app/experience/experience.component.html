@@ -1,111 +1,769 @@
-<div class="experience-container">
-  <div class="sidebar">
-    <button (click)="filterContent('work')" [class.active]="selectedFilter === 'work'">{{ 'WORK' | translate }}</button>
-    <button (click)="filterContent('education')" [class.active]="selectedFilter === 'education'">{{ 'EDUCATION' | translate }}</button>
-    <button (click)="filterContent('skills')" [class.active]="selectedFilter === 'skills'">{{ 'SKILLS' | translate }}</button>
-    <button (click)="filterContent('about')" [class.active]="selectedFilter === 'about'">{{ 'ABOUT_ME' | translate }}</button>
+<section class="experience-page">
+
+  <!-- =====================================================
+       PAGE HEADER
+  ====================================================== -->
+
+
+
+
+  <!-- =====================================================
+       FILTER TABS
+  ====================================================== -->
+
+  <nav
+    class="experience-tabs"
+    aria-label="Experience sections"
+  >
+
+    <button
+      type="button"
+      [class.active]="selectedFilter === 'work'"
+      (click)="filterContent('work')"
+    >
+      <i class="fas fa-briefcase"></i>
+
+      <span>
+        {{ 'WORK' | translate }}
+      </span>
+    </button>
+
+
+    <button
+      type="button"
+      [class.active]="selectedFilter === 'education'"
+      (click)="filterContent('education')"
+    >
+      <i class="fas fa-graduation-cap"></i>
+
+      <span>
+        {{ 'EDUCATION' | translate }}
+      </span>
+    </button>
+
+
+    <button
+      type="button"
+      [class.active]="selectedFilter === 'skills'"
+      (click)="filterContent('skills')"
+    >
+      <i class="fas fa-code"></i>
+
+      <span>
+        {{ 'SKILLS' | translate }}
+      </span>
+    </button>
+
+
+    <button
+      type="button"
+      [class.active]="selectedFilter === 'about'"
+      (click)="filterContent('about')"
+    >
+      <i class="fas fa-user"></i>
+
+      <span>
+        {{ 'ABOUT_ME' | translate }}
+      </span>
+    </button>
+
+  </nav>
+
+
+  <!-- =====================================================
+       CONTENT WRAPPER
+  ====================================================== -->
+
+  <div class="experience-content">
+
+
+    <!-- ===================================================
+         WORK EXPERIENCE
+    ==================================================== -->
+
+    <section
+      *ngIf="selectedFilter === 'work'"
+      class="content-section"
+    >
+
+      <div class="content-heading">
+
+        <div>
+
+          <span class="content-kicker">
+            {{ 'CAREER' | translate }}
+          </span>
+
+          <h2>
+            {{ 'MY_EXPERIENCE' | translate }}
+          </h2>
+
+        </div>
+
+        <span class="content-count">
+          {{ experiences.length }}
+        </span>
+
+      </div>
+
+
+      <div class="timeline">
+
+        <article
+          class="timeline-item"
+          *ngFor="let exp of experiences; let i = index"
+        >
+
+          <div class="timeline-marker">
+            <span></span>
+          </div>
+
+
+          <div
+            class="experience-card expandable-card"
+            [class.expanded]="exp.expanded"
+          >
+
+            <!-- ===========================================
+                 CLICKABLE EXPERIENCE HEADER
+            ============================================ -->
+
+            <button
+              type="button"
+              class="experience-card-toggle"
+              (click)="toggleExperience(i)"
+              [attr.aria-expanded]="exp.expanded"
+            >
+
+              <div class="experience-card-header">
+
+                <div class="experience-main-info">
+
+                  <div class="experience-company-row">
+
+                    <div
+                      class="company-logo-wrapper"
+                      *ngIf="exp.logo"
+                    >
+
+                      <img
+                        [src]="exp.logo"
+                        [alt]="exp.company + ' logo'"
+                        class="company-logo"
+                      >
+
+                    </div>
+
+
+                    <div class="experience-title-wrapper">
+
+                      <h3>
+                        {{ exp.title }}
+                      </h3>
+
+                      <div class="company-name">
+                        {{ exp.company }}
+                      </div>
+
+                    </div>
+
+                  </div>
+
+                </div>
+
+
+                <div class="experience-header-right">
+
+                  <div class="experience-meta">
+
+                    <span class="meta-item">
+
+                      <i class="fas fa-calendar-alt"></i>
+
+                      {{ exp.duration }}
+
+                    </span>
+
+
+                    <span class="meta-item">
+
+                      <i class="fas fa-map-marker-alt"></i>
+
+                      {{ exp.location }}
+
+                    </span>
+
+                  </div>
+
+
+                  <span
+                    class="expand-icon"
+                    [class.rotated]="exp.expanded"
+                    aria-hidden="true"
+                  >
+                    <i class="fas fa-chevron-down"></i>
+                  </span>
+
+                </div>
+
+              </div>
+
+            </button>
+
+
+            <!-- ===========================================
+                 EXPANDABLE EXPERIENCE BODY
+            ============================================ -->
+
+            <div
+              class="experience-expandable-content"
+              [class.open]="exp.expanded"
+            >
+
+              <div class="experience-expandable-inner">
+
+                <div class="experience-divider"></div>
+
+
+                <ul class="experience-highlights">
+
+                  <li
+                    *ngFor="let highlight of exp.highlights"
+                  >
+                    {{ highlight | translate }}
+                  </li>
+
+                </ul>
+
+
+                <div
+                  class="technology-list"
+                  *ngIf="exp.technologies?.length"
+                >
+
+                  <span
+                    class="technology-tag"
+                    *ngFor="let tech of exp.technologies"
+                  >
+                    {{ tech }}
+                  </span>
+
+                </div>
+
+              </div>
+
+            </div>
+
+          </div>
+
+        </article>
+
+      </div>
+
+    </section>
+
+
+    <!-- ===================================================
+         EDUCATION
+    ==================================================== -->
+
+<!-- ===================================================
+     EDUCATION
+==================================================== -->
+
+<section
+  *ngIf="selectedFilter === 'education'"
+  class="content-section"
+>
+
+  <div class="content-heading">
+
+    <div>
+
+      <span class="content-kicker">
+        {{ 'ACADEMIC_BACKGROUND' | translate }}
+      </span>
+
+      <h2>
+        {{ 'MY_EDUCATION' | translate }}
+      </h2>
+
+    </div>
+
+    <span class="content-count">
+      {{ education.length }}
+    </span>
+
   </div>
 
-  <div class="content">
 
-    <!-- Work Experience Section -->
-    <div *ngIf="selectedFilter === 'work'">
-      <h1>{{ 'MY_EXPERIENCE' | translate }}</h1>
-      <div class="experience-list">
-        <div class="experience-item" *ngFor="let exp of experiences">
-          <div class="row">
-            <div class="col-9">
-              <h3>{{ exp.title }}</h3>
-              <h5>{{ exp.company }}</h5>
-              <p>{{ exp.duration }}</p>
-              <p>{{ exp.description | translate }}</p>
+  <div class="timeline">
+
+    <article
+      class="timeline-item"
+      *ngFor="let edu of education; let i = index"
+    >
+
+      <div class="timeline-marker">
+        <span></span>
+      </div>
+
+
+      <div
+        class="experience-card expandable-card"
+        [class.expanded]="edu.expanded"
+      >
+
+        <!-- CLICKABLE EDUCATION HEADER -->
+        <button
+          type="button"
+          class="experience-card-toggle"
+          (click)="toggleEducation(i)"
+          [attr.aria-expanded]="edu.expanded"
+        >
+
+          <div class="experience-card-header">
+
+            <div class="experience-main-info">
+
+              <div class="experience-company-row">
+
+                <div
+                  class="company-logo-wrapper"
+                  *ngIf="edu.logo"
+                >
+
+                  <img
+                    [src]="edu.logo"
+                    [alt]="edu.company + ' logo'"
+                    class="company-logo"
+                  >
+
+                </div>
+
+
+                <div class="experience-title-wrapper">
+
+                  <h3>
+                    {{ edu.title }}
+                  </h3>
+
+                  <div class="company-name">
+                    {{ edu.company }}
+                  </div>
+
+                </div>
+
+              </div>
+
             </div>
-            <div class="col-3">
-              <img class="company-logo" [src]="exp.logo" alt="{{ exp.company }} logo">
-              <p style="text-align: center;">{{ exp.location }}</p>
+
+
+            <div class="experience-header-right">
+
+              <div class="experience-meta">
+
+                <span class="meta-item">
+                  <i class="fas fa-calendar-alt"></i>
+
+                  {{ edu.duration }}
+                </span>
+
+
+                <span class="meta-item">
+                  <i class="fas fa-map-marker-alt"></i>
+
+                  {{ edu.location }}
+                </span>
+
+              </div>
+
+
+              <span
+                class="expand-icon"
+                [class.rotated]="edu.expanded"
+                aria-hidden="true"
+              >
+                <i class="fas fa-chevron-down"></i>
+              </span>
+
             </div>
-          </div>
-        </div>
-      </div>
-    </div>
 
-    <!-- Education Section -->
-    <div *ngIf="selectedFilter === 'education'">
-      <h1>{{ 'MY_EDUCATION' | translate }}</h1>
-      <div class="education-list">
-        <div class="education-item" *ngFor="let edu of education">
-          <div class="row">
-            <div class="col-9">
-              <h3>{{ edu.title }}</h3>
-              <h5>{{ edu.company }}</h5>
-              <p>{{ edu.duration }}</p>
-              <p>{{ edu.description | translate }}</p>
+          </div>
+
+        </button>
+
+
+        <!-- EXPANDABLE EDUCATION BODY -->
+        <div
+          class="experience-expandable-content"
+          [class.open]="edu.expanded"
+        >
+
+          <div class="experience-expandable-inner">
+
+            <div class="experience-divider"></div>
+
+
+            <p class="experience-description">
+              {{ edu.description | translate }}
+            </p>
+
+
+            <div
+              class="technology-list"
+              *ngIf="edu.technologies?.length"
+            >
+
+              <span
+                class="technology-tag"
+                *ngFor="let tech of edu.technologies"
+              >
+                {{ tech }}
+              </span>
+
             </div>
-            <div class="col-3">
-              <img class="company-logo" [src]="edu.logo" alt="{{ edu.company }} logo">
-              <p style="text-align: center;">{{ edu.location }}</p>
-            </div>
+
           </div>
-        </div>
-      </div>
-    </div>
 
-    <!-- Skills Section -->
-    <div *ngIf="selectedFilter === 'skills'">
-      <h1>{{ 'MY_SKILLS' | translate }}</h1>
-
-      <!-- Frontend Skills -->
-      <h4>{{ 'FRONTEND_TECHNOLOGIES' | translate }}</h4>
-      <div class="skills-list">
-        <div class="skill-card" *ngFor="let skill of frontendSkills">
-          <img [src]="skill.logo" alt="{{ skill.name }} logo">
-          <p>{{ skill.name }}</p>
         </div>
+
       </div>
 
-      <!-- Backend Skills -->
-      <h4>{{ 'BACKEND_TECHNOLOGIES' | translate }}</h4>
-      <div class="skills-list">
-        <div class="skill-card" *ngFor="let skill of backendSkills">
-          <img [src]="skill.logo" alt="{{ skill.name }} logo">
-          <p>{{ skill.name }}</p>
-        </div>
-      </div>
-
-      <!-- DevOps & Version Control Skills -->
-      <h4>{{ 'DEVOPS_VERSION_CONTROL' | translate }}</h4>
-      <div class="skills-list">
-        <div class="skill-card" *ngFor="let skill of devOpsAndVersionControlSkills">
-          <img [src]="skill.logo" alt="{{ skill.name }} logo">
-          <p>{{ skill.name }}</p>
-        </div>
-      </div>
-
-      <!-- DevOps & Version Control Skills -->
-      <h4>{{ 'AI_DATA' | translate }}</h4>
-      <div class="skills-list">
-        <div class="skill-card" *ngFor="let skill of datascienceai">
-          <img [src]="skill.logo" alt="{{ skill.name }} logo">
-          <p>{{ skill.name }}</p>
-        </div>
-      </div>
-    </div>
-
-    <!-- About Me Section -->
-    <div *ngIf="selectedFilter === 'about'">
-      <h1>{{ 'ABOUT_ME' | translate }}</h1>
-      <div class="about-me">
-        <div class="row">
-          <div class="col-3">
-            <img [src]="aboutMe.photo" alt="{{ aboutMe.name }}" class="about-me-photo">
-          </div>
-          <div class="col-9">
-            <h2>{{ aboutMe.name }}</h2>
-            <p [innerHTML]="'ABOUT_ME_DESCRIPTION' | translate"></p>
-          </div>
-        </div>
-      </div>
-    </div>
+    </article>
 
   </div>
-</div>
+
+</section>
+
+
+    <!-- ===================================================
+         SKILLS
+    ==================================================== -->
+
+    <section
+      *ngIf="selectedFilter === 'skills'"
+      class="content-section"
+    >
+
+      <div class="content-heading">
+
+        <div>
+
+          <span class="content-kicker">
+            {{ 'TECHNICAL_PROFILE' | translate }}
+          </span>
+
+          <h2>
+            {{ 'MY_SKILLS' | translate }}
+          </h2>
+
+        </div>
+
+        <span class="content-count">
+          {{
+            datascienceai.length +
+            backendSkills.length +
+            frontendSkills.length +
+            devOpsAndVersionControlSkills.length
+          }}
+        </span>
+
+      </div>
+
+
+      <div class="skill-groups">
+
+
+        <!-- ===============================================
+             AI & DATA
+        ================================================ -->
+
+        <article class="skill-group">
+
+          <div class="skill-group-heading">
+
+            <div class="skill-heading-icon">
+              <i class="fas fa-brain"></i>
+            </div>
+
+
+            <div>
+
+              <span>
+                {{ 'SKILL_CATEGORY_AI_DATA' | translate }}
+              </span>
+
+              <h3>
+                {{ 'AI_DATA' | translate }}
+              </h3>
+
+            </div>
+
+          </div>
+
+
+          <div class="skills-grid">
+
+            <div
+              class="skill-card"
+              *ngFor="let skill of datascienceai"
+            >
+
+              <div class="skill-logo">
+
+                <img
+                  [src]="skill.logo"
+                  [alt]="skill.name + ' logo'"
+                >
+
+              </div>
+
+              <span>
+                {{ skill.name }}
+              </span>
+
+            </div>
+
+          </div>
+
+        </article>
+
+
+        <!-- ===============================================
+             BACKEND
+        ================================================ -->
+
+        <article class="skill-group">
+
+          <div class="skill-group-heading">
+
+            <div class="skill-heading-icon">
+              <i class="fas fa-server"></i>
+            </div>
+
+
+            <div>
+
+              <span>
+                {{ 'SKILL_CATEGORY_ENGINEERING' | translate }}
+              </span>
+
+              <h3>
+                {{ 'BACKEND_TECHNOLOGIES' | translate }}
+              </h3>
+
+            </div>
+
+          </div>
+
+
+          <div class="skills-grid">
+
+            <div
+              class="skill-card"
+              *ngFor="let skill of backendSkills"
+            >
+
+              <div class="skill-logo">
+
+                <img
+                  [src]="skill.logo"
+                  [alt]="skill.name + ' logo'"
+                >
+
+              </div>
+
+              <span>
+                {{ skill.name }}
+              </span>
+
+            </div>
+
+          </div>
+
+        </article>
+
+
+        <!-- ===============================================
+             FRONTEND
+        ================================================ -->
+
+        <article class="skill-group">
+
+          <div class="skill-group-heading">
+
+            <div class="skill-heading-icon">
+              <i class="fas fa-laptop-code"></i>
+            </div>
+
+
+            <div>
+
+              <span>
+                {{ 'SKILL_CATEGORY_INTERFACES' | translate }}
+              </span>
+
+              <h3>
+                {{ 'FRONTEND_TECHNOLOGIES' | translate }}
+              </h3>
+
+            </div>
+
+          </div>
+
+
+          <div class="skills-grid">
+
+            <div
+              class="skill-card"
+              *ngFor="let skill of frontendSkills"
+            >
+
+              <div class="skill-logo">
+
+                <img
+                  [src]="skill.logo"
+                  [alt]="skill.name + ' logo'"
+                >
+
+              </div>
+
+              <span>
+                {{ skill.name }}
+              </span>
+
+            </div>
+
+          </div>
+
+        </article>
+
+
+        <!-- ===============================================
+             DEVOPS
+        ================================================ -->
+
+        <article class="skill-group">
+
+          <div class="skill-group-heading">
+
+            <div class="skill-heading-icon">
+              <i class="fas fa-cogs"></i>
+            </div>
+
+
+            <div>
+
+              <span>
+                {{ 'SKILL_CATEGORY_INFRASTRUCTURE' | translate }}
+              </span>
+
+              <h3>
+                {{ 'DEVOPS_VERSION_CONTROL' | translate }}
+              </h3>
+
+            </div>
+
+          </div>
+
+
+          <div class="skills-grid">
+
+            <div
+              class="skill-card"
+              *ngFor="let skill of devOpsAndVersionControlSkills"
+            >
+
+              <div class="skill-logo">
+
+                <img
+                  [src]="skill.logo"
+                  [alt]="skill.name + ' logo'"
+                >
+
+              </div>
+
+              <span>
+                {{ skill.name }}
+              </span>
+
+            </div>
+
+          </div>
+
+        </article>
+
+      </div>
+
+    </section>
+
+
+    <!-- ===================================================
+         ABOUT
+    ==================================================== -->
+
+    <section
+      *ngIf="selectedFilter === 'about'"
+      class="content-section"
+    >
+
+      <div class="content-heading">
+
+        <div>
+
+          <span class="content-kicker">
+            {{ 'PROFILE' | translate }}
+          </span>
+
+          <h2>
+            {{ 'ABOUT_ME' | translate }}
+          </h2>
+
+        </div>
+
+      </div>
+
+
+      <article class="about-card">
+
+        <div class="about-image-column">
+
+          <div class="about-photo-wrapper">
+
+            <img
+              [src]="aboutMe.photo"
+              [alt]="aboutMe.name"
+              class="about-me-photo"
+            >
+
+          </div>
+
+        </div>
+
+
+        <div class="about-content">
+
+          <span class="about-intro">
+            {{ 'ABOUT_FOCUS_LABEL' | translate }}
+          </span>
+
+          <h3>
+            {{ aboutMe.name }}
+          </h3>
+
+
+          <div
+            class="about-description"
+            [innerHTML]="'ABOUT_ME_DESCRIPTION' | translate"
+          ></div>
+
+        </div>
+
+      </article>
+
+    </section>
+
+  </div>
+
+</section>

@@ -1,68 +1,231 @@
 
+/* =========================================================
+   Global Theme
+========================================================= */
+
+html {
+  min-height: 100%;
+  scroll-behavior: smooth;
+}
+
 body {
-  --light-color: rgba(255, 204, 128, 0.6); /* Default light color for day mode */
-  --light-shadow: rgba(255, 204, 128, 0.8); /* Default light shadow for day mode */
+  /* Brand */
+  --accent-color: #ff6347;
+  --accent-hover: #e9543c;
+  --accent-soft: rgba(255, 99, 71, 0.10);
+
+  /* Animated lights - default */
+  --light-color: rgba(255, 204, 128, 0.60);
+  --light-shadow: rgba(255, 204, 128, 0.80);
+
+  /* Surface */
+  --page-background: #f7f8fa;
+  --surface-color: rgba(255, 255, 255, 0.72);
+  --surface-secondary: rgba(255, 255, 255, 0.45);
+
+  /* Text */
+  --text-primary: #171717;
+  --text-secondary: #5f6368;
+  --text-muted: #7a7f87;
+
+  /* Borders */
+  --border-color: rgba(0, 0, 0, 0.10);
+  --border-color-soft: rgba(0, 0, 0, 0.06);
+
+  /* Shadows */
+  --card-shadow: 0 20px 55px rgba(0, 0, 0, 0.08);
+
+  /* Footer */
   --footer-text-color: inherit;
   --footer-link-color: inherit;
   --footer-link-hover-color: #0077b5;
-    font-family: 'Roboto', sans-serif;
-    transition: background-color 0.5s, color 0.5s, background-image 0.5s;
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-  }
-  
-  body.light-mode {
-    background-color: #ffffff;
-    color: #000000;
-    background-image: url('assets/images/white-mode.jpg'); /* Path to your light mode background image */
-    --footer-text-color: #000000;
-  --footer-link-color: #000000;
-  --footer-link-hover-color: #0077b5;
-  }
-  
-  body.dark-mode {
-    --light-color: rgba(211, 211, 211, 0.6); /* Light color for night mode */
-  --light-shadow: rgba(211, 211, 211, 0.8); /* Light shadow for night mode */
-    background-color: #121212;
-    color: #ffffff;
-    background-image: url('assets/images/dark-mode.jpg'); /* Path to your dark mode background image */
-    --footer-text-color: #ffffff;
-  --footer-link-color: #ffffff;
-  --footer-link-hover-color: #0077b5;
-  }
 
-  .toast-center-center {
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    position: fixed;
-    margin: 0;
-  }
+  margin: 0;
 
-  /* Change background color for success toasts */
+  min-height: 100vh;
+
+  font-family: 'Roboto', sans-serif;
+
+  background-color: var(--page-background);
+  color: var(--text-primary);
+
+  transition:
+    background-color 0.4s ease,
+    color 0.4s ease;
+}
+
+
+/* =========================================================
+   Light Mode
+========================================================= */
+
+body.light-mode {
+  --page-background: #f7f8fa;
+
+  --surface-color: rgba(255, 255, 255, 0.78);
+  --surface-secondary: rgba(255, 255, 255, 0.48);
+
+  --text-primary: #171717;
+  --text-secondary: #5f6368;
+  --text-muted: #7a7f87;
+
+  --border-color: rgba(0, 0, 0, 0.10);
+  --border-color-soft: rgba(0, 0, 0, 0.06);
+
+  --card-shadow:
+    0 20px 55px rgba(0, 0, 0, 0.08);
+
+  /* Warm animated lights */
+  --light-color: rgba(255, 190, 110, 0.55);
+  --light-shadow: rgba(255, 170, 80, 0.65);
+
+  --footer-text-color: #171717;
+  --footer-link-color: #171717;
+  --footer-link-hover-color: #0077b5;
+
+  background-color: var(--page-background);
+
+  color: var(--text-primary);
+}
+
+
+/* =========================================================
+   Dark Mode
+========================================================= */
+
+body.dark-mode {
+  --page-background: #101114;
+
+  --surface-color: rgba(27, 29, 34, 0.82);
+  --surface-secondary: rgba(20, 22, 26, 0.65);
+
+  --text-primary: #f4f4f5;
+  --text-secondary: #b5b7bd;
+  --text-muted: #8e9198;
+
+  --border-color: rgba(255, 255, 255, 0.10);
+  --border-color-soft: rgba(255, 255, 255, 0.06);
+
+  --card-shadow:
+    0 20px 60px rgba(0, 0, 0, 0.30);
+
+  /* Cool white animated lights */
+  --light-color: rgba(210, 215, 225, 0.48);
+  --light-shadow: rgba(190, 200, 220, 0.55);
+
+  --footer-text-color: #f4f4f5;
+  --footer-link-color: #f4f4f5;
+  --footer-link-hover-color: #4da3d4;
+
+  background-color: var(--page-background);
+
+  color: var(--text-primary);
+}
+
+
+/* =========================================================
+   Global Links
+========================================================= */
+
+a {
+  color: inherit;
+}
+
+
+/* =========================================================
+   Text Selection
+========================================================= */
+
+::selection {
+  background-color: rgba(255, 99, 71, 0.22);
+  color: inherit;
+}
+
+
+/* =========================================================
+   Scrollbar
+========================================================= */
+
+::-webkit-scrollbar {
+  width: 9px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(128, 128, 128, 0.35);
+  border-radius: 20px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(128, 128, 128, 0.55);
+}
+
+
+/* =========================================================
+   Toast Position
+========================================================= */
+
+.toast-center-center {
+  top: 50%;
+  left: 50%;
+
+  position: fixed;
+
+  transform: translate(-50%, -50%);
+
+  margin: 0;
+}
+
+
+/* =========================================================
+   Toast Colors
+========================================================= */
+
 .toast-success {
-  background-color: #28a745 !important; /* Green background */
+  background-color: #28a745 !important;
 }
 
-/* Change background color for error toasts */
 .toast-error {
-  background-color: #dc3545 !important; /* Red background */
+  background-color: #dc3545 !important;
 }
 
-/* Change background color for info toasts */
 .toast-info {
-  background-color: #17a2b8 !important; /* Blue background */
+  background-color: #17a2b8 !important;
 }
 
-/* Change background color for warning toasts */
 .toast-warning {
-  background-color: #ffc107 !important; /* Yellow background */
+  background-color: #ffc107 !important;
 }
 
-/* Optional: Change text color if needed */
-.toast-success, .toast-error, .toast-info, .toast-warning {
-  color: #ffffff !important; /* White text color */
+
+/* =========================================================
+   Toast Text
+========================================================= */
+
+.toast-success,
+.toast-error,
+.toast-info,
+.toast-warning {
+  color: #ffffff !important;
 }
 
-  
+
+/* =========================================================
+   Accessibility
+========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+  html {
+    scroll-behavior: auto;
+  }
+
+  body {
+    transition: none;
+  }
+
+}
+

@@ -1,131 +1,368 @@
-import { Component, AfterViewInit } from '@angular/core';
-import $ from 'jquery';
-import 'slick-carousel';
+import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-projects',
   templateUrl: './projects.component.html',
   styleUrls: ['./projects.component.css']
 })
-export class ProjectsComponent implements AfterViewInit {
+export class ProjectsComponent {
 
-  projects = [
+  selectedCategory: string = 'all';
+
+
+  /* =========================================================
+     Project Categories
+  ========================================================= */
+
+  categories = [
     {
-      id: 1,
-      title: 'Chemnitz Interactive Map',
-      description: 'CHEMNITZ_DESCRIPTION', // Use the translation key
-      technologies: [
-        { name: 'MongoDB', imgUrl: 'assets/images/logos/mongodb.png' },
-        { name: 'Express', imgUrl: 'assets/images/logos/express.png' },
-        { name: 'Angular', imgUrl: 'assets/images/logos/angular.png' },
-        { name: 'Node', imgUrl: 'assets/images/logos/node.png' },
-        { name: 'Typescript', imgUrl: 'assets/images/logos/typescript.png' },
-        { name: 'HTML', imgUrl: 'assets/images/logos/html.png' },
-        { name: 'CSS', imgUrl: 'assets/images/logos/css.png' },
-      ],
-      image: 'assets/images/project-images/chemnitz.jpg',
-      liveLink: 'https://chemnitz-interactive-map.netlify.app/',
-      githubLink: 'https://github.com/imamulahsan/chemnitz-interactive-map'
+      key: 'all',
+      label: 'All Projects'
     },
     {
-      id: 2,
-      title: 'Berliner Tehari',
-      description: 'BERLINER_DESCRIPTION', // Use the translation key
-      technologies: [
-        { name: 'MongoDB', imgUrl: 'assets/images/logos/mongodb.png' },
-        { name: 'Express', imgUrl: 'assets/images/logos/express.png' },
-        { name: 'React', imgUrl: 'assets/images/logos/react.png' },
-        { name: 'Node', imgUrl: 'assets/images/logos/node.png' },
-        { name: 'Javascript', imgUrl: 'assets/images/logos/javascript.png' },
-        { name: 'HTML', imgUrl: 'assets/images/logos/html.png' },
-        { name: 'CSS', imgUrl: 'assets/images/logos/css.png' },
-      ],
-      image: 'assets/images/project-images/berliner.jpg',
-      liveLink: 'https://react-berliner-tehari-restaurant.netlify.app/',
-      githubLink: 'https://github.com/imamulahsan/react-berliner-tehari-restaurant'
+      key: 'ai',
+      label: 'AI & Computer Vision'
     },
     {
-      id: 3,
-      title: 'AI Language Tool using OpenAI API',
-      description: 'AI_TOOL_DESCRIPTION', // Use the translation key
-      technologies: [
-        { name: 'MongoDB', imgUrl: 'assets/images/logos/mongodb.png' },
-        { name: 'Express', imgUrl: 'assets/images/logos/express.png' },
-        { name: 'React', imgUrl: 'assets/images/logos/react.png' },
-        { name: 'Node', imgUrl: 'assets/images/logos/node.png' },
-        { name: 'Javascript', imgUrl: 'assets/images/logos/javascript.png' },
-        { name: 'HTML', imgUrl: 'assets/images/logos/html.png' },
-        { name: 'CSS', imgUrl: 'assets/images/logos/css.png' },
-      ],
-      image: 'assets/images/project-images/ai_tool.jpg',
-      liveLink: 'https://www.youtube.com/watch?v=U0N5khyGdQ4&t=52s',
-      githubLink: 'https://github.com/imamulahsan/AI-language-tool-openai'
+      key: 'fullstack',
+      label: 'Full Stack'
     },
     {
-      id: 4,
-      title: 'Angular App of a Graffiti Art Community',
-      description: 'GRAFFITI_DESCRIPTION', // Use the translation key
-      technologies: [
-        { name: 'HTML', imgUrl: 'assets/images/logos/html.png' },
-        { name: 'CSS', imgUrl: 'assets/images/logos/css.png' },
-        { name: 'Angular', imgUrl: 'assets/images/logos/angular.png' },
-        { name: 'Bootstrap', imgUrl: 'assets/images/logos/bootstrap.png' },
-        { name: 'Typescript', imgUrl: 'assets/images/logos/typescript.png' },
-        { name: 'HTML', imgUrl: 'assets/images/logos/html.png' },
-        { name: 'CSS', imgUrl: 'assets/images/logos/css.png' },
-      ],
-      image: 'assets/images/project-images/graffiti.jpg',
-      liveLink: 'https://photography-app-angular.netlify.app',
-      githubLink: 'https://github.com/imamulahsan/photography-app-angular'
-    },
-    {
-      id: 5,
-      title: 'Facial Recognition Based Attendance System',
-      description: 'FACIAL_RECOGNITION_DESCRIPTION', // Use the translation key
-      technologies: [
-        { name: 'Python', imgUrl: 'assets/images/logos/python.png' },
-        { name: 'OpenCV', imgUrl: 'assets/images/logos/opencv.png' },
-        { name: 'Flask', imgUrl: 'assets/images/logos/flask.png' },
-        { name: 'HTML', imgUrl: 'assets/images/logos/html.png' },
-      ],
-      image: 'assets/images/project-images/facial.gif',
-      liveLink: 'https://github.com/imamulahsan/facial_recognition_based_attendance_system',
-      githubLink: 'https://github.com/imamulahsan/facial_recognition_based_attendance_system'
-    },
-    {
-      id: 6,
-      title: 'People Detection using Python, Flask and OpenCV',
-      description: 'PEOPLE_DETECTION_DESCRIPTION', // Use the translation key
-      technologies: [
-        { name: 'Python', imgUrl: 'assets/images/logos/python.png' },
-        { name: 'OpenCV', imgUrl: 'assets/images/logos/opencv.png' },
-        { name: 'Flask', imgUrl: 'assets/images/logos/flask.png' },
-        { name: 'HTML', imgUrl: 'assets/images/logos/html.png' },
-      ],
-      image: 'assets/images/project-images/person.gif',
-      liveLink: 'https://github.com/imamulahsan/people_detection',
-      githubLink: 'https://github.com/imamulahsan/people_detection'
+      key: 'frontend',
+      label: 'Frontend'
     }
   ];
 
 
-  slideConfig = {
-    slidesToShow: 1,
-    slidesToScroll: 1,
-    dots: true,
-    infinite: true,
-    autoplay: false,
-    autoplaySpeed: 2000,
-    arrows: true
-  };
+  /* =========================================================
+     Projects
+  ========================================================= */
 
-  ngAfterViewInit() {
-    // Initialize slick carousel after view initialization
-    $('.carousel').slick(this.slideConfig);
+  projects = [
+
+    /* ---------------------------------------------------------
+       AI Language Tool
+    --------------------------------------------------------- */
+
+    {
+      id: 1,
+
+      title: 'AI Language Tool using OpenAI API',
+
+      description: 'AI_TOOL_DESCRIPTION',
+
+      category: 'ai',
+
+      categoryLabel: 'Generative AI',
+
+      featured: true,
+
+      image: 'assets/images/project-images/ai_tool.jpg',
+
+      technologies: [
+        {
+          name: 'React',
+          imgUrl: 'assets/images/logos/react.png'
+        },
+        {
+          name: 'Node.js',
+          imgUrl: 'assets/images/logos/node.png'
+        },
+        {
+          name: 'Express.js',
+          imgUrl: 'assets/images/logos/express.png'
+        },
+        {
+          name: 'MongoDB',
+          imgUrl: 'assets/images/logos/mongodb.png'
+        },
+        {
+          name: 'JavaScript',
+          imgUrl: 'assets/images/logos/javascript.png'
+        }
+      ],
+
+      liveLink:
+        'https://www.youtube.com/watch?v=U0N5khyGdQ4&t=52s',
+
+      githubLink:
+        'https://github.com/imamulahsan/AI-language-tool-openai'
+    },
+
+
+    /* ---------------------------------------------------------
+       Facial Recognition
+    --------------------------------------------------------- */
+
+    {
+      id: 2,
+
+      title: 'Facial Recognition Based Attendance System',
+
+      description: 'FACIAL_RECOGNITION_DESCRIPTION',
+
+      category: 'ai',
+
+      categoryLabel: 'Computer Vision',
+
+      featured: true,
+
+      image:
+        'assets/images/project-images/facial.gif',
+
+      technologies: [
+        {
+          name: 'Python',
+          imgUrl: 'assets/images/logos/python.png'
+        },
+        {
+          name: 'OpenCV',
+          imgUrl: 'assets/images/logos/opencv.png'
+        },
+        {
+          name: 'Flask',
+          imgUrl: 'assets/images/logos/flask.png'
+        },
+        {
+          name: 'HTML5',
+          imgUrl: 'assets/images/logos/html.png'
+        }
+      ],
+
+      liveLink:
+        'https://github.com/imamulahsan/facial_recognition_based_attendance_system',
+
+      githubLink:
+        'https://github.com/imamulahsan/facial_recognition_based_attendance_system'
+    },
+
+
+    /* ---------------------------------------------------------
+       People Detection
+    --------------------------------------------------------- */
+
+    {
+      id: 3,
+
+      title: 'Real-Time People Detection',
+
+      description: 'PEOPLE_DETECTION_DESCRIPTION',
+
+      category: 'ai',
+
+      categoryLabel: 'Computer Vision',
+
+      featured: false,
+
+      image:
+        'assets/images/project-images/person.gif',
+
+      technologies: [
+        {
+          name: 'Python',
+          imgUrl: 'assets/images/logos/python.png'
+        },
+        {
+          name: 'OpenCV',
+          imgUrl: 'assets/images/logos/opencv.png'
+        },
+        {
+          name: 'Flask',
+          imgUrl: 'assets/images/logos/flask.png'
+        },
+        {
+          name: 'HTML5',
+          imgUrl: 'assets/images/logos/html.png'
+        }
+      ],
+
+      liveLink:
+        'https://github.com/imamulahsan/people_detection',
+
+      githubLink:
+        'https://github.com/imamulahsan/people_detection'
+    },
+
+
+    /* ---------------------------------------------------------
+       Chemnitz Interactive Map
+    --------------------------------------------------------- */
+
+    {
+      id: 4,
+
+      title: 'Chemnitz Interactive Map',
+
+      description: 'CHEMNITZ_DESCRIPTION',
+
+      category: 'fullstack',
+
+      categoryLabel: 'Full Stack',
+
+      featured: true,
+
+      image:
+        'assets/images/project-images/chemnitz.jpg',
+
+      technologies: [
+        {
+          name: 'Angular',
+          imgUrl: 'assets/images/logos/angular.png'
+        },
+        {
+          name: 'Node.js',
+          imgUrl: 'assets/images/logos/node.png'
+        },
+        {
+          name: 'Express.js',
+          imgUrl: 'assets/images/logos/express.png'
+        },
+        {
+          name: 'MongoDB',
+          imgUrl: 'assets/images/logos/mongodb.png'
+        },
+        {
+          name: 'TypeScript',
+          imgUrl: 'assets/images/logos/typescript.png'
+        }
+      ],
+
+      liveLink:
+        'https://chemnitz-interactive-map.netlify.app/',
+
+      githubLink:
+        'https://github.com/imamulahsan/chemnitz-interactive-map'
+    },
+
+
+    /* ---------------------------------------------------------
+       Berliner Tehari
+    --------------------------------------------------------- */
+
+    {
+      id: 5,
+
+      title: 'Berliner Tehari',
+
+      description: 'BERLINER_DESCRIPTION',
+
+      category: 'fullstack',
+
+      categoryLabel: 'Full Stack',
+
+      featured: false,
+
+      image:
+        'assets/images/project-images/berliner.jpg',
+
+      technologies: [
+        {
+          name: 'React',
+          imgUrl: 'assets/images/logos/react.png'
+        },
+        {
+          name: 'Node.js',
+          imgUrl: 'assets/images/logos/node.png'
+        },
+        {
+          name: 'Express.js',
+          imgUrl: 'assets/images/logos/express.png'
+        },
+        {
+          name: 'MongoDB',
+          imgUrl: 'assets/images/logos/mongodb.png'
+        },
+        {
+          name: 'JavaScript',
+          imgUrl: 'assets/images/logos/javascript.png'
+        }
+      ],
+
+      liveLink:
+        'https://react-berliner-tehari-restaurant.netlify.app/',
+
+      githubLink:
+        'https://github.com/imamulahsan/react-berliner-tehari-restaurant'
+    },
+
+
+    /* ---------------------------------------------------------
+       Graffiti Community
+    --------------------------------------------------------- */
+
+    {
+      id: 6,
+
+      title: 'Graffiti Art Community',
+
+      description: 'GRAFFITI_DESCRIPTION',
+
+      category: 'frontend',
+
+      categoryLabel: 'Frontend',
+
+      featured: false,
+
+      image:
+        'assets/images/project-images/graffiti.jpg',
+
+      technologies: [
+        {
+          name: 'Angular',
+          imgUrl: 'assets/images/logos/angular.png'
+        },
+        {
+          name: 'TypeScript',
+          imgUrl: 'assets/images/logos/typescript.png'
+        },
+        {
+          name: 'Bootstrap',
+          imgUrl: 'assets/images/logos/bootstrap.png'
+        },
+        {
+          name: 'HTML5',
+          imgUrl: 'assets/images/logos/html.png'
+        },
+        {
+          name: 'CSS3',
+          imgUrl: 'assets/images/logos/css.png'
+        }
+      ],
+
+      liveLink:
+        'https://photography-app-angular.netlify.app',
+
+      githubLink:
+        'https://github.com/imamulahsan/photography-app-angular'
+    }
+
+  ];
+
+
+  /* =========================================================
+     Filtered Projects
+  ========================================================= */
+
+  get filteredProjects() {
+
+    if (this.selectedCategory === 'all') {
+      return this.projects;
+    }
+
+    return this.projects.filter(
+      project =>
+        project.category === this.selectedCategory
+    );
+
   }
 
-  ngAfterViewChecked() {
-    // Recalculate the slick carousel layout if necessary
-    $('.carousel').slick('setPosition');
+
+  /* =========================================================
+     Filter Projects
+  ========================================================= */
+
+  filterProjects(category: string): void {
+    this.selectedCategory = category;
   }
+
 }

@@ -1,38 +1,307 @@
-<div class="contact-container">
-    <h1>{{ 'CONTACT_ME' | translate }}</h1>
-    <p>{{ 'CONTACT_MESSAGE' | translate }}</p>
-  
-    <form class="contact-form" (submit)="sendEmail($event)">
-      <div class="form-group">
-        <label for="name">{{ 'NAME' | translate }}</label>
-        <input type="text" id="name" name="from_name" placeholder="Your Name" required>
+<section class="contact-page">
+
+  <!-- =====================================================
+       HEADER
+  ====================================================== -->
+
+
+
+
+  <!-- =====================================================
+       CONTACT GRID
+  ====================================================== -->
+
+  <div class="contact-grid">
+
+
+    <!-- ===================================================
+         LEFT SIDE
+    ==================================================== -->
+
+    <aside class="contact-info">
+
+      <div>
+
+        <span class="contact-kicker">
+          Get in touch
+        </span>
+
+        <h2>
+          Let's build something meaningful.
+        </h2>
+
+        <p class="contact-intro">
+          I'm interested in AI development, software engineering,
+          research collaborations, and PhD opportunities.
+          Feel free to reach out if you'd like to discuss a project,
+          research topic, or professional opportunity.
+        </p>
+
       </div>
-  
-      <div class="form-group">
-        <label for="email">{{ 'EMAIL' | translate }}</label>
-        <input type="email" id="email" name="reply_to" placeholder="Your Email" required>
+
+
+      <!-- EMAIL -->
+
+      <div class="contact-method">
+
+        <div class="contact-method-icon">
+          <i class="fas fa-envelope"></i>
+        </div>
+
+        <div>
+          <span>Email</span>
+
+          <p>
+            Send me a message using the contact form.
+          </p>
+        </div>
+
       </div>
-  
-      <div class="form-group">
-        <label for="subject">{{ 'SUBJECT' | translate }}</label>
-        <input type="text" id="subject" name="subject" placeholder="Subject" required>
+
+
+      <!-- LOCATION -->
+
+      <div class="contact-method">
+
+        <div class="contact-method-icon">
+          <i class="fas fa-map-marker-alt"></i>
+        </div>
+
+        <div>
+          <span>Location</span>
+
+          <p>
+            Germany
+          </p>
+        </div>
+
       </div>
-  
-      <div class="form-group">
-        <label for="message">{{ 'MESSAGE' | translate }}</label>
-        <textarea id="message" name="message" placeholder="Your Message" required></textarea>
+
+
+      <!-- SOCIAL -->
+
+      <div class="social-section">
+
+        <span class="social-label">
+          {{ 'CONNECT_WITH_ME' | translate }}
+        </span>
+
+
+        <div class="social-icons">
+
+          <a
+            href="https://github.com/imamulahsan"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="GitHub"
+            title="GitHub"
+          >
+            <i class="fab fa-github"></i>
+          </a>
+
+
+          <!-- Replace with your real LinkedIn URL -->
+          <a
+            href="https://linkedin.com/in/your-profile"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="LinkedIn"
+            title="LinkedIn"
+          >
+            <i class="fab fa-linkedin-in"></i>
+          </a>
+
+        </div>
+
       </div>
-  
-      <button type="submit" class="submit-btn">{{ 'SEND_MESSAGE' | translate }}</button>
-    </form>
-  
-    <div class="social-media">
-      <p>{{ 'CONNECT_WITH_ME' | translate }}</p>
-      <div class="social-icons">
-        <a href="https://github.com/your-profile" target="_blank"><i class="fab fa-github"></i></a>
-        <a href="https://linkedin.com/in/your-profile" target="_blank"><i class="fab fa-linkedin"></i></a>
-        <a href="https://twitter.com/your-profile" target="_blank"><i class="fab fa-twitter"></i></a>
+
+    </aside>
+
+
+    <!-- ===================================================
+         CONTACT FORM
+    ==================================================== -->
+
+    <div class="contact-form-card">
+
+      <div class="form-heading">
+
+        <span>
+          Send a message
+        </span>
+
+        <h2>
+          Start a conversation
+        </h2>
+
       </div>
+
+
+      <form
+        class="contact-form"
+        (submit)="sendEmail($event)"
+      >
+
+
+        <!-- NAME + EMAIL -->
+
+        <div class="form-row">
+
+          <div class="form-group">
+
+            <label for="name">
+              {{ 'NAME' | translate }}
+            </label>
+
+
+            <div class="input-wrapper">
+
+              <i class="fas fa-user"></i>
+
+              <input
+                type="text"
+                id="name"
+                name="from_name"
+                placeholder="Your name"
+                autocomplete="name"
+                required
+              >
+
+            </div>
+
+          </div>
+
+
+          <div class="form-group">
+
+            <label for="email">
+              {{ 'EMAIL' | translate }}
+            </label>
+
+
+            <div class="input-wrapper">
+
+              <i class="fas fa-envelope"></i>
+
+              <input
+                type="email"
+                id="email"
+                name="reply_to"
+                placeholder="your@email.com"
+                autocomplete="email"
+                required
+              >
+
+            </div>
+
+          </div>
+
+        </div>
+
+
+        <!-- SUBJECT -->
+
+        <div class="form-group">
+
+          <label for="subject">
+            {{ 'SUBJECT' | translate }}
+          </label>
+
+
+          <div class="input-wrapper">
+
+            <i class="fas fa-pen"></i>
+
+            <input
+              type="text"
+              id="subject"
+              name="subject"
+              placeholder="What would you like to discuss?"
+              required
+            >
+
+          </div>
+
+        </div>
+
+
+        <!-- MESSAGE -->
+
+        <div class="form-group">
+
+          <label for="message">
+            {{ 'MESSAGE' | translate }}
+          </label>
+
+
+          <div class="input-wrapper textarea-wrapper">
+
+            <i class="fas fa-comment-alt"></i>
+
+            <textarea
+              id="message"
+              name="message"
+              placeholder="Write your message..."
+              rows="7"
+              required
+            ></textarea>
+
+          </div>
+
+        </div>
+
+
+        <!-- SUBMIT -->
+
+        <button
+          type="submit"
+          class="submit-btn"
+          [disabled]="isSending"
+        >
+
+          <ng-container *ngIf="!isSending">
+
+            <span>
+              {{ 'SEND_MESSAGE' | translate }}
+            </span>
+
+            <i class="fas fa-paper-plane"></i>
+
+          </ng-container>
+
+
+          <ng-container *ngIf="isSending">
+
+            <i class="fas fa-spinner fa-spin"></i>
+
+            <span>
+              Sending...
+            </span>
+
+          </ng-container>
+
+        </button>
+
+
+        <!-- SUCCESS MESSAGE -->
+
+        <div
+          class="form-success"
+          *ngIf="isSent"
+        >
+
+          <i class="fas fa-check-circle"></i>
+
+          <span>
+            Your message has been sent successfully.
+          </span>
+
+        </div>
+
+      </form>
+
     </div>
+
   </div>
-  
+
+</section>

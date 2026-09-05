@@ -1,31 +1,152 @@
-<nav>
-  <div class="nav-left">
-    <span class="brand-name">Imamul Ahsan</span>
+
+<nav class="site-header">
+
+  <div class="nav-container">
+
+    <!-- Brand -->
+    <div class="nav-left">
+      <a routerLink="/home" class="brand">
+        <span class="brand-dot"></span>
+
+        <span class="brand-name">
+          Imamul Ahsan
+        </span>
+      </a>
+    </div>
+
+
+    <!-- Desktop / Mobile Navigation -->
+    <div class="nav-right">
+
+      <ul class="nav-menu" [class.open]="isMenuOpen">
+
+        <li>
+          <a
+            routerLink="/home"
+            routerLinkActive="active"
+            [routerLinkActiveOptions]="{ exact: true }"
+            (click)="toggleMenu()"
+          >
+            {{ 'HOME' | translate }}
+          </a>
+        </li>
+
+        <li>
+          <a
+            routerLink="/experience"
+            routerLinkActive="active"
+            (click)="toggleMenu()"
+          >
+            {{ 'EXPERIENCE' | translate }}
+          </a>
+        </li>
+
+        <li>
+          <a
+            routerLink="/research"
+            routerLinkActive="active"
+            (click)="toggleMenu()"
+          >
+            {{ 'RESEARCH' | translate }}
+          </a>
+        </li>
+
+        <li>
+          <a
+            routerLink="/projects"
+            routerLinkActive="active"
+            (click)="toggleMenu()"
+          >
+            {{ 'PROJECTS' | translate }}
+          </a>
+        </li>
+
+        <li>
+          <a
+            routerLink="/contact"
+            routerLinkActive="active"
+            (click)="toggleMenu()"
+          >
+            {{ 'CONTACT' | translate }}
+          </a>
+        </li>
+
+        <li>
+          <a
+            routerLink="/hobby"
+            routerLinkActive="active"
+            (click)="toggleMenu()"
+          >
+            {{ 'HOBBIES' | translate }}
+          </a>
+        </li>
+
+
+        <!-- Utility Controls -->
+        <li class="nav-utilities">
+
+          <!-- Theme -->
+          <button
+            class="icon-button"
+            type="button"
+            (click)="toggleTheme()"
+            aria-label="Toggle theme"
+            title="Toggle theme"
+          >
+            <i [class]="isDarkMode ? 'fas fa-sun' : 'fas fa-moon'"></i>
+          </button>
+
+
+          <!-- Language -->
+          <div class="language-switcher">
+
+            <button
+              type="button"
+              class="language-button"
+              (click)="switchLanguage('en'); toggleMenu()"
+              aria-label="Switch to English"
+              title="English"
+            >
+              <img
+                src="assets/images/uk.png"
+                alt="English"
+              >
+            </button>
+
+            <button
+              type="button"
+              class="language-button"
+              (click)="switchLanguage('de'); toggleMenu()"
+              aria-label="Switch to German"
+              title="Deutsch"
+            >
+              <img
+                src="assets/images/german.png"
+                alt="German"
+              >
+            </button>
+
+          </div>
+
+        </li>
+
+      </ul>
+
+
+      <!-- Hamburger -->
+      <button
+        class="hamburger"
+        type="button"
+        (click)="toggleMenu()"
+        [attr.aria-expanded]="isMenuOpen"
+        aria-label="Toggle navigation menu"
+      >
+        <i [class]="isMenuOpen ? 'fas fa-times' : 'fas fa-bars'"></i>
+      </button>
+
+    </div>
+
   </div>
-  <div class="nav-right">
-    <ul [class.open]="isMenuOpen">
-      <li><a routerLink="/home" (click)="toggleMenu()">{{ 'HOME' | translate }}</a></li>
-      <li><a routerLink="/experience" (click)="toggleMenu()">{{ 'EXPERIENCE' | translate }}</a></li>
-      <li><a routerLink="/research" (click)="toggleMenu()">{{ 'RESEARCH' | translate }}</a></li>
-      <li><a routerLink="/projects" (click)="toggleMenu()">{{ 'PROJECTS' | translate }}</a></li>
-      <li><a routerLink="/contact" (click)="toggleMenu()">{{ 'CONTACT' | translate }}</a></li>
-      <li><a routerLink="/hobby" (click)="toggleMenu()">{{ 'HOBBIES' | translate }}</a></li>
-      <li>
-        <button (click)="toggleTheme()">
-          <i [class]="isDarkMode ? 'fas fa-sun' : 'fas fa-moon'"></i>
-        </button>
-      </li>
-      <li>
-        <button (click)="switchLanguage('en')" class="btn btn-link" (click)="toggleMenu()">
-          <img src="assets/images/uk.png" alt="English" width="30">
-        </button>
-        <button (click)="switchLanguage('de')" class="btn btn-link" (click)="toggleMenu()">
-          <img src="assets/images/german.png" alt="German" width="30">
-        </button>
-      </li>
-    </ul>
-    <button class="hamburger" (click)="toggleMenu()">
-      <i class="fas fa-bars"></i>
-    </button>
-  </div>
+
 </nav>
+

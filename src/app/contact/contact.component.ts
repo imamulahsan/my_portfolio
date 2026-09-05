@@ -1,33 +1,81 @@
 import { Component } from '@angular/core';
-import emailjs, { EmailJSResponseStatus } from 'emailjs-com';
+import emailjs, { EmailJSResponseStatus } from '@emailjs/browser';
 import { ToastrService } from 'ngx-toastr';
-import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-contact',
   templateUrl: './contact.component.html',
-  styleUrl: './contact.component.css'
+  styleUrls: ['./contact.component.css']
 })
 export class ContactComponent {
 
-  constructor(private toastr: ToastrService, private router: Router) {}
+  isSending = false;
+  isSent = false;
 
-  // Function to send the form data
-  public sendEmail(e: Event) {
-    e.preventDefault();  // Prevent form submission to the server
+  private readonly serviceId = 'service_zeejw9j';
+  private readonly templateId = 'template_8qz88xm';
+  private readonly publicKey = 'YIpZcIlRqdEX5UVvB';
 
-    emailjs.sendForm('service_zeejw9j', 'template_8qz88xm', e.target as HTMLFormElement, 'YIpZcIlRqdEX5UVvB')
-      .then((result: EmailJSResponseStatus) => {
-        console.log(result.text);
-        this.toastr.success('Message sent successfully!', 'Success');
-      // Redirect to the home page after a short delay
-      setTimeout(() => {
-        this.router.navigate(['/']);
-      }, 3000); // 3 seconds delay before redirect
-    }, (error) => {
-      console.error(error.text);
-      this.toastr.error('Failed to send the message, please try again later.', 'Error');
-    });
+  constructor(
+    private toastr: ToastrService
+  ) {}
+
+  public sendEmail(event: Event): void {
+    event.preventDefault();
+
+    if (this.isSending) {
+      return;
+    }
+
+    const form = event.target as HTMLFormElement;
+
+    if (!form.checkValidity()) {
+      form.reportValidity();
+      return;
+    }
+
+    this.isSending = true;
+
+    emailjs
+      .sendForm(
+        this.serviceId,
+        this.templateId,
+        form,
+        {
+          publicKey: this.publicKey
+        }
+      )
+      .then(
+        (response: EmailJSResponseStatus) => {
+          console.log(
+            'Email sent successfully:',
+            response.status,
+            response.text
+          );
+
+          this.toastr.success(
+            'Message sent successfully!',
+            'Success'
+          );
+
+          form.reset();
+
+          this.isSent = true;
+          this.isSending = false;
+        },
+        (error: EmailJSResponseStatus) => {
+          console.error(
+            'EmailJS error:',
+            error
+          );
+
+          this.toastr.error(
+            'Failed to send the message. Please try again.',
+            'Error'
+          );
+
+          this.isSending = false;
+        }
+      );
   }
-
 }

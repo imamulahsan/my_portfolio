@@ -1,65 +1,259 @@
 <section class="research-page">
 
-  <h1>{{ 'RESEARCH_TITLE' | translate }}</h1>
+  <!-- =====================================================
+       Header
+  ====================================================== -->
 
-  <!-- MASTER THESIS -->
-  <div class="research-card">
 
-    <h2>{{ 'MASTER_THESIS' | translate }}</h2>
 
-    <h3>
-      {{ thesis.title | translate }}
-    </h3>
 
-    <p class="meta">
-      {{ thesis.university }} ·
-      {{ thesis.submission | translate }}
-    </p>
+  <!-- =====================================================
+       Research Interests
+  ====================================================== -->
 
-    <ul>
-      <li *ngFor="let point of thesis.points">
-        {{ point | translate }}
-      </li>
-    </ul>
+  <section class="research-section">
 
-    <div class="methods-section">
-      <h4>{{ 'METHODS_TECH' | translate }}</h4>
+    <div class="section-heading">
 
-      <p>
-        {{ thesis.methods | translate }}
-      </p>
-    </div>
+      <div>
+        <span class="section-kicker">
+          {{ 'RESEARCH_FOCUS' | translate }}
+        </span>
 
-  </div>
-
-  <!-- PUBLICATIONS -->
-  <div class="research-card">
-
-    <h2>{{ 'PUBLICATIONS' | translate }}</h2>
-
-    <div
-      class="publication"
-      *ngFor="let publication of publications"
-    >
-
-      <h3>
-        {{ publication.title }}
-      </h3>
-
-      <p class="publication-authors">
-        {{ publication.authors }}
-      </p>
-
-      <p class="publication-year">
-        {{ publication.year }}
-      </p>
-
-      <p class="publication-venue">
-        <em>{{ publication.venue }}</em>
-      </p>
+        <h2>
+          {{ 'RESEARCH_INTERESTS' | translate }}
+        </h2>
+      </div>
 
     </div>
 
-  </div>
+
+    <div class="interest-grid">
+
+      <article
+        class="interest-card"
+        *ngFor="let interest of researchInterests"
+      >
+
+        <div class="interest-icon">
+          <i [class]="interest.icon"></i>
+        </div>
+
+        <span>
+          {{ interest.label | translate }}
+        </span>
+
+      </article>
+
+    </div>
+
+  </section>
+
+
+  <!-- =====================================================
+       Master Thesis
+  ====================================================== -->
+
+  <section class="research-section">
+
+    <div class="section-heading">
+
+      <div>
+        <span class="section-kicker">
+          {{ 'CURRENT_RESEARCH' | translate }}
+        </span>
+
+        <h2>
+          {{ 'MASTER_THESIS' | translate }}
+        </h2>
+      </div>
+
+    </div>
+
+
+    <article class="thesis-card">
+
+      <div class="thesis-content">
+
+        <div class="thesis-meta-row">
+
+          <span class="research-badge">
+            {{ 'MASTER_THESIS' | translate }}
+          </span>
+
+          <span class="thesis-status">
+            <i class="fas fa-calendar-alt"></i>
+            {{ thesis.submission | translate }}
+          </span>
+
+        </div>
+
+
+        <h3>
+          {{ thesis.title | translate }}
+        </h3>
+
+
+        <div class="university-row">
+
+          <i class="fas fa-university"></i>
+
+          <span>
+            {{ thesis.university }}
+          </span>
+
+        </div>
+
+
+        <p class="thesis-summary">
+          {{ thesis.summary | translate }}
+        </p>
+
+
+        <ul class="research-points">
+
+          <li *ngFor="let point of thesis.points">
+            {{ point | translate }}
+          </li>
+
+        </ul>
+
+
+        <div class="methods-section">
+
+          <span class="methods-label">
+            {{ 'METHODS_TECH' | translate }}
+          </span>
+
+          <div class="method-tags">
+
+            <span
+              class="method-tag"
+              *ngFor="let method of thesis.methods"
+            >
+              {{ method }}
+            </span>
+
+          </div>
+
+        </div>
+
+      </div>
+
+
+      <!-- Thesis Image -->
+      <div class="thesis-visual">
+
+        <div class="image-frame">
+
+          <img
+            src="assets/images/overview_setup_app.png"
+            [alt]="'THESIS_IMAGE_ALT' | translate"
+          >
+
+        </div>
+
+        <p class="image-caption">
+          {{ 'THESIS_IMAGE_CAPTION' | translate }}
+        </p>
+
+      </div>
+
+    </article>
+
+  </section>
+
+
+  <!-- =====================================================
+       Publications
+  ====================================================== -->
+
+  <section class="research-section">
+
+    <div class="section-heading">
+
+      <div>
+
+        <span class="section-kicker">
+          {{ 'ACADEMIC_OUTPUT' | translate }}
+        </span>
+
+        <h2>
+          {{ 'PUBLICATIONS' | translate }}
+        </h2>
+
+      </div>
+
+      <span class="publication-count">
+        {{ publications.length }}
+      </span>
+
+    </div>
+
+
+    <div class="publication-list">
+
+      <article
+        class="publication-card"
+        *ngFor="let publication of publications; let i = index"
+      >
+
+        <div class="publication-index">
+          {{ (i + 1).toString().padStart(2, '0') }}
+        </div>
+
+
+        <div class="publication-content">
+
+          <div class="publication-top">
+
+            <span class="publication-year">
+              {{ publication.year }}
+            </span>
+
+            <span
+              class="publication-type"
+              *ngIf="publication.type"
+            >
+              {{ publication.type }}
+            </span>
+
+          </div>
+
+
+          <h3>
+            {{ publication.title }}
+          </h3>
+
+
+          <p
+            class="publication-authors"
+            [innerHTML]="publication.authors"
+          ></p>
+
+
+          <p class="publication-venue">
+            {{ publication.venue }}
+          </p>
+
+
+          <a
+            *ngIf="publication.doi"
+            class="publication-link"
+            [href]="publication.doi"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <i class="fas fa-external-link-alt"></i>
+            DOI
+          </a>
+
+        </div>
+
+      </article>
+
+    </div>
+
+  </section>
 
 </section>
