@@ -92,6 +92,10 @@
   "FACIAL_RECOGNITION_DESCRIPTION": "Ein Python-basiertes Gesichtserkennungssystem mit Echtzeitvideo über eine Webcam. Die Weboberfläche wurde mit Flask entwickelt, während Gesichtserkennung und -verarbeitung mit OpenCV und einer Facial-Recognition-Bibliothek umgesetzt wurden.",
   "PEOPLE_DETECTION_DESCRIPTION": "Ein Python-basiertes System zur Echtzeit-Personenerkennung über Webcam-Video. Die Weboberfläche wurde mit Flask entwickelt, während die Computer-Vision-Funktionalität mit OpenCV umgesetzt wurde.",
 
+"MUC_XR_DESCRIPTION": "Ein immersiver Forschungsprototyp für die Mensch-Roboter-Interaktion, der einen kollaborativen Roboterarbeitsplatz in XR abbildet. Das System vermittelt Roboterzustände, aktuelle Aktionen und den Aufgabenfortschritt durch multimodales visuelles Feedback und unterstützt Nutzer dabei, das Verhalten des Roboters während kollaborativer Aufgaben besser zu verstehen.",
+
+"OBJECT_DETECTION_TF_DESCRIPTION": "Eine browserbasierte Computer-Vision-Anwendung für Echtzeit-Objekterkennung, Bildklassifikation und Handgestenerkennung. Die Anwendung kombiniert TensorFlow.js, COCO-SSD, MediaPipe und Angular, um interaktive Machine-Learning-Inferenz direkt im Browser auszuführen.",
+
   "DESCRIPTION": "Beschreibung",
   "TECHNOLOGIES_USED": "Verwendete Technologien",
   "LINKS": "Links",
@@ -112,6 +116,7 @@
   "RESEARCH_INTEREST_EMPIRICAL_SE": "Empirisches Software Engineering",
   "RESEARCH_INTEREST_HUMAN_FACTORS": "Human Factors im Software Engineering",
   "RESEARCH_INTEREST_DEVELOPER_TOOLS": "Intelligente Entwicklerwerkzeuge",
+  "RESEARCH_INTEREST_HCI": "Mensch-Computer-Interaktion",
 
   "MASTER_THESIS": "Masterarbeit",
   "THESIS_TITLE": "Entwicklung einer Weboberfläche für einen Mensch-Roboter-Arbeitsplatz",

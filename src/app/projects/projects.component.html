@@ -4,6 +4,30 @@
        PAGE HEADER
   ====================================================== -->
 
+  <header class="projects-header">
+
+    <div class="section-label">
+
+      <span class="section-label-line"></span>
+
+      Selected Work
+
+    </div>
+
+
+    <h1>
+      Building intelligent,
+      <span>interactive systems.</span>
+    </h1>
+
+
+    <p>
+      Selected projects spanning artificial intelligence,
+      computer vision, extended reality, human–robot interaction
+      and full-stack software engineering.
+    </p>
+
+  </header>
 
 
 
@@ -30,8 +54,9 @@
   </nav>
 
 
+
   <!-- =====================================================
-       PROJECT COUNT
+       PROJECT OVERVIEW
   ====================================================== -->
 
   <div class="projects-overview">
@@ -42,21 +67,31 @@
         Portfolio
       </span>
 
+
       <h2>
-        {{ selectedCategory === 'all'
-          ? 'All Projects'
-          : 'Selected Projects'
+
+        {{
+          selectedCategory === 'all'
+            ? 'All Projects'
+            : 'Selected Projects'
         }}
+
       </h2>
 
     </div>
 
 
-    <span class="project-count">
+    <span
+      class="project-count"
+      [attr.aria-label]="filteredProjects.length + ' projects'"
+    >
+
       {{ filteredProjects.length }}
+
     </span>
 
   </div>
+
 
 
   <!-- =====================================================
@@ -73,25 +108,34 @@
 
 
       <!-- =================================================
-           IMAGE
+           PROJECT IMAGE
       ================================================== -->
 
       <div class="project-image-wrapper">
+
 
         <img
           [src]="project.image"
           [alt]="project.title"
           class="project-image"
+          loading="lazy"
         >
 
 
         <div class="project-image-overlay"></div>
 
 
+
+        <!-- =============================================
+             IMAGE BADGES
+        ============================================== -->
+
         <div class="project-badges">
 
           <span class="project-category">
+
             {{ project.categoryLabel }}
+
           </span>
 
 
@@ -111,31 +155,69 @@
       </div>
 
 
+
       <!-- =================================================
-           CONTENT
+           PROJECT CONTENT
       ================================================== -->
 
       <div class="project-content">
 
 
-        <!-- PROJECT HEADER -->
+        <!-- =============================================
+             PROJECT HEADER
+        ============================================== -->
 
         <div class="project-title-row">
 
-          <div>
 
-            <span class="project-number">
-              PROJECT {{ project.id.toString().padStart(2, '0') }}
-            </span>
+          <div class="project-title-content">
+
+
+            <!-- PROJECT NUMBER + YEAR -->
+
+            <div class="project-meta-line">
+
+              <span class="project-number">
+
+                PROJECT
+                {{ project.id.toString().padStart(2, '0') }}
+
+              </span>
+
+
+              <span
+                class="project-year"
+                *ngIf="project.year"
+              >
+
+                {{ project.year }}
+
+              </span>
+
+            </div>
+
+
+
+            <!-- PROJECT TITLE -->
 
             <h3>
+
               {{ project.title }}
+
             </h3>
 
           </div>
 
 
+
+          <!-- ===========================================
+               QUICK LINKS
+          ============================================ -->
+
           <div class="project-header-links">
+
+
+            <!-- GITHUB -->
 
             <a
               *ngIf="project.githubLink"
@@ -145,9 +227,14 @@
               aria-label="View source code on GitHub"
               title="GitHub"
             >
+
               <i class="fab fa-github"></i>
+
             </a>
 
+
+
+            <!-- LIVE / DEMO -->
 
             <a
               *ngIf="project.liveLink"
@@ -157,7 +244,9 @@
               aria-label="Open project demo"
               title="Open project"
             >
+
               <i class="fas fa-external-link-alt"></i>
+
             </a>
 
           </div>
@@ -165,16 +254,27 @@
         </div>
 
 
-        <!-- DESCRIPTION -->
+
+        <!-- =============================================
+             DESCRIPTION
+        ============================================== -->
 
         <p class="project-description">
+
           {{ project.description | translate }}
+
         </p>
 
 
-        <!-- TECHNOLOGIES -->
 
-        <div class="technology-list">
+        <!-- =============================================
+             TECHNOLOGIES
+        ============================================== -->
+
+        <div
+          class="technology-list"
+          *ngIf="project.technologies?.length"
+        >
 
           <div
             class="technology-tag"
@@ -185,10 +285,14 @@
             <img
               [src]="tech.imgUrl"
               [alt]="tech.name + ' logo'"
+              loading="lazy"
             >
 
+
             <span>
+
               {{ tech.name }}
+
             </span>
 
           </div>
@@ -196,9 +300,18 @@
         </div>
 
 
-        <!-- ACTIONS -->
 
-        <div class="project-actions">
+        <!-- =============================================
+             ACTIONS
+        ============================================== -->
+
+        <div
+          class="project-actions"
+          *ngIf="project.liveLink || project.githubLink"
+        >
+
+
+          <!-- LIVE PROJECT -->
 
           <a
             *ngIf="project.liveLink"
@@ -212,10 +325,14 @@
               View Project
             </span>
 
-            <i class="fas fa-arrow-up-right-from-square"></i>
+
+            <i class="fas fa-external-link-alt"></i>
 
           </a>
 
+
+
+          <!-- SOURCE CODE -->
 
           <a
             *ngIf="project.githubLink"
@@ -226,6 +343,7 @@
           >
 
             <i class="fab fa-github"></i>
+
 
             <span>
               Source Code
@@ -238,6 +356,26 @@
       </div>
 
     </article>
+
+  </div>
+
+
+
+  <!-- =====================================================
+       FOOTNOTE
+  ====================================================== -->
+
+  <div class="projects-footer-note">
+
+    <span class="projects-footer-line"></span>
+
+
+    <p>
+
+      Selected academic, experimental and software development
+      projects. Additional work is available on GitHub.
+
+    </p>
 
   </div>
 

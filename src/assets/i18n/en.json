@@ -91,6 +91,9 @@
   "GRAFFITI_DESCRIPTION": "A web application for discovering and showcasing street art from different locations across Europe and celebrating the creativity of street artists.",
   "FACIAL_RECOGNITION_DESCRIPTION": "A Python-based facial recognition system using real-time webcam video. The web interface is built with Flask, while face detection and recognition are implemented using OpenCV and a facial recognition library.",
   "PEOPLE_DETECTION_DESCRIPTION": "A Python-based real-time person detection system using webcam video. The web interface is built with Flask, with computer vision functionality implemented using OpenCV.",
+  "MUC_XR_DESCRIPTION": "An immersive Human–Robot Interaction research prototype that recreates a collaborative robot workspace in XR. The system communicates robot states, current actions, and task progress through multimodal visual feedback, helping users understand robot behavior during collaborative tasks.",
+
+"OBJECT_DETECTION_TF_DESCRIPTION": "A browser-based computer vision application for real-time object detection, image classification, and hand gesture recognition. The application combines TensorFlow.js, COCO-SSD, MediaPipe, and Angular to perform interactive machine-learning inference directly in the browser.",
 
   "DESCRIPTION": "Description",
   "TECHNOLOGIES_USED": "Technologies Used",
@@ -112,6 +115,7 @@
   "RESEARCH_INTEREST_EMPIRICAL_SE": "Empirical Software Engineering",
   "RESEARCH_INTEREST_HUMAN_FACTORS": "Human Factors in Software Engineering",
   "RESEARCH_INTEREST_DEVELOPER_TOOLS": "Intelligent Developer Tools",
+  "RESEARCH_INTEREST_HCI": "Human–Computer Interaction",
 
   "MASTER_THESIS": "Master Thesis",
   "THESIS_TITLE": "Development of a Web Interface for a Human–Robot Workplace",

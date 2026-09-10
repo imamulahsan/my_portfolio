@@ -20,6 +20,10 @@ export class ProjectsComponent {
       label: 'All Projects'
     },
     {
+      key: 'xr',
+      label: 'XR & HRI'
+    },
+    {
       key: 'ai',
       label: 'AI & Computer Vision'
     },
@@ -40,12 +44,119 @@ export class ProjectsComponent {
 
   projects = [
 
-    /* ---------------------------------------------------------
-       AI Language Tool
-    --------------------------------------------------------- */
+    /* =========================================================
+       01 — MUC XR
+    ========================================================= */
+
+{
+  id: 1,
+
+  title: 'MUC-XR: Human–Robot Interaction Prototype',
+
+  description: 'MUC_XR_DESCRIPTION',
+
+  category: 'xr',
+
+  categoryLabel: 'XR · HRI Research',
+
+  featured: true,
+
+  year: '2026',
+
+  image:
+    'assets/images/webxr_prototype.png',
+
+  technologies: [
+    {
+      name: 'Angular',
+      imgUrl: 'assets/images/logos/angular.png'
+    },
+    {
+      name: 'TypeScript',
+      imgUrl: 'assets/images/logos/typescript.png'
+    },
+    {
+      name: 'A-Frame',
+      imgUrl: 'assets/images/logos/a-frame.png'
+    },
+    {
+      name: 'WebXR',
+      imgUrl: 'assets/images/logos/webxr.svg'
+    },
+    {
+      name: 'HTML5',
+      imgUrl: 'assets/images/logos/html.png'
+    }
+  ],
+
+  liveLink:
+    'https://mucxr.netlify.app/',
+
+  githubLink:
+    'https://github.com/imamulahsan/MuC_XR'
+},
+
+
+    /* =========================================================
+       02 — TensorFlow.js Object Detection
+    ========================================================= */
 
     {
-      id: 1,
+      id: 2,
+
+      title:
+        'Real-Time Object Detection, Classification & Gesture Recognition',
+
+      description: 'OBJECT_DETECTION_TF_DESCRIPTION',
+
+      category: 'ai',
+
+      categoryLabel: 'Browser AI · Computer Vision',
+
+      featured: true,
+
+      year: '2024',
+
+      image:
+        'assets/images/vision_x.png',
+
+      technologies: [
+        {
+          name: 'TensorFlow.js',
+          imgUrl: 'assets/images/logos/Tensorflow_logo.svg.webp'
+        },
+        {
+          name: 'Angular',
+          imgUrl: 'assets/images/logos/angular.png'
+        },
+        {
+          name: 'MediaPipe',
+          imgUrl: 'assets/images/logos/mediapipe-64px.png'
+        },
+        {
+          name: 'TypeScript',
+          imgUrl: 'assets/images/logos/typescript.png'
+        },
+        {
+          name: 'JavaScript',
+          imgUrl: 'assets/images/logos/javascript.png'
+        }
+      ],
+
+      liveLink:
+        'https://simpledetectors.netlify.app/',
+
+      githubLink:
+        'https://github.com/imamulahsan/object_detection_tensorflow_angular'
+    },
+
+
+    /* =========================================================
+       03 — AI Language Tool
+    ========================================================= */
+
+    {
+      id: 3,
 
       title: 'AI Language Tool using OpenAI API',
 
@@ -57,7 +168,10 @@ export class ProjectsComponent {
 
       featured: true,
 
-      image: 'assets/images/project-images/ai_tool.jpg',
+      year: '2024',
+
+      image:
+        'assets/images/project-images/ai_tool.jpg',
 
       technologies: [
         {
@@ -90,22 +204,30 @@ export class ProjectsComponent {
     },
 
 
-    /* ---------------------------------------------------------
-       Facial Recognition
-    --------------------------------------------------------- */
+    /* =========================================================
+       04 — Facial Recognition
+    ========================================================= */
 
     {
-      id: 2,
+      id: 4,
 
-      title: 'Facial Recognition Based Attendance System',
+      title:
+        'Facial Recognition Based Attendance System',
 
-      description: 'FACIAL_RECOGNITION_DESCRIPTION',
+      description:
+        'FACIAL_RECOGNITION_DESCRIPTION',
 
-      category: 'ai',
+      category:
+        'ai',
 
-      categoryLabel: 'Computer Vision',
+      categoryLabel:
+        'Computer Vision',
 
-      featured: true,
+      featured:
+        false,
+
+      year:
+        '2023',
 
       image:
         'assets/images/project-images/facial.gif',
@@ -129,77 +251,37 @@ export class ProjectsComponent {
         }
       ],
 
-      liveLink:
-        'https://github.com/imamulahsan/facial_recognition_based_attendance_system',
+      liveLink: '',
 
       githubLink:
         'https://github.com/imamulahsan/facial_recognition_based_attendance_system'
     },
 
 
-    /* ---------------------------------------------------------
-       People Detection
-    --------------------------------------------------------- */
+    /* =========================================================
+       05 — Chemnitz Interactive Map
+    ========================================================= */
 
     {
-      id: 3,
+      id: 5,
 
-      title: 'Real-Time People Detection',
+      title:
+        'Chemnitz Interactive Map',
 
-      description: 'PEOPLE_DETECTION_DESCRIPTION',
+      description:
+        'CHEMNITZ_DESCRIPTION',
 
-      category: 'ai',
+      category:
+        'fullstack',
 
-      categoryLabel: 'Computer Vision',
+      categoryLabel:
+        'Full Stack',
 
-      featured: false,
+      featured:
+        false,
 
-      image:
-        'assets/images/project-images/person.gif',
-
-      technologies: [
-        {
-          name: 'Python',
-          imgUrl: 'assets/images/logos/python.png'
-        },
-        {
-          name: 'OpenCV',
-          imgUrl: 'assets/images/logos/opencv.png'
-        },
-        {
-          name: 'Flask',
-          imgUrl: 'assets/images/logos/flask.png'
-        },
-        {
-          name: 'HTML5',
-          imgUrl: 'assets/images/logos/html.png'
-        }
-      ],
-
-      liveLink:
-        'https://github.com/imamulahsan/people_detection',
-
-      githubLink:
-        'https://github.com/imamulahsan/people_detection'
-    },
-
-
-    /* ---------------------------------------------------------
-       Chemnitz Interactive Map
-    --------------------------------------------------------- */
-
-    {
-      id: 4,
-
-      title: 'Chemnitz Interactive Map',
-
-      description: 'CHEMNITZ_DESCRIPTION',
-
-      category: 'fullstack',
-
-      categoryLabel: 'Full Stack',
-
-      featured: true,
+      year:
+        '2023',
 
       image:
         'assets/images/project-images/chemnitz.jpg',
@@ -235,22 +317,84 @@ export class ProjectsComponent {
     },
 
 
-    /* ---------------------------------------------------------
-       Berliner Tehari
-    --------------------------------------------------------- */
+    /* =========================================================
+       06 — People Detection
+    ========================================================= */
 
     {
-      id: 5,
+      id: 6,
 
-      title: 'Berliner Tehari',
+      title:
+        'Real-Time People Detection',
 
-      description: 'BERLINER_DESCRIPTION',
+      description:
+        'PEOPLE_DETECTION_DESCRIPTION',
 
-      category: 'fullstack',
+      category:
+        'ai',
 
-      categoryLabel: 'Full Stack',
+      categoryLabel:
+        'Computer Vision',
 
-      featured: false,
+      featured:
+        false,
+
+      year:
+        '2023',
+
+      image:
+        'assets/images/project-images/person.gif',
+
+      technologies: [
+        {
+          name: 'Python',
+          imgUrl: 'assets/images/logos/python.png'
+        },
+        {
+          name: 'OpenCV',
+          imgUrl: 'assets/images/logos/opencv.png'
+        },
+        {
+          name: 'Flask',
+          imgUrl: 'assets/images/logos/flask.png'
+        },
+        {
+          name: 'HTML5',
+          imgUrl: 'assets/images/logos/html.png'
+        }
+      ],
+
+      liveLink: '',
+
+      githubLink:
+        'https://github.com/imamulahsan/people_detection'
+    },
+
+
+    /* =========================================================
+       07 — Berliner Tehari
+    ========================================================= */
+
+    {
+      id: 7,
+
+      title:
+        'Berliner Tehari',
+
+      description:
+        'BERLINER_DESCRIPTION',
+
+      category:
+        'fullstack',
+
+      categoryLabel:
+        'Full Stack',
+
+      featured:
+        false,
+
+      year:
+        '2022',
 
       image:
         'assets/images/project-images/berliner.jpg',
@@ -286,22 +430,30 @@ export class ProjectsComponent {
     },
 
 
-    /* ---------------------------------------------------------
-       Graffiti Community
-    --------------------------------------------------------- */
+    /* =========================================================
+       08 — Graffiti Community
+    ========================================================= */
 
     {
-      id: 6,
+      id: 8,
 
-      title: 'Graffiti Art Community',
+      title:
+        'Graffiti Art Community',
 
-      description: 'GRAFFITI_DESCRIPTION',
+      description:
+        'GRAFFITI_DESCRIPTION',
 
-      category: 'frontend',
+      category:
+        'frontend',
 
-      categoryLabel: 'Frontend',
+      categoryLabel:
+        'Frontend',
 
-      featured: false,
+      featured:
+        false,
+
+      year:
+        '2022',
 
       image:
         'assets/images/project-images/graffiti.jpg',
@@ -353,16 +505,20 @@ export class ProjectsComponent {
       project =>
         project.category === this.selectedCategory
     );
-
   }
 
 
   /* =========================================================
-     Filter Projects
+     Filter
   ========================================================= */
 
-  filterProjects(category: string): void {
-    this.selectedCategory = category;
+  filterProjects(
+    category: string
+  ): void {
+
+    this.selectedCategory =
+      category;
+
   }
 
 }

@@ -7,36 +7,49 @@ import { Component } from '@angular/core';
 })
 export class ResearchComponent {
 
-  researchInterests = [
-    {
-      label: 'RESEARCH_INTEREST_SOFTWARE_ENGINEERING',
-      icon: 'fas fa-code'
-    },
-    {
-      label: 'RESEARCH_INTEREST_AI_ASSISTED_SE',
-      icon: 'fas fa-brain'
-    },
-    {
-      label: 'RESEARCH_INTEREST_AUTOMATED_TESTING',
-      icon: 'fas fa-vial'
-    },
-    {
-      label: 'RESEARCH_INTEREST_SOFTWARE_QUALITY',
-      icon: 'fas fa-check-circle'
-    },
-    {
-      label: 'RESEARCH_INTEREST_EMPIRICAL_SE',
-      icon: 'fas fa-chart-bar'
-    },
-    {
-      label: 'RESEARCH_INTEREST_HUMAN_FACTORS',
-      icon: 'fas fa-users'
-    },
-    {
-      label: 'RESEARCH_INTEREST_DEVELOPER_TOOLS',
-      icon: 'fas fa-tools'
-    }
-  ];
+researchInterests = [
+
+  {
+    label: 'RESEARCH_INTEREST_HCI',
+    icon: 'fas fa-laptop-code'
+  },
+
+  {
+    label: 'RESEARCH_INTEREST_SOFTWARE_ENGINEERING',
+    icon: 'fas fa-code'
+  },
+
+  {
+    label: 'RESEARCH_INTEREST_AI_ASSISTED_SE',
+    icon: 'fas fa-brain'
+  },
+
+  {
+    label: 'RESEARCH_INTEREST_AUTOMATED_TESTING',
+    icon: 'fas fa-vial'
+  },
+
+  {
+    label: 'RESEARCH_INTEREST_SOFTWARE_QUALITY',
+    icon: 'fas fa-check-circle'
+  },
+
+  {
+    label: 'RESEARCH_INTEREST_EMPIRICAL_SE',
+    icon: 'fas fa-chart-bar'
+  },
+
+  {
+    label: 'RESEARCH_INTEREST_HUMAN_FACTORS',
+    icon: 'fas fa-users'
+  },
+
+  {
+    label: 'RESEARCH_INTEREST_DEVELOPER_TOOLS',
+    icon: 'fas fa-tools'
+  }
+
+];
 
 
   thesis = {
