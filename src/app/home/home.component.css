@@ -1182,3 +1182,284 @@
 
 }
 
+/* =========================================================
+   ORANGE STAR CURSOR
+========================================================= */
+
+.star-cursor {
+  position: fixed;
+
+  left: 0;
+  top: 0;
+
+  width: 8px;
+  height: 8px;
+
+  z-index: 99999;
+
+  pointer-events: none;
+
+  opacity: 0;
+
+  transform:
+    translate(-50%, -50%);
+
+  transition:
+    opacity 0.15s ease;
+
+  will-change:
+    left,
+    top;
+}
+
+
+.star-cursor.visible {
+  opacity: 1;
+}
+
+
+/* =========================================================
+   ORANGE GLOW
+========================================================= */
+
+.star-cursor-glow {
+  position: absolute;
+
+  top: 50%;
+  left: 50%;
+
+  width: 34px;
+  height: 34px;
+
+  border-radius: 50%;
+
+  transform:
+    translate(-50%, -50%);
+
+  background:
+    radial-gradient(
+      circle,
+      rgba(255, 255, 255, 0.95) 0%,
+      rgba(255, 196, 150, 0.75) 8%,
+      rgba(255, 120, 75, 0.48) 22%,
+      rgba(255, 99, 71, 0.22) 42%,
+      rgba(255, 99, 71, 0.08) 58%,
+      transparent 74%
+    );
+
+  filter: blur(2px);
+
+  animation:
+    orangeCursorPulse
+    1.8s
+    ease-in-out
+    infinite;
+}
+
+
+/* =========================================================
+   WHITE-HOT CENTER
+========================================================= */
+
+.star-cursor-core {
+  position: absolute;
+
+  top: 50%;
+  left: 50%;
+
+  width: 6px;
+  height: 6px;
+
+  border-radius: 50%;
+
+  transform:
+    translate(-50%, -50%);
+
+  background: #ffffff;
+
+  box-shadow:
+    0 0 3px #ffffff,
+    0 0 6px #ffe2d8,
+    0 0 10px #ff9a7f,
+    0 0 17px #ff6347,
+    0 0 28px rgba(255, 99, 71, 0.85),
+    0 0 42px rgba(255, 99, 71, 0.4);
+}
+
+
+/* =========================================================
+   HORIZONTAL STAR FLARE
+========================================================= */
+
+.star-cursor::before {
+  content: '';
+
+  position: absolute;
+
+  top: 50%;
+  left: 50%;
+
+  width: 24px;
+  height: 1px;
+
+  transform:
+    translate(-50%, -50%);
+
+  background:
+    linear-gradient(
+      90deg,
+      transparent,
+      rgba(255, 99, 71, 0.15),
+      rgba(255, 170, 135, 0.65),
+      #ffffff,
+      rgba(255, 170, 135, 0.65),
+      rgba(255, 99, 71, 0.15),
+      transparent
+    );
+
+  box-shadow:
+    0 0 7px
+    rgba(255, 99, 71, 0.75);
+}
+
+
+/* =========================================================
+   VERTICAL STAR FLARE
+========================================================= */
+
+.star-cursor::after {
+  content: '';
+
+  position: absolute;
+
+  top: 50%;
+  left: 50%;
+
+  width: 1px;
+  height: 24px;
+
+  transform:
+    translate(-50%, -50%);
+
+  background:
+    linear-gradient(
+      180deg,
+      transparent,
+      rgba(255, 99, 71, 0.15),
+      rgba(255, 170, 135, 0.65),
+      #ffffff,
+      rgba(255, 170, 135, 0.65),
+      rgba(255, 99, 71, 0.15),
+      transparent
+    );
+
+  box-shadow:
+    0 0 7px
+    rgba(255, 99, 71, 0.75);
+}
+
+
+/* =========================================================
+   INTERACTIVE HOVER
+========================================================= */
+
+.star-cursor.interactive
+.star-cursor-glow {
+  width: 48px;
+  height: 48px;
+}
+
+
+.star-cursor.interactive
+.star-cursor-core {
+  width: 7px;
+  height: 7px;
+
+  box-shadow:
+    0 0 4px #ffffff,
+    0 0 8px #ffe0d5,
+    0 0 15px #ff9a7f,
+    0 0 25px #ff6347,
+    0 0 42px rgba(255, 99, 71, 0.8);
+}
+
+
+.star-cursor.interactive::before {
+  width: 34px;
+}
+
+
+.star-cursor.interactive::after {
+  height: 34px;
+}
+
+
+
+
+/* =========================================================
+   CURSOR PULSE
+========================================================= */
+
+@keyframes orangeCursorPulse {
+
+  0%,
+  100% {
+    opacity: 0.78;
+
+    transform:
+      translate(-50%, -50%)
+      scale(0.9);
+  }
+
+
+  50% {
+    opacity: 1;
+
+    transform:
+      translate(-50%, -50%)
+      scale(1.15);
+  }
+
+}
+
+
+/* =========================================================
+   HIDE NORMAL CURSOR
+========================================================= */
+
+@media (hover: hover) and (pointer: fine) {
+
+  .home-container,
+  .home-container a,
+  .home-container button {
+    cursor: none;
+  }
+
+}
+
+
+/* =========================================================
+   TOUCH DEVICES
+========================================================= */
+
+@media (hover: none),
+       (pointer: coarse) {
+
+  .star-cursor {
+    display: none;
+  }
+
+}
+
+
+/* =========================================================
+   REDUCED MOTION
+========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+  .star-cursor-glow {
+    animation: none;
+  }
+
+}
